@@ -8,9 +8,9 @@ export default function Footer() {
         <div className="mb-10 pb-8 border-b border-navy-light/60 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-3 no-underline group">
             <img
-              src="/logo.png"
+              src="/logo-icon.svg"
               alt="ConvergeTec logo"
-              className="h-8 w-auto object-contain"
+              className="h-8 w-8 object-contain shrink-0"
             />
             <span className="font-display font-bold text-xl text-white tracking-wide group-hover:text-cyan transition-colors">
               ConvergeTec

@@ -74,9 +74,9 @@ export default function Navbar() {
           aria-label="ConvergeTec Home"
         >
           <img
-            src="/logo.png"
+            src="/logo-icon.svg"
             alt="ConvergeTec logo"
-            className="h-8 w-auto object-contain"
+            className="h-8 w-8 object-contain shrink-0"
           />
           <span
             className={`font-display font-bold text-xl tracking-wide transition-colors ${

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="130 8 113 113" width="100%" height="100%">
+  <defs>
+    <clipPath id="fav-bl-over-top">
+      <rect x="140" y="32" width="35" height="35" />
+    </clipPath>
+  </defs>
+
+  <!-- ConvergeTec Rings Mark -->
+  <g fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 1. BL Ring (Cyan #00C4F0) -->
+    <circle cx="177.5" cy="71.5" r="39" stroke="#00C4F0" />
+
+    <!-- 2. BR Ring (Royal Blue #0078E0) -->
+    <circle cx="195.5" cy="71.5" r="39" stroke="#0078E0" />
+
+    <!-- 3. Top Ring (Cyan #00C4F0) -->
+    <circle cx="186.5" cy="55.5" r="39" stroke="#00C4F0" />
+
+    <!-- 4. BL arc on top of Top at top-left intersection -->
+    <circle cx="177.5" cy="71.5" r="39" stroke="#00C4F0" clip-path="url(#fav-bl-over-top)" />
+  </g>
+</svg>
