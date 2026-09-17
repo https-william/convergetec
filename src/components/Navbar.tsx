@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import Button from './Button';
 
 const serviceLinks = [
   { name: 'Consulting', path: '/services/consulting' },
@@ -9,11 +10,22 @@ const serviceLinks = [
 ];
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Scroll listener for solidifying effect past 40px
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 40);
+    }
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const closeMenus = () => {
     setMobileMenuOpen(false);
@@ -46,21 +58,33 @@ export default function Navbar() {
   const isServicesActive = location.pathname.startsWith('/services');
 
   return (
-    <header className="bg-navy border-b border-navy-light sticky top-0 z-50">
-      <div className="content-container py-4 flex items-center justify-between">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-200 ease-in-out ${
+        scrolled || mobileMenuOpen
+          ? 'bg-navy border-b border-navy-light text-offwhite shadow-md'
+          : 'bg-offwhite/90 backdrop-blur-md border-b border-navy/10 text-navy'
+      }`}
+    >
+      <div className="content-container py-3.5 sm:py-4 flex items-center justify-between">
         {/* Brand Logo */}
         <Link
           to="/"
           onClick={closeMenus}
-          className="flex items-center gap-3 group no-underline focus-visible:outline-cyan"
+          className="flex items-center gap-3 group no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 rounded"
           aria-label="ConvergeTec Home"
         >
           <img
             src="/logo.png"
-            alt="ConvergeTec"
+            alt="ConvergeTec logo"
             className="h-8 w-auto object-contain"
           />
-          <span className="font-display font-bold text-xl text-white tracking-wide group-hover:text-cyan transition-colors">
+          <span
+            className={`font-display font-bold text-xl tracking-wide transition-colors ${
+              scrolled || mobileMenuOpen
+                ? 'text-white group-hover:text-cyan'
+                : 'text-navy group-hover:text-blue'
+            }`}
+          >
             ConvergeTec
           </span>
         </Link>
@@ -72,10 +96,14 @@ export default function Navbar() {
             end
             onClick={closeMenus}
             className={({ isActive }) =>
-              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 ${
+              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
                 isActive
-                  ? 'text-cyan border-cyan font-semibold'
-                  : 'text-offwhite/85 hover:text-cyan border-transparent'
+                  ? scrolled
+                    ? 'text-cyan border-cyan font-semibold'
+                    : 'text-blue border-blue font-semibold'
+                  : scrolled
+                  ? 'text-offwhite/85 hover:text-cyan border-transparent'
+                  : 'text-navy/80 hover:text-blue border-transparent'
               }`
             }
           >
@@ -86,10 +114,14 @@ export default function Navbar() {
             to="/about"
             onClick={closeMenus}
             className={({ isActive }) =>
-              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 ${
+              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
                 isActive
-                  ? 'text-cyan border-cyan font-semibold'
-                  : 'text-offwhite/85 hover:text-cyan border-transparent'
+                  ? scrolled
+                    ? 'text-cyan border-cyan font-semibold'
+                    : 'text-blue border-blue font-semibold'
+                  : scrolled
+                  ? 'text-offwhite/85 hover:text-cyan border-transparent'
+                  : 'text-navy/80 hover:text-blue border-transparent'
               }`
             }
           >
@@ -108,16 +140,24 @@ export default function Navbar() {
               onClick={() => setDesktopDropdownOpen((prev) => !prev)}
               aria-expanded={desktopDropdownOpen}
               aria-haspopup="true"
-              className={`flex items-center gap-1.5 text-sm font-medium transition-colors no-underline pb-1 border-b-2 bg-transparent cursor-pointer ${
+              className={`flex items-center gap-1.5 text-sm font-medium transition-colors no-underline pb-1 border-b-2 bg-transparent cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
                 isServicesActive
-                  ? 'text-cyan border-cyan font-semibold'
-                  : 'text-offwhite/85 hover:text-cyan border-transparent'
+                  ? scrolled
+                    ? 'text-cyan border-cyan font-semibold'
+                    : 'text-blue border-blue font-semibold'
+                  : scrolled
+                  ? 'text-offwhite/85 hover:text-cyan border-transparent'
+                  : 'text-navy/80 hover:text-blue border-transparent'
               }`}
             >
               Services
               <svg
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  desktopDropdownOpen ? 'rotate-180 text-cyan' : 'text-offwhite/60'
+                  desktopDropdownOpen
+                    ? 'rotate-180 text-cyan'
+                    : scrolled
+                    ? 'text-offwhite/60'
+                    : 'text-navy/60'
                 }`}
                 fill="none"
                 viewBox="0 0 24 24"
@@ -143,7 +183,7 @@ export default function Navbar() {
                     role="menuitem"
                     onClick={closeMenus}
                     className={({ isActive }) =>
-                      `block px-4 py-2.5 text-sm transition-colors no-underline ${
+                      `block px-4 py-2.5 text-sm transition-colors no-underline focus-visible:outline-none focus-visible:bg-navy ${
                         isActive
                           ? 'text-cyan bg-navy font-semibold border-l-2 border-cyan'
                           : 'text-offwhite/80 hover:text-cyan hover:bg-navy/60'
@@ -161,10 +201,14 @@ export default function Navbar() {
             to="/contact"
             onClick={closeMenus}
             className={({ isActive }) =>
-              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 ${
+              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
                 isActive
-                  ? 'text-cyan border-cyan font-semibold'
-                  : 'text-offwhite/85 hover:text-cyan border-transparent'
+                  ? scrolled
+                    ? 'text-cyan border-cyan font-semibold'
+                    : 'text-blue border-blue font-semibold'
+                  : scrolled
+                  ? 'text-offwhite/85 hover:text-cyan border-transparent'
+                  : 'text-navy/80 hover:text-blue border-transparent'
               }`
             }
           >
@@ -172,15 +216,16 @@ export default function Navbar() {
           </NavLink>
         </nav>
 
-        {/* Desktop CTA Button */}
+        {/* Desktop CTA Button with hover scale */}
         <div className="hidden md:flex items-center">
-          <Link
+          <Button
             to="/contact"
+            variant="primary"
             onClick={closeMenus}
-            className="bg-blue hover:bg-cyan text-white hover:text-navy font-semibold px-5 py-2.5 rounded-lg transition-colors duration-200 text-sm inline-flex items-center justify-center no-underline shadow-sm"
+            className="px-5 py-2.5 text-sm"
           >
             Book a Discovery Call
-          </Link>
+          </Button>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -190,7 +235,11 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="text-offwhite hover:text-cyan p-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan"
+            className={`p-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-blue transition-colors ${
+              scrolled || mobileMenuOpen
+                ? 'text-offwhite hover:text-cyan'
+                : 'text-navy hover:text-blue'
+            }`}
           >
             {mobileMenuOpen ? (
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -208,7 +257,7 @@ export default function Navbar() {
       {/* Mobile Full-Screen Navigation */}
       {mobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-x-0 top-[73px] bottom-0 bg-navy text-offwhite overflow-y-auto z-40 border-t border-navy-light"
+          className="md:hidden fixed inset-x-0 top-[65px] sm:top-[73px] bottom-0 bg-navy text-offwhite overflow-y-auto z-40 border-t border-navy-light"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
@@ -301,13 +350,14 @@ export default function Navbar() {
             </nav>
 
             <div className="pt-8 mt-8 border-t border-navy-light">
-              <Link
+              <Button
                 to="/contact"
+                variant="primary"
                 onClick={closeMenus}
-                className="w-full bg-blue hover:bg-cyan text-white hover:text-navy font-semibold px-6 py-3.5 rounded-lg transition-colors duration-200 text-center text-lg block no-underline font-body shadow"
+                className="w-full py-3.5 text-lg font-body"
               >
                 Book a Discovery Call
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

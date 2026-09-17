@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Button from './Button';
 
 export default function CTASection() {
   return (
@@ -12,12 +12,13 @@ export default function CTASection() {
             Talk to ConvergeTec about where your organisation is trying to go.
           </p>
           <div>
-            <Link
+            <Button
               to="/contact"
-              className="bg-offwhite text-navy hover:bg-navy hover:text-offwhite transition-colors duration-200 font-semibold px-8 py-4 rounded-lg text-base sm:text-lg inline-flex items-center justify-center no-underline shadow-md"
+              variant="inverted"
+              className="px-8 py-4 text-base sm:text-lg"
             >
               Book a Discovery Call
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

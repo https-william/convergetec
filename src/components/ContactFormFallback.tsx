@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import Button from './Button';
 
 export default function ContactFormFallback() {
   const [submitted, setSubmitted] = useState(false);
@@ -126,12 +127,13 @@ export default function ContactFormFallback() {
 
               {/* Submit Button */}
               <div>
-                <button
+                <Button
                   type="submit"
-                  className="w-full sm:w-auto bg-blue hover:bg-cyan text-white hover:text-navy font-semibold px-8 py-3.5 rounded-lg transition-all duration-200 text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-blue focus:ring-offset-2 cursor-pointer inline-flex items-center justify-center"
+                  variant="primary"
+                  className="w-full sm:w-auto px-8 py-3.5 text-base"
                 >
                   Send Message
-                </button>
+                </Button>
               </div>
             </form>
           )}

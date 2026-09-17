@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollProgressBar from './components/ScrollProgressBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Consulting from './pages/services/Consulting';
@@ -18,12 +20,20 @@ function ScrollToTop() {
   return null;
 }
 
-function Layout() {
+function AnimatedRoutes() {
+  const location = useLocation();
+
   return (
-    <div className="flex flex-col min-h-screen bg-offwhite text-ink font-body">
-      <Navbar />
-      <main className="flex-1">
-        <Routes>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2, ease: 'easeInOut' }}
+        className="flex-1 flex flex-col"
+      >
+        <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services/consulting" element={<Consulting />} />
@@ -32,6 +42,18 @@ function Layout() {
           <Route path="/services/resources-talent" element={<ResourcesTalent />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+function Layout() {
+  return (
+    <div className="flex flex-col min-h-screen bg-offwhite text-ink font-body">
+      <ScrollProgressBar />
+      <Navbar />
+      <main className="flex-1 flex flex-col">
+        <AnimatedRoutes />
       </main>
       <Footer />
     </div>

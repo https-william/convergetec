@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Button from './Button';
 
 export default function Hero() {
   return (
@@ -20,18 +20,20 @@ export default function Hero() {
 
             {/* Buttons: side by side, stacked on mobile */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
-              <Link
+              <Button
                 to="/contact"
-                className="bg-blue text-offwhite hover:bg-cyan hover:text-navy transition-colors duration-200 font-semibold px-7 py-3.5 rounded-lg text-center text-base sm:text-lg inline-flex items-center justify-center no-underline shadow-sm"
+                variant="primary"
+                className="px-7 py-3.5 text-base sm:text-lg"
               >
                 Book a Discovery Call
-              </Link>
-              <Link
+              </Button>
+              <Button
                 to="/contact"
-                className="bg-transparent border border-navy text-navy hover:bg-navy hover:text-offwhite transition-colors duration-200 font-semibold px-7 py-3.5 rounded-lg text-center text-base sm:text-lg inline-flex items-center justify-center no-underline"
+                variant="secondary"
+                className="px-7 py-3.5 text-base sm:text-lg"
               >
                 Talk to ConvergeTec
-              </Link>
+              </Button>
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Button from './Button';
 import CTASection from './CTASection';
 
 export interface Pillar {
@@ -71,12 +72,13 @@ export default function ServicePageTemplate({
 
             {/* Primary CTA Button */}
             <div>
-              <Link
+              <Button
                 to="/contact"
-                className="bg-blue text-offwhite hover:bg-cyan hover:text-navy transition-colors duration-200 font-semibold px-7 py-3.5 rounded-lg text-base sm:text-lg inline-flex items-center justify-center no-underline shadow-sm"
+                variant="primary"
+                className="px-7 py-3.5 text-base sm:text-lg"
               >
                 Book a Discovery Call
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
