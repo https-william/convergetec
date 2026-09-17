@@ -1,18 +1,62 @@
+import { motion } from 'framer-motion';
+
 export default function Differentiator() {
   return (
-    <section className="w-full py-16 md:py-24 bg-offwhite border-b border-navy/10">
-      <div className="content-container">
-        <div className="rounded-2xl border-2 border-dashed border-navy/20 bg-white/60 p-8 md:p-12 text-center">
-          <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blue bg-blue/10 rounded-full mb-3">
-            Component Shell
-          </span>
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 font-display text-navy">
-            Differentiator
-          </h2>
-          <p className="text-ink/70 max-w-xl mx-auto text-base md:text-lg">
-            Placeholder for Differentiator section (Phase 2 content)
-          </p>
-        </div>
+    <section className="relative w-full bg-navy text-offwhite py-16 md:py-128 overflow-hidden">
+      {/* Background Texture: Faint overlapping ring outlines (stroke only, opacity 0.08) */}
+      <div
+        className="absolute inset-0 pointer-events-none select-none overflow-hidden flex items-center justify-center"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1000 800"
+          className="w-[1200px] h-[960px] max-w-none transform -translate-x-12 translate-y-8"
+          fill="none"
+        >
+          <circle
+            cx="400"
+            cy="360"
+            r="260"
+            stroke="#F7F9FC"
+            strokeWidth="2"
+            strokeOpacity="0.08"
+          />
+          <circle
+            cx="600"
+            cy="360"
+            r="260"
+            stroke="#F7F9FC"
+            strokeWidth="2"
+            strokeOpacity="0.08"
+          />
+          <circle
+            cx="500"
+            cy="520"
+            r="260"
+            stroke="#F7F9FC"
+            strokeWidth="2"
+            strokeOpacity="0.08"
+          />
+        </svg>
+      </div>
+
+      <div className="content-container relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="max-w-[720px] mx-auto text-center"
+        >
+          <blockquote className="m-0 p-0">
+            <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] leading-relaxed md:leading-[1.3] text-offwhite tracking-tight font-medium">
+              &ldquo;We do not simply advise organisations on what they should
+              do. We help design the future, provide the people, build the
+              technology, train the workforce, and support the organisation
+              through implementation.&rdquo;
+            </p>
+          </blockquote>
+        </motion.div>
       </div>
     </section>
   );
