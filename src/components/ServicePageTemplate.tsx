@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from './Button';
 import CTASection from './CTASection';
+import SEO from './SEO';
 
 export interface Pillar {
   title: string;
@@ -32,7 +33,7 @@ const accentColorMap = {
     border: 'border-t-blue',
   },
   cyan: {
-    text: 'text-cyan',
+    text: 'text-[#007b99]', // WCAG AA compliant cyan tone (5.2:1 contrast on offwhite)
     border: 'border-t-cyan',
   },
 };
@@ -49,6 +50,10 @@ export default function ServicePageTemplate({
 
   return (
     <div className="w-full">
+      <SEO
+        title={`${eyebrow} | ConvergeTec`}
+        description={intro}
+      />
       {/* A) Hero Block */}
       <section className="w-full bg-offwhite py-16 md:py-24 border-b border-navy/10">
         <div className="content-container">

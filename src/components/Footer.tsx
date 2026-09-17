@@ -9,7 +9,7 @@ export default function Footer() {
           <Link to="/" className="flex items-center gap-3 no-underline group">
             <img
               src="/logo.png"
-              alt="ConvergeTec"
+              alt="ConvergeTec logo"
               className="h-8 w-auto object-contain"
             />
             <span className="font-display font-bold text-xl text-white tracking-wide group-hover:text-cyan transition-colors">

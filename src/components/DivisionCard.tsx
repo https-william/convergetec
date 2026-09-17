@@ -39,7 +39,7 @@ export default function DivisionCard({
       <div className="pt-2">
         <Link
           to={href}
-          className="text-xs font-semibold uppercase tracking-wider text-blue group-hover:text-cyan transition-colors inline-flex items-center gap-1.5 no-underline"
+          className="text-xs font-semibold uppercase tracking-wider text-blue group-hover:text-navy group-hover:underline group-hover:decoration-cyan transition-colors inline-flex items-center gap-1.5 no-underline"
         >
           <span>Explore Division</span>
           <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

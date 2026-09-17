@@ -12,7 +12,7 @@
   }
 
   a {
-    @apply text-blue hover:text-cyan hover:underline transition-colors;
+    @apply text-blue hover:text-navy hover:underline hover:decoration-cyan hover:decoration-2 transition-colors;
   }
 }
 
