@@ -1,39 +1,56 @@
+import type { MotionValue } from 'framer-motion';
 import DivisionCard from './DivisionCard';
 
 const divisions = [
   {
+    id: 'division-tile-1',
     title: 'ConvergeTec Consulting',
     description:
       'Advisory and transformation services across business analysis, project delivery, change management, data and AI.',
     href: '/services/consulting',
     borderColorClass: 'border-navy',
+    accentCorner: 'top-right' as const,
+    accentColor: 'navy' as const,
   },
   {
+    id: 'division-tile-2',
     title: 'ConvergeTec Digital & Software',
     description:
       'Custom software, SaaS products, automation and systems integration.',
     href: '/services/digital-software',
     borderColorClass: 'border-blue',
+    accentCorner: 'bottom-left' as const,
+    accentColor: 'blue' as const,
   },
   {
+    id: 'division-tile-3',
     title: 'ConvergeTec Academy',
     description:
       'Corporate training and online learning in business analysis, project management, transformation, technology and leadership.',
     href: '/services/academy',
     borderColorClass: 'border-cyan',
+    accentCorner: 'top-left' as const,
+    accentColor: 'cyan' as const,
   },
   {
+    id: 'division-tile-4',
     title: 'ConvergeTec Resources & Talent',
     description:
       'Skilled contract professionals and fractional executives, placed where you need them.',
     href: '/services/resources-talent',
     borderColorClass: 'border-blue',
+    accentCorner: 'bottom-right' as const,
+    accentColor: 'blue' as const,
   },
 ];
 
-export default function DivisionsGrid() {
+interface DivisionsGridProps {
+  tileAccentOpacity?: MotionValue<number> | number;
+}
+
+export default function DivisionsGrid({ tileAccentOpacity }: DivisionsGridProps) {
   return (
-    <section className="w-full py-16 md:py-24 bg-white border-b border-navy/10">
+    <section id="divisions-grid" className="w-full py-16 md:py-24 bg-white border-b border-navy/10">
       <div className="content-container">
         {/* Section Header */}
         <div className="text-center max-w-[600px] mx-auto mb-12 sm:mb-16">
@@ -51,10 +68,14 @@ export default function DivisionsGrid() {
           {divisions.map((division, index) => (
             <DivisionCard
               key={division.href}
+              id={division.id}
               title={division.title}
               description={division.description}
               href={division.href}
               borderColorClass={division.borderColorClass}
+              accentCorner={division.accentCorner}
+              accentColor={division.accentColor}
+              accentOpacity={tileAccentOpacity}
               delay={index * 0.1}
             />
           ))}

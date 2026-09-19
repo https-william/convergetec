@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import type { MotionValue } from 'framer-motion';
 
 interface DivisionCardProps {
   title: string;
@@ -7,7 +8,24 @@ interface DivisionCardProps {
   href: string;
   borderColorClass: string;
   delay?: number;
+  id?: string;
+  accentCorner?: 'top-right' | 'bottom-left' | 'top-left' | 'bottom-right';
+  accentColor?: 'navy' | 'blue' | 'cyan';
+  accentOpacity?: MotionValue<number> | number;
 }
+
+const cornerClasses = {
+  'top-right': '-top-5 -right-5',
+  'bottom-left': '-bottom-5 -left-5',
+  'top-left': '-top-5 -left-5',
+  'bottom-right': '-bottom-5 -right-5',
+};
+
+const colorClasses = {
+  navy: 'bg-navy',
+  blue: 'bg-blue',
+  cyan: 'bg-cyan',
+};
 
 export default function DivisionCard({
   title,
@@ -15,15 +33,28 @@ export default function DivisionCard({
   href,
   borderColorClass,
   delay = 0,
+  id,
+  accentCorner = 'top-right',
+  accentColor = 'blue',
+  accentOpacity = 0.35,
 }: DivisionCardProps) {
   return (
     <motion.div
+      id={id}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: 'easeOut', delay }}
-      className={`group bg-offwhite rounded-xl shadow-sm p-6 border-t-4 ${borderColorClass} hover:border-t-cyan hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ease-out flex flex-col justify-between h-full`}
+      className={`group relative overflow-hidden bg-offwhite rounded-xl shadow-sm p-6 border-t-4 ${borderColorClass} hover:border-t-cyan hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ease-out flex flex-col justify-between h-full`}
     >
+      {/* Native Accent Glow Circle */}
+      <motion.div
+        aria-hidden="true"
+        className={`absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full pointer-events-none blur-sm ${
+          cornerClasses[accentCorner]
+        } ${colorClasses[accentColor]}`}
+        style={{ opacity: accentOpacity }}
+      />
       <div>
         <Link
           to={href}

@@ -37,9 +37,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Three Interlocked Circles Graphic */}
-          {/* Desktop: beside text on right side. Mobile: centered behind text at low opacity */}
-          <div className="absolute inset-0 m-auto flex items-center justify-center opacity-20 pointer-events-none lg:static lg:col-span-5 xl:col-span-4 lg:opacity-100 lg:pointer-events-auto lg:flex lg:justify-end">
+          {/* Three Interlocked Circles Graphic (Mobile only: <900px / lg:hidden. Desktop uses ConvergenceTransition) */}
+          <div className="absolute inset-0 m-auto flex items-center justify-center opacity-20 pointer-events-none lg:hidden">
             <div className="w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] relative">
               <svg
                 viewBox="0 0 380 380"
