@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollProgressBar from './components/ScrollProgressBar';
+import CursorGlow from './components/CursorGlow';
 
 // Code-split route components with React.lazy
 const Home = lazy(() => import('./pages/Home'));
@@ -75,6 +76,7 @@ function Layout() {
         Skip to main content
       </a>
 
+      <CursorGlow />
       <ScrollProgressBar />
       <Navbar />
 

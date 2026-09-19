@@ -117,7 +117,7 @@ export default function ServicePageTemplate({
       </section>
 
       {/* C) Cross-Sell Strip */}
-      <section className="w-full bg-navy text-offwhite py-16 border-t border-navy-light">
+      <section data-glow-zone="true" className="w-full bg-navy text-offwhite py-16 border-t border-navy-light">
         <div className="content-container text-center">
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
             Explore the other divisions

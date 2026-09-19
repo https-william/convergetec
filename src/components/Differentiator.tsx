@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Differentiator() {
   return (
-    <section className="relative w-full bg-navy text-offwhite py-16 md:py-128 overflow-hidden">
+    <section data-glow-zone="true" className="relative w-full bg-navy text-offwhite py-16 md:py-128 overflow-hidden">
       {/* Background Texture: Faint overlapping ring outlines (stroke only, opacity 0.08) */}
       <div
         className="absolute inset-0 pointer-events-none select-none overflow-hidden flex items-center justify-center"

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-navy text-offwhite border-t border-navy-light">
+    <footer data-glow-zone="true" className="w-full bg-navy text-offwhite border-t border-navy-light">
       <div className="content-container py-12 md:py-16">
         {/* Brand & Tagline Header */}
         <div className="mb-10 pb-8 border-b border-navy-light/60 flex flex-col md:flex-row md:items-center justify-between gap-4">
