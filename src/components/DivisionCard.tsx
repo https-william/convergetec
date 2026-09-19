@@ -12,6 +12,8 @@ interface DivisionCardProps {
   divisionNumber?: string;
   divisionTag?: string;
   ctaText?: string;
+  tags?: string[];
+  deliverable?: string;
   accentCorner?: 'top-right' | 'bottom-left' | 'top-left' | 'bottom-right';
   accentColor?: 'navy' | 'blue' | 'cyan';
   accentOpacity?: MotionValue<number> | number;
@@ -40,6 +42,8 @@ export default function DivisionCard({
   divisionNumber,
   divisionTag,
   ctaText,
+  tags = [],
+  deliverable,
   accentCorner = 'top-right',
   accentColor = 'blue',
   accentOpacity = 0.35,
@@ -51,12 +55,12 @@ export default function DivisionCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, ease: 'easeOut', delay }}
-      className={`group relative overflow-hidden bg-offwhite rounded-xl p-6 sm:p-7 border border-navy/10 border-t-4 ${borderColorClass} hover:border-navy/25 hover:shadow-md transition-all duration-200 flex flex-col justify-between h-full`}
+      className={`group relative overflow-hidden bg-offwhite rounded-2xl p-7 sm:p-8 border border-navy/15 border-t-4 ${borderColorClass} hover:border-navy/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full`}
     >
-      {/* Native Accent Glow Circle (synchronized with ConvergenceTransition scroll scrub) */}
+      {/* Native Accent Glow Circle */}
       <motion.div
         aria-hidden="true"
-        className={`absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full pointer-events-none blur-sm ${
+        className={`absolute w-24 h-24 rounded-full pointer-events-none blur-md ${
           cornerClasses[accentCorner]
         } ${colorClasses[accentColor]}`}
         style={{ opacity: accentOpacity }}
@@ -64,32 +68,52 @@ export default function DivisionCard({
 
       <div>
         {/* Architectural Bay Datum Header */}
-        <div className="flex items-center justify-between pb-3.5 border-b border-navy/10 mb-4">
-          <span className="font-mono text-[11px] tracking-[0.18em] uppercase font-bold text-navy/60">
+        <div className="flex items-center justify-between pb-4 border-b border-navy/10 mb-5">
+          <span className="font-mono text-[11px] tracking-[0.18em] uppercase font-bold text-navy/70">
             [{divisionNumber || '01'} // {divisionTag || 'DIVISION'}]
           </span>
-          <span className="w-2 h-2 rounded-full bg-navy/20 group-hover:bg-blue group-hover:scale-125 transition-all duration-300" />
+          <span className="w-2.5 h-2.5 rounded-full bg-navy/20 group-hover:bg-blue group-hover:scale-125 transition-all duration-300" />
         </div>
 
         <Link
           to={href}
-          className="font-display font-bold text-xl sm:text-2xl text-navy group-hover:text-blue transition-colors block mb-3 no-underline leading-snug"
+          className="font-display font-bold text-2xl sm:text-[1.65rem] text-navy group-hover:text-blue transition-colors block mb-3 no-underline leading-snug"
         >
           {title}
         </Link>
-        <p className="text-ink/80 font-body text-sm sm:text-base leading-relaxed mb-6">
+        <p className="text-ink/80 font-body text-base sm:text-lg leading-relaxed mb-6">
           {description}
         </p>
+
+        {/* Capability Tags */}
+        {tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-6">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-mono tracking-wide bg-white border border-navy/10 text-navy/80 shadow-2xs"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
 
-      <div className="pt-4 border-t border-navy/10 mt-auto">
+      <div className="pt-5 border-t border-navy/10 mt-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        {deliverable && (
+          <div className="text-xs font-body text-ink/70 max-w-sm">
+            <span className="font-semibold text-navy">Outcome:</span> {deliverable}
+          </div>
+        )}
+
         <Link
           to={href}
-          className="text-xs font-semibold uppercase tracking-wider text-blue group-hover:text-navy transition-colors inline-flex items-center gap-1.5 no-underline"
+          className="text-xs font-semibold uppercase tracking-wider text-blue group-hover:text-navy transition-colors inline-flex items-center gap-1.5 no-underline shrink-0"
         >
           <span>{ctaText || 'Explore Division'}</span>
           <svg
-            className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200 text-blue group-hover:text-navy"
+            className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200 text-blue group-hover:text-navy"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
