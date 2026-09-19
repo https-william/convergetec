@@ -6,8 +6,8 @@ interface DoodleProps extends React.SVGProps<SVGSVGElement> {
 }
 
 /**
- * Hand-drawn wavy double underline scribble per svg-drawing skill.
- * Uses smooth cubic beziers with slight organic human asymmetry.
+ * Hand-drawn wavy underline accent per svg-drawing skill.
+ * Clean, tight single-stroke with natural curve.
  */
 export function DoodleUnderline({
   color = '#0078E0',
@@ -16,25 +16,19 @@ export function DoodleUnderline({
 }: DoodleProps) {
   return (
     <svg
-      viewBox="0 0 160 24"
+      viewBox="0 0 120 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
+      preserveAspectRatio="none"
       className={className}
       {...props}
     >
       <path
-        d="M4 14 C42 6, 88 18, 156 10"
+        d="M2 9 C35 3, 75 12, 118 6"
         stroke={color}
-        strokeWidth="2.4"
+        strokeWidth="2.5"
         strokeLinecap="round"
-      />
-      <path
-        d="M12 19 C52 14, 96 21, 148 16"
-        stroke={color}
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        opacity="0.65"
       />
     </svg>
   );
@@ -57,14 +51,12 @@ export function DoodleArrow({
       className={className}
       {...props}
     >
-      {/* Shaft with natural arc */}
       <path
         d="M8 8 C18 36, 42 46, 62 42"
         stroke={color}
         strokeWidth="2.2"
         strokeLinecap="round"
       />
-      {/* Arrowhead wings */}
       <path
         d="M48 38 L63 43 L56 28"
         stroke={color}
