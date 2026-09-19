@@ -71,11 +71,11 @@ export default function ServicePageTemplate({
 
       {/* A) Hero Block */}
       <section
-        className="w-full py-16 md:py-24 border-b border-navy/10"
+        className="w-full py-20 md:py-28 lg:py-32 border-b border-navy/10"
         style={{ background: accent.heroBg }}
       >
         <div className="content-container">
-          <div className={heroImage ? 'grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center' : ''}>
+          <div className={heroImage ? 'grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center' : ''}>
             <div className={heroImage ? 'lg:col-span-7 xl:col-span-7 max-w-[660px]' : 'max-w-[760px]'}>
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white text-navy text-xs font-mono tracking-widest uppercase mb-6 shadow-2xs">
@@ -91,8 +91,8 @@ export default function ServicePageTemplate({
                 </span>
               </h1>
 
-              {/* Intro Paragraph in Claude's Signature Editorial Serif */}
-              <p className="font-claude text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
+              {/* Intro Paragraph in Tiempos Editorial Serif */}
+              <p className="font-tiempos text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
                 {intro}
               </p>
 
@@ -101,14 +101,14 @@ export default function ServicePageTemplate({
                 <Button
                   to="/contact"
                   variant="primary"
-                  className="px-8 py-4 text-base shadow-lg shadow-blue/20"
+                  className="px-8 py-4 text-base font-display font-semibold shadow-lg shadow-blue/20"
                 >
                   Book a Practice Discovery Call
                 </Button>
               </div>
             </div>
 
-            {/* Right Column: Supporting Hero Photograph */}
+            {/* Right Column: Clean Hero Photograph */}
             {heroImage && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -131,10 +131,10 @@ export default function ServicePageTemplate({
       </section>
 
       {/* B) Pillars Grid */}
-      <section className="w-full bg-white py-16 md:py-24 border-b border-navy/10">
+      <section className="w-full bg-white py-24 md:py-32 border-b border-navy/10">
         <div className="content-container">
-          <div className="max-w-[640px] mb-12">
-            <span className="font-mono text-xs uppercase tracking-wider text-ink/60 font-bold block mb-2">
+          <div className="max-w-[640px] mb-14 sm:mb-16">
+            <span className="font-mono text-xs uppercase tracking-wider text-ink/50 font-bold block mb-2">
               Capabilities &amp; Deliverables
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy">
@@ -142,7 +142,7 @@ export default function ServicePageTemplate({
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
             {pillars.map((pillar, index) => (
               <motion.div
                 key={pillar.title}
@@ -150,11 +150,11 @@ export default function ServicePageTemplate({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: 'easeOut', delay: index * 0.08 }}
-                className="group bg-offwhite rounded-2xl p-7 sm:p-8 border border-navy/10 hover:border-navy/20 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+                className="group bg-offwhite rounded-2xl p-8 sm:p-9 border border-navy/10 hover:border-navy/20 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between pb-3.5 border-b border-navy/10 mb-4">
-                    <span className="font-mono text-xs tracking-wider uppercase font-bold text-navy/70">
+                  <div className="flex items-center justify-between pb-4 border-b border-navy/10 mb-4">
+                    <span className="font-mono text-xs tracking-wider uppercase font-bold text-navy/60">
                       Pillar 0{index + 1}
                     </span>
                     <CheckCircle2 className="w-4 h-4 text-navy/30 group-hover:text-blue transition-colors" />
@@ -163,7 +163,7 @@ export default function ServicePageTemplate({
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-navy mb-3 leading-snug">
                     {pillar.title}
                   </h3>
-                  <p className="text-ink/75 font-body text-base leading-relaxed m-0">
+                  <p className="text-ink/75 font-tiempos text-base sm:text-lg leading-relaxed m-0">
                     {pillar.description}
                   </p>
                 </div>
@@ -174,22 +174,22 @@ export default function ServicePageTemplate({
       </section>
 
       {/* C) Cross-Sell Strip */}
-      <section data-glow-zone="true" className="w-full bg-navy text-offwhite py-16 border-t border-navy-light">
+      <section data-glow-zone="true" className="w-full bg-navy text-offwhite py-20 md:py-24 border-t border-navy-light">
         <div className="content-container text-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan/20 bg-cyan/5 text-cyan text-xs font-mono tracking-widest uppercase mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
             Interlocking Capabilities
           </div>
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
             Explore our complementary divisions
           </h2>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-2xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-4 max-w-2xl mx-auto">
             {crossSell.map((item) => (
               <Link
                 key={item.route}
                 to={item.route}
-                className="rounded-xl border border-offwhite/20 bg-offwhite/5 text-offwhite hover:bg-white hover:text-navy px-5 py-2.5 text-sm font-medium transition-all duration-200 no-underline inline-flex items-center gap-2 shadow-sm"
+                className="rounded-xl border border-offwhite/20 bg-offwhite/5 text-offwhite hover:bg-white hover:text-navy px-6 py-3 text-sm font-display font-semibold transition-all duration-200 no-underline inline-flex items-center gap-2 shadow-sm"
               >
                 <span>{item.name}</span>
                 <ArrowRight className="w-3.5 h-3.5" />

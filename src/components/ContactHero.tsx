@@ -2,7 +2,7 @@ import { DoodleUnderline } from './Doodles';
 
 export default function ContactHero() {
   return (
-    <section className="w-full bg-offwhite pt-20 pb-12 md:pt-28 md:pb-16">
+    <section className="w-full bg-offwhite pt-24 pb-12 md:pt-32 md:pb-16">
       <div className="content-container">
         <div className="max-w-[700px] mx-auto text-center">
           {/* Badge */}
@@ -21,7 +21,7 @@ export default function ContactHero() {
             </span>
           </h1>
 
-          <p className="font-claude text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[560px] mx-auto font-normal">
+          <p className="font-tiempos text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[560px] mx-auto font-normal">
             Book an executive discovery session, or send an inquiry directly to our Australian practice leads.
           </p>
         </div>

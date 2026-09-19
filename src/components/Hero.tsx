@@ -5,7 +5,7 @@ import { ArrowDown } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-offwhite min-h-[85vh] flex items-center overflow-hidden py-16 md:py-24 border-b border-navy/10">
+    <section className="relative w-full bg-offwhite min-h-[85vh] flex items-center overflow-hidden py-20 md:py-28 lg:py-32 border-b border-navy/10">
       <div className="content-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Command & SaaS Positioning (~55%) */}
@@ -16,7 +16,7 @@ export default function Hero() {
               Australian Transformation &amp; Technology Partner
             </div>
 
-            {/* Confident, Punchy Headline with SVG Doodle Underline */}
+            {/* Confident Headline in Outfit */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[4.25rem] font-bold font-display text-navy leading-[1.08] tracking-tight mb-6">
               Advise. Build.{' '}
               <span className="relative inline-block">
@@ -27,8 +27,8 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* High-End Editorial Subhead in Claude's Signature Serif */}
-            <p className="font-claude text-xl sm:text-2xl text-ink/75 leading-relaxed max-w-[540px] mb-8 sm:mb-10 font-normal">
+            {/* High-End Editorial Subhead in Tiempos Serif */}
+            <p className="font-tiempos text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[540px] mb-10 font-normal">
               One unified partner for strategic advisory, custom cloud engineering,
               workforce academies, and elite contract talent.
             </p>
@@ -38,7 +38,7 @@ export default function Hero() {
               <Button
                 to="/contact"
                 variant="primary"
-                className="px-8 py-4 text-base sm:text-lg shadow-lg shadow-blue/20 w-full sm:w-auto"
+                className="px-8 py-4 text-base sm:text-lg shadow-lg shadow-blue/20 w-full sm:w-auto font-display font-semibold"
               >
                 Book Discovery Call
               </Button>

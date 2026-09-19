@@ -18,7 +18,7 @@ export default function CTASection() {
             Ready to move from advice to live outcomes?
           </h2>
 
-          <p className="text-lg sm:text-xl font-claude text-offwhite/75 max-w-lg mx-auto mb-10 leading-relaxed font-normal">
+          <p className="text-lg sm:text-xl font-tiempos text-offwhite/80 max-w-lg mx-auto mb-10 leading-relaxed font-normal">
             Talk to ConvergeTec partners about your organisation&apos;s strategic and technological goals.
           </p>
 
@@ -26,7 +26,7 @@ export default function CTASection() {
             <Button
               to="/contact"
               variant="primary"
-              className="px-9 py-4 text-base shadow-xl shadow-blue/25 w-full sm:w-auto"
+              className="px-9 py-4 text-base font-display font-semibold shadow-xl shadow-blue/25 w-full sm:w-auto"
             >
               Book a Discovery Call
             </Button>

@@ -3,13 +3,13 @@ import { DoodleUnderline } from './Doodles';
 
 export default function AboutHero() {
   return (
-    <section className="w-full bg-offwhite pt-20 pb-16 md:pt-28 md:pb-24 border-b border-navy/10">
+    <section className="w-full bg-offwhite pt-24 pb-16 md:pt-32 md:pb-24 border-b border-navy/10">
       <div className="content-container">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="max-w-[760px] mx-auto text-center mb-12 sm:mb-16"
+          className="max-w-[760px] mx-auto text-center mb-14 sm:mb-20"
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white text-navy text-xs font-mono tracking-widest uppercase mb-6 shadow-2xs">
@@ -28,8 +28,8 @@ export default function AboutHero() {
             </span>
           </h1>
 
-          {/* Clean 2-Sentence Intro in Claude's Editorial Serif */}
-          <p className="font-claude text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[640px] mx-auto font-normal">
+          {/* Clean 2-Sentence Intro in Tiempos Serif */}
+          <p className="font-tiempos text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[640px] mx-auto font-normal">
             ConvergeTec unifies strategic advisory, custom software engineering,
             corporate training, and specialist talent to deliver lasting enterprise scale.
           </p>

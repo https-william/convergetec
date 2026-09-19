@@ -34,10 +34,10 @@ const steps = [
 
 export default function TransformationPipeline() {
   return (
-    <section className="w-full bg-offwhite py-20 md:py-28 border-b border-navy/10 relative overflow-hidden">
+    <section className="w-full bg-offwhite py-24 md:py-32 border-b border-navy/10 relative overflow-hidden">
       <div className="content-container">
         {/* Section Header */}
-        <div className="max-w-[620px] mx-auto text-center mb-16">
+        <div className="max-w-[660px] mx-auto text-center mb-16 md:mb-20">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white text-navy text-xs font-mono tracking-widest uppercase mb-4 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-blue" />
             Operating Model
@@ -45,13 +45,13 @@ export default function TransformationPipeline() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy mb-4 tracking-tight">
             The Transformation Lifecycle
           </h2>
-          <p className="text-ink/70 font-claude text-lg sm:text-xl leading-relaxed">
+          <p className="text-ink/75 font-tiempos text-lg sm:text-xl leading-relaxed">
             A cohesive path from strategic diagnosis to sustained operational scale — with zero vendor friction.
           </p>
         </div>
 
-        {/* 4-Step Clean Horizontal Grid with Connecting Accent */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1140px] mx-auto relative">
+        {/* 4-Step Clean Horizontal Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-[1140px] mx-auto">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -61,7 +61,7 @@ export default function TransformationPipeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-7 border border-navy/10 hover:border-navy/20 hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
+                className="bg-white rounded-2xl p-7 sm:p-8 border border-navy/10 hover:border-navy/20 hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between pb-4 border-b border-navy/5 mb-5">
@@ -73,7 +73,7 @@ export default function TransformationPipeline() {
                     </span>
                   </div>
 
-                  <div className="w-10 h-10 rounded-xl bg-offwhite text-navy flex items-center justify-center mb-4 border border-navy/10">
+                  <div className="w-11 h-11 rounded-xl bg-offwhite text-navy flex items-center justify-center mb-4 border border-navy/10">
                     <Icon className="w-5 h-5" />
                   </div>
 
@@ -81,7 +81,7 @@ export default function TransformationPipeline() {
                     {step.stage}
                   </h3>
 
-                  <p className="text-ink/70 font-body text-sm sm:text-base leading-relaxed m-0">
+                  <p className="text-ink/75 font-tiempos text-sm sm:text-base leading-relaxed m-0">
                     {step.description}
                   </p>
                 </div>

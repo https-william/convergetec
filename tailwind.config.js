@@ -16,9 +16,12 @@ export default {
       },
       fontFamily: {
         display: ['"Outfit"', 'sans-serif'],
-        body: ['"Outfit"', 'sans-serif'],
-        claude: ['"Newsreader"', 'Georgia', 'serif'],
-        serif: ['"Newsreader"', 'Georgia', 'serif'],
+        outfit: ['"Outfit"', 'sans-serif'],
+        sans: ['"Outfit"', 'sans-serif'],
+        body: ['"Tiempos Text"', '"Tiempos"', '"Newsreader"', 'Georgia', 'serif'],
+        tiempos: ['"Tiempos Text"', '"Tiempos"', '"Newsreader"', 'Georgia', 'serif'],
+        claude: ['"Tiempos Text"', '"Tiempos"', '"Newsreader"', 'Georgia', 'serif'],
+        serif: ['"Tiempos Text"', '"Tiempos"', '"Newsreader"', 'Georgia', 'serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       spacing: {
