@@ -21,7 +21,7 @@ export default function ContactHero() {
             </span>
           </h1>
 
-          <p className="font-body text-ink/80 text-lg sm:text-xl leading-relaxed max-w-[560px] mx-auto">
+          <p className="font-claude text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[560px] mx-auto font-normal">
             Book an executive discovery session, or send an inquiry directly to our Australian practice leads.
           </p>
         </div>

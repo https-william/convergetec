@@ -28,8 +28,8 @@ export default function AboutHero() {
             </span>
           </h1>
 
-          {/* Clean 2-Sentence Intro */}
-          <p className="font-body text-ink/80 text-lg sm:text-xl leading-relaxed max-w-[620px] mx-auto">
+          {/* Clean 2-Sentence Intro in Claude's Editorial Serif */}
+          <p className="font-claude text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[640px] mx-auto font-normal">
             ConvergeTec unifies strategic advisory, custom software engineering,
             corporate training, and specialist talent to deliver lasting enterprise scale.
           </p>

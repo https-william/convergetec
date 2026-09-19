@@ -15,8 +15,10 @@ export default {
         ink: '#111827',           // body text on light backgrounds
       },
       fontFamily: {
-        display: ['"Plus Jakarta Sans"', '"Instrument Sans"', 'sans-serif'],
-        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Outfit"', 'sans-serif'],
+        body: ['"Outfit"', 'sans-serif'],
+        claude: ['"Newsreader"', 'Georgia', 'serif'],
+        serif: ['"Newsreader"', 'Georgia', 'serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       spacing: {

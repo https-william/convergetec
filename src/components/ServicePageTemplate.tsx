@@ -92,8 +92,8 @@ export default function ServicePageTemplate({
                 </span>
               </h1>
 
-              {/* Intro Paragraph */}
-              <p className="font-body text-ink/80 text-lg sm:text-xl leading-relaxed max-w-[620px] mb-8 sm:mb-10">
+              {/* Intro Paragraph in Claude's Signature Editorial Serif */}
+              <p className="font-claude text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
                 {intro}
               </p>
 
