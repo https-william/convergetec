@@ -59,7 +59,6 @@ export default function ServicePageTemplate({
   pillars,
   crossSell,
   heroImage,
-  imageCaption,
 }: ServicePageTemplateProps) {
   const accent = accentColorMap[accentColor] || accentColorMap.blue;
 
@@ -121,17 +120,9 @@ export default function ServicePageTemplate({
                   <img
                     src={heroImage}
                     alt={headline}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out"
                     loading="eager"
                   />
-                  {imageCaption && (
-                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy/95 via-navy/60 to-transparent p-4 pt-10">
-                      <div className="flex items-center gap-2 text-offwhite text-xs font-mono tracking-wider">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
-                        <span>{imageCaption}</span>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </motion.div>
             )}
@@ -159,7 +150,7 @@ export default function ServicePageTemplate({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: 'easeOut', delay: index * 0.08 }}
-                className={`group bg-offwhite rounded-2xl p-7 sm:p-9 border border-navy/10 border-t-4 ${accent.border} hover:border-navy/20 hover:shadow-lg transition-all duration-300 flex flex-col justify-between`}
+                className="group bg-offwhite rounded-2xl p-7 sm:p-8 border border-navy/10 hover:border-navy/20 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between pb-3.5 border-b border-navy/10 mb-4">

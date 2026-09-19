@@ -49,18 +49,6 @@ export default function AboutHero() {
               className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out"
               loading="eager"
             />
-            {/* Overlay Bar */}
-            <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy/95 via-navy/60 to-transparent p-5 sm:p-7 pt-16 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-2.5 text-offwhite text-xs sm:text-sm font-mono tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-                <span className="font-semibold uppercase text-cyan">Active Practice</span>
-                <span className="text-offwhite/40">|</span>
-                <span className="text-offwhite/90">Multidisciplinary Advisory Session // Sydney &amp; Melbourne</span>
-              </div>
-              <span className="text-xs font-mono text-offwhite/60 uppercase tracking-widest hidden sm:inline-block">
-                END-TO-END DELIVERY
-              </span>
-            </div>
           </div>
         </motion.div>
       </div>
