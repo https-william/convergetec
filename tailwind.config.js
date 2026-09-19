@@ -15,8 +15,9 @@ export default {
         ink: '#111827',           // body text on light backgrounds
       },
       fontFamily: {
-        display: ['"Space Grotesk"', 'sans-serif'],  // headlines only
-        body: ['"Inter"', 'sans-serif'],              // everything else
+        display: ['"Plus Jakarta Sans"', '"Instrument Sans"', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       spacing: {
         '96': '6rem',   // 96px = 6rem
