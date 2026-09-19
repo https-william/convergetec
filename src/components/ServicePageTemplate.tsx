@@ -21,6 +21,8 @@ export interface ServicePageTemplateProps {
   intro: string;
   pillars: Pillar[];
   crossSell: CrossSellItem[];
+  heroImage?: string;
+  imageCaption?: string;
 }
 
 const accentColorMap = {
@@ -48,6 +50,8 @@ export default function ServicePageTemplate({
   intro,
   pillars,
   crossSell,
+  heroImage,
+  imageCaption,
 }: ServicePageTemplateProps) {
   const accent = accentColorMap[accentColor] || accentColorMap.blue;
 
@@ -63,33 +67,62 @@ export default function ServicePageTemplate({
         style={{ background: accent.heroBg }}
       >
         <div className="content-container">
-          <div className="max-w-[800px]">
-            {/* Architectural System Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white/80 text-navy/75 text-xs font-mono tracking-widest uppercase mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue" />
-              Divisional Practice // {eyebrow}
+          <div className={heroImage ? 'grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center' : ''}>
+            <div className={heroImage ? 'lg:col-span-7 xl:col-span-7 max-w-[700px]' : 'max-w-[800px]'}>
+              {/* Architectural System Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white/80 text-navy/75 text-xs font-mono tracking-widest uppercase mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+                Divisional Practice // {eyebrow}
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.12] tracking-tight mb-6">
+                {headline}
+              </h1>
+
+              {/* Intro Paragraph (max-width 680px) */}
+              <p className="font-body text-ink/85 text-lg sm:text-xl leading-relaxed max-w-[680px] mb-8 sm:mb-10">
+                {intro}
+              </p>
+
+              {/* Primary CTA Button */}
+              <div>
+                <Button
+                  to="/contact"
+                  variant="primary"
+                  className="px-7 py-3.5 text-base sm:text-lg"
+                >
+                  Book a Discovery Call
+                </Button>
+              </div>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.12] tracking-tight mb-6">
-              {headline}
-            </h1>
-
-            {/* Intro Paragraph (max-width 680px) */}
-            <p className="font-body text-ink/85 text-lg sm:text-xl leading-relaxed max-w-[680px] mb-8 sm:mb-10">
-              {intro}
-            </p>
-
-            {/* Primary CTA Button */}
-            <div>
-              <Button
-                to="/contact"
-                variant="primary"
-                className="px-7 py-3.5 text-base sm:text-lg"
+            {/* Right Column (Supporting Hero Photograph) */}
+            {heroImage && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+                className="lg:col-span-5 xl:col-span-5 relative"
               >
-                Book a Discovery Call
-              </Button>
-            </div>
+                <div className="relative rounded-2xl overflow-hidden border border-navy/15 shadow-xl shadow-navy/5 bg-navy aspect-[4/3] group">
+                  <img
+                    src={heroImage}
+                    alt={headline}
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                    loading="eager"
+                  />
+                  {imageCaption && (
+                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy/95 via-navy/60 to-transparent p-4 pt-10">
+                      <div className="flex items-center gap-2 text-offwhite text-xs font-mono tracking-wider">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
+                        <span>{imageCaption}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </section>

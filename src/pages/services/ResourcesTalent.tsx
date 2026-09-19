@@ -41,6 +41,8 @@ export default function ResourcesTalent() {
       intro="Skilled contract professionals and fractional executives, placed where you need them."
       pillars={pillars}
       crossSell={crossSell}
+      heroImage="/images/resources-talent-executive.jpg"
+      imageCaption="Talent & Leadership // Fractional & Contract Executives"
     />
   );
 }
