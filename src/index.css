@@ -8,6 +8,13 @@
 @font-face {
   font-family: 'Outfit';
   font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/outfit-semibold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
   font-weight: 600;
   font-display: swap;
   src: url('/fonts/outfit-semibold.ttf') format('truetype');
@@ -19,42 +26,12 @@
   font-display: swap;
   src: url('/fonts/outfit-bold.ttf') format('truetype');
 }
-
 @font-face {
-  font-family: 'Tiempos';
+  font-family: 'Outfit';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 800;
   font-display: swap;
-  src: url('/fonts/tiempos-regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Tiempos';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/tiempos-semibold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Tiempos';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/tiempos-italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Tiempos Text';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/tiempos-regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Tiempos Text';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/tiempos-semibold.ttf') format('truetype');
+  src: url('/fonts/outfit-bold.ttf') format('truetype');
 }
 
 @tailwind base;
@@ -90,7 +67,7 @@
 
   body {
     @apply bg-offwhite text-ink min-h-screen antialiased;
-    font-family: 'Tiempos', 'Tiempos Text', Georgia, serif;
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   h1, h2, h3, h4 {
@@ -99,7 +76,7 @@
   }
 
   p {
-    font-family: 'Tiempos', 'Tiempos Text', Georgia, serif;
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   a {

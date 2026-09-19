@@ -45,7 +45,7 @@ export default function TransformationPipeline() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy mb-4 tracking-tight">
             The Transformation Lifecycle
           </h2>
-          <p className="text-ink/75 font-tiempos text-lg sm:text-xl leading-relaxed">
+          <p className="text-ink/75 text-lg sm:text-xl leading-relaxed">
             A cohesive path from strategic diagnosis to sustained operational scale — with zero vendor friction.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function TransformationPipeline() {
                     {step.stage}
                   </h3>
 
-                  <p className="text-ink/75 font-tiempos text-sm sm:text-base leading-relaxed m-0">
+                  <p className="text-ink/75 text-sm sm:text-base leading-relaxed m-0">
                     {step.description}
                   </p>
                 </div>

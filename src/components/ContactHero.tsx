@@ -21,7 +21,7 @@ export default function ContactHero() {
             </span>
           </h1>
 
-          <p className="font-tiempos text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[560px] mx-auto font-normal">
+          <p className="text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[560px] mx-auto font-normal">
             Book an executive discovery session, or send an inquiry directly to our Australian practice leads.
           </p>
         </div>

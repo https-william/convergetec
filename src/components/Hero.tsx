@@ -27,8 +27,8 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* High-End Editorial Subhead in Tiempos Serif */}
-            <p className="font-tiempos text-lg sm:text-xl md:text-2xl text-ink/80 leading-relaxed max-w-[560px] mb-8 sm:mb-10 font-normal">
+            {/* High-End Subhead */}
+            <p className="text-lg sm:text-xl md:text-2xl text-ink/80 leading-relaxed max-w-[560px] mb-8 sm:mb-10 font-normal">
               One unified partner for strategic advisory, custom cloud engineering,
               workforce academies, and elite contract talent.
             </p>

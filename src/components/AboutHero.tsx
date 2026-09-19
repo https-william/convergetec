@@ -28,8 +28,8 @@ export default function AboutHero() {
             </span>
           </h1>
 
-          {/* Clean 2-Sentence Intro in Tiempos Serif */}
-          <p className="font-tiempos text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[640px] mx-auto font-normal">
+          {/* Clean 2-Sentence Intro */}
+          <p className="text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[640px] mx-auto font-normal">
             ConvergeTec unifies strategic advisory, custom software engineering,
             corporate training, and specialist talent to deliver lasting enterprise scale.
           </p>

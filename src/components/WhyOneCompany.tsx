@@ -37,7 +37,7 @@ export default function WhyOneCompany() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy tracking-tight mb-4">
             Why one company, four divisions?
           </h2>
-          <p className="text-ink/75 font-tiempos text-lg sm:text-xl leading-relaxed">
+          <p className="text-ink/75 text-lg sm:text-xl leading-relaxed">
             By keeping all four disciplines under one roof, we eliminate the structural friction that derails typical corporate transformations.
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ export default function WhyOneCompany() {
                 <h3 className="font-display font-bold text-xl text-navy mb-2">
                   {item.title}
                 </h3>
-                <p className="text-ink/75 font-tiempos text-base leading-relaxed m-0">
+                <p className="text-ink/75 text-base leading-relaxed m-0">
                   {item.description}
                 </p>
               </motion.div>

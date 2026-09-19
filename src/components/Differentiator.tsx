@@ -33,7 +33,7 @@ export default function Differentiator() {
             Why settle for fragmented consulting when you can have a single accountable partner?
           </h2>
 
-          <p className="font-tiempos text-xl sm:text-2xl text-offwhite/80 leading-relaxed font-normal max-w-[640px] mx-auto">
+          <p className="text-xl sm:text-2xl text-offwhite/80 leading-relaxed font-normal max-w-[640px] mx-auto">
             Traditional enterprise transformation stalls during handoffs between advisory firms, software agencies, and recruiters. ConvergeTec unites all disciplines under one accountable engine.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function Differentiator() {
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-white mb-3">
                   {pillar.title}
                 </h3>
-                <p className="text-offwhite/75 font-tiempos text-base leading-relaxed m-0">
+                <p className="text-offwhite/75 text-base leading-relaxed m-0">
                   {pillar.description}
                 </p>
               </motion.div>

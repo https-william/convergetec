@@ -33,7 +33,7 @@ export default function VisionMission() {
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
                 To be Australia&apos;s definitive transformation engine.
               </h3>
-              <p className="font-tiempos text-offwhite/80 text-base sm:text-lg leading-relaxed m-0">
+              <p className="text-offwhite/80 text-base sm:text-lg leading-relaxed m-0">
                 Helping modern organisations fundamentally improve operating models, equip internal teams, and deploy cloud technology to scale without limits.
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function VisionMission() {
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
                 Turn boardroom strategy into live production outcomes.
               </h3>
-              <p className="font-tiempos text-offwhite/80 text-base sm:text-lg leading-relaxed m-0">
+              <p className="text-offwhite/80 text-base sm:text-lg leading-relaxed m-0">
                 Providing pragmatic advisory, skilled delivery talent, enterprise software engineering, and corporate learning that generate verifiable ROI.
               </p>
             </div>

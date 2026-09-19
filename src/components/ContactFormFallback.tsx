@@ -37,7 +37,7 @@ export default function ContactFormFallback() {
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-navy mb-3">
               Send a Direct Message
             </h2>
-            <p className="font-tiempos text-ink/75 text-base sm:text-lg m-0 leading-relaxed">
+            <p className="text-ink/75 text-base sm:text-lg m-0 leading-relaxed">
               Our Sydney &amp; Melbourne leadership responds within one business day.
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function ContactFormFallback() {
               <h3 className="font-display text-navy font-bold text-xl mb-2">
                 Inquiry Dispatched
               </h3>
-              <p className="font-tiempos text-ink/80 text-base max-w-sm mx-auto m-0 leading-relaxed">
+              <p className="text-ink/80 text-base max-w-sm mx-auto m-0 leading-relaxed">
                 Thank you. A ConvergeTec practice lead will follow up with you within one business day.
               </p>
             </div>

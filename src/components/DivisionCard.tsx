@@ -51,8 +51,8 @@ export default function DivisionCard({
           {title}
         </Link>
 
-        {/* Concise Description in Tiempos */}
-        <p className="text-ink/75 font-tiempos text-base sm:text-lg leading-relaxed mb-6">
+        {/* Concise Description */}
+        <p className="text-ink/75 text-base sm:text-lg leading-relaxed mb-6">
           {description}
         </p>
       </div>

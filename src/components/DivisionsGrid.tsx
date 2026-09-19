@@ -57,7 +57,7 @@ export default function DivisionsGrid() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy mb-4 tracking-tight">
             One Company. Four Divisions.
           </h2>
-          <p className="text-ink/75 font-tiempos text-lg sm:text-xl leading-relaxed">
+          <p className="text-ink/75 text-lg sm:text-xl leading-relaxed">
             Rather than juggling multiple fragmented suppliers, ConvergeTec unites strategy, software,
             training, and talent into one accountable engine.
           </p>

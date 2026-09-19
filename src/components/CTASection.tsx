@@ -18,7 +18,7 @@ export default function CTASection() {
             Ready to move from advice to live outcomes?
           </h2>
 
-          <p className="text-lg sm:text-xl font-tiempos text-offwhite/80 max-w-lg mx-auto mb-10 leading-relaxed font-normal">
+          <p className="text-lg sm:text-xl text-offwhite/80 max-w-lg mx-auto mb-10 leading-relaxed font-normal">
             Talk to ConvergeTec partners about your organisation&apos;s strategic and technological goals.
           </p>
 
