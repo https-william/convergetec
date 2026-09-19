@@ -10,13 +10,14 @@ export default function AboutHero() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="max-w-[800px] mx-auto text-center"
         >
-          {/* Eyebrow Label */}
-          <span className="font-body text-xs sm:text-sm font-semibold uppercase tracking-widest text-blue mb-4 inline-block">
-            About ConvergeTec
-          </span>
+          {/* Architectural System Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-navy/5 text-navy/75 text-xs font-mono tracking-widest uppercase mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+            Enterprise Overview // About ConvergeTec
+          </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.15] tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.12] tracking-tight mb-6">
             One partner. Every stage of the journey.
           </h1>
 

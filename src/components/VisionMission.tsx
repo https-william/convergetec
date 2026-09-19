@@ -7,16 +7,25 @@ export default function VisionMission() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* Left Card: Vision */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            data-glow-zone="true"
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0 }}
-            className="bg-navy text-offwhite p-6 sm:p-8 rounded-xl shadow-sm flex flex-col justify-start border border-navy-light"
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0 }}
+            className="relative overflow-hidden bg-navy text-offwhite p-6 sm:p-8 rounded-xl shadow-sm flex flex-col justify-start border border-navy-light"
           >
-            <span className="font-body text-xs font-semibold uppercase tracking-wider text-cyan mb-4 block">
-              Vision
-            </span>
-            <p className="font-display text-lg sm:text-xl font-medium leading-relaxed text-offwhite">
+            {/* Precision 1px cyan highlight rail */}
+            <div
+              className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent"
+              aria-hidden="true"
+            />
+            <div className="flex items-center justify-between pb-3.5 border-b border-navy-light/80 mb-5">
+              <span className="font-mono text-[11px] tracking-[0.18em] uppercase font-bold text-cyan">
+                [01 // STRATEGIC VISION]
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
+            </div>
+            <p className="font-display text-lg sm:text-xl font-medium leading-relaxed text-offwhite/95 m-0">
               To become a leading Australian business transformation and technology
               company that helps organisations improve how they operate, equip
               their people, and use technology to scale.
@@ -25,16 +34,25 @@ export default function VisionMission() {
 
           {/* Right Card: Mission */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            data-glow-zone="true"
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
-            className="bg-navy text-offwhite p-6 sm:p-8 rounded-xl shadow-sm flex flex-col justify-start border border-navy-light"
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+            className="relative overflow-hidden bg-navy text-offwhite p-6 sm:p-8 rounded-xl shadow-sm flex flex-col justify-start border border-navy-light"
           >
-            <span className="font-body text-xs font-semibold uppercase tracking-wider text-cyan mb-4 block">
-              Mission
-            </span>
-            <p className="font-display text-lg sm:text-xl font-medium leading-relaxed text-offwhite">
+            {/* Precision 1px cyan highlight rail */}
+            <div
+              className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent"
+              aria-hidden="true"
+            />
+            <div className="flex items-center justify-between pb-3.5 border-b border-navy-light/80 mb-5">
+              <span className="font-mono text-[11px] tracking-[0.18em] uppercase font-bold text-cyan">
+                [02 // OPERATIONAL MISSION]
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
+            </div>
+            <p className="font-display text-lg sm:text-xl font-medium leading-relaxed text-offwhite/95 m-0">
               To provide organisations with practical consulting, skilled
               professionals, digital solutions, training and business resources
               that turn strategy into measurable business outcomes.

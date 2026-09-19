@@ -64,12 +64,11 @@ export default function ServicePageTemplate({
       >
         <div className="content-container">
           <div className="max-w-[800px]">
-            {/* Eyebrow */}
-            <span
-              className={`font-body text-xs sm:text-sm font-semibold uppercase tracking-widest ${accent.text} mb-4 inline-block`}
-            >
-              {eyebrow}
-            </span>
+            {/* Architectural System Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white/80 text-navy/75 text-xs font-mono tracking-widest uppercase mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+              Divisional Practice // {eyebrow}
+            </div>
 
             {/* Headline */}
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.12] tracking-tight mb-6">
@@ -102,13 +101,21 @@ export default function ServicePageTemplate({
             {pillars.map((pillar, index) => (
               <motion.div
                 key={pillar.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.1 }}
-                className={`bg-offwhite rounded-xl shadow-sm p-6 sm:p-8 border-t-[3px] ${accent.border} hover:shadow-md transition-shadow duration-200 flex flex-col justify-between`}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: index * 0.08 }}
+                className={`group bg-offwhite rounded-xl p-6 sm:p-8 border border-navy/10 border-t-4 ${accent.border} hover:border-navy/25 hover:shadow-md transition-all duration-200 flex flex-col justify-between`}
               >
                 <div>
+                  {/* Architectural Pillar Datum Header */}
+                  <div className="flex items-center justify-between pb-3.5 border-b border-navy/10 mb-4">
+                    <span className="font-mono text-[11px] tracking-[0.18em] uppercase font-bold text-navy/60">
+                      [0{index + 1} // CAPABILITY PILLAR]
+                    </span>
+                    <span className="w-2 h-2 rounded-full bg-navy/20 group-hover:bg-blue group-hover:scale-125 transition-all duration-300" />
+                  </div>
+
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-navy mb-3 leading-snug">
                     {pillar.title}
                   </h3>
@@ -125,6 +132,10 @@ export default function ServicePageTemplate({
       {/* C) Cross-Sell Strip */}
       <section data-glow-zone="true" className="w-full bg-navy text-offwhite py-16 border-t border-navy-light">
         <div className="content-container text-center">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan/20 bg-cyan/5 text-cyan text-xs font-mono tracking-widest uppercase mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
+            Integrated Capability Ecosystem
+          </div>
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
             Explore the other divisions
           </h2>
@@ -134,7 +145,7 @@ export default function ServicePageTemplate({
               <Link
                 key={item.route}
                 to={item.route}
-                className="rounded-full border border-offwhite/80 text-offwhite hover:bg-cyan hover:border-cyan hover:text-navy px-6 py-2.5 text-sm sm:text-base font-medium transition-colors duration-200 no-underline inline-flex items-center justify-center shadow-sm"
+                className="rounded-full border border-offwhite/25 bg-offwhite/5 text-offwhite hover:bg-cyan hover:border-cyan hover:text-navy px-6 py-2.5 text-sm sm:text-base font-medium transition-colors duration-200 no-underline inline-flex items-center justify-center shadow-sm"
               >
                 {item.name}
               </Link>

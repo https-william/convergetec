@@ -89,19 +89,25 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Social / Contact Info (Placeholder) */}
+          {/* Column 3: Operations & Engagement */}
           <div>
             <h4 className="font-display text-white text-base font-semibold mb-4 tracking-wide uppercase text-sm">
-              Connect
+              Operations
             </h4>
-            {/* social links TBD */}
             <div className="space-y-3">
-              <div className="h-9 w-full max-w-xs rounded-md bg-navy-light/60 border border-navy-light/80 flex items-center px-3 text-xs text-offwhite/50">
-                // social links TBD
+              <div className="rounded-lg bg-navy-light/50 border border-navy-light/80 p-3 text-xs text-offwhite/80">
+                <div className="font-semibold text-white mb-0.5">Sydney &amp; Melbourne</div>
+                <div className="text-offwhite/60">Australian Business Transformation</div>
               </div>
-              <div className="h-9 w-full max-w-xs rounded-md bg-navy-light/40 border border-dashed border-navy-light/60 flex items-center px-3 text-xs text-offwhite/40">
-                // contact info TBD
-              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan hover:underline uppercase tracking-wider no-underline pt-1"
+              >
+                <span>Schedule Discovery Call</span>
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

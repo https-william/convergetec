@@ -20,8 +20,12 @@ export default function ContactFormFallback() {
   return (
     <section className="w-full bg-offwhite py-12 sm:py-16 border-t border-navy/10">
       <div className="content-container">
-        <div className="max-w-[700px] mx-auto bg-white rounded-2xl shadow-sm border border-navy/10 p-6 sm:p-10">
+        <div className="max-w-[720px] mx-auto bg-white rounded-2xl shadow-sm border border-navy/10 p-6 sm:p-10">
           <div className="mb-8 text-center sm:text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-navy/5 text-navy/70 text-xs font-mono tracking-widest uppercase mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+              Direct Communication Channel
+            </div>
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-navy mb-2">
               Prefer to send a direct message?
             </h2>
@@ -33,13 +37,18 @@ export default function ContactFormFallback() {
           {submitted ? (
             <div
               role="alert"
-              className="rounded-xl bg-blue/10 border border-blue/30 p-6 text-center"
+              className="rounded-xl bg-blue/5 border border-blue/25 p-8 text-center"
             >
-              <h3 className="font-display text-navy font-bold text-lg mb-2">
-                Thank you for reaching out
+              <div className="w-12 h-12 rounded-full bg-blue/10 text-blue mx-auto flex items-center justify-center mb-3">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="font-display text-navy font-bold text-xl mb-2">
+                Inquiry Received
               </h3>
-              <p className="font-body text-ink/80 text-sm m-0">
-                Your message has been received. We&apos;ll be in touch shortly.
+              <p className="font-body text-ink/80 text-sm max-w-sm mx-auto m-0">
+                Your message has been dispatched to ConvergeTec partners. We will respond within one business day.
               </p>
             </div>
           ) : (
