@@ -1,122 +1,169 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, Cpu, Award, TrendingUp, CheckCircle2 } from 'lucide-react';
 
 interface PipelineStep {
   number: string;
   division: string;
   stage: string;
-  focus: string;
-  detail: string;
+  icon: React.ComponentType<{ className?: string }>;
+  tagline: string;
+  outputs: string[];
+  accentColor: string;
   accentBorder: string;
-  accentText: string;
 }
 
 const steps: PipelineStep[] = [
   {
     number: '01',
     division: 'Consulting',
-    stage: 'Advise & Diagnose',
-    focus: 'Operational Strategy & Architecture',
-    detail:
-      'We uncover operational bottlenecks, define target operating models, and structure high-impact roadmaps that are technically validated from day one.',
+    stage: 'Diagnose & Blueprint',
+    icon: Search,
+    tagline: 'We uncover operational bottlenecks and design executable technical roadmaps.',
+    outputs: ['Target Operating Model', 'Data & AI Architecture', 'Investment Feasibility'],
+    accentColor: 'text-navy',
     accentBorder: 'border-t-navy',
-    accentText: 'text-navy',
   },
   {
     number: '02',
     division: 'Digital & Software',
     stage: 'Architect & Build',
-    focus: 'Production Software & Platforms',
-    detail:
-      'Our engineers build the custom applications, API integrations, and cloud infrastructure specified during advisory — with zero vendor friction.',
+    icon: Cpu,
+    tagline: 'Our engineers build production-ready cloud software directly from the blueprint.',
+    outputs: ['Custom SaaS Systems', 'Enterprise API Mesh', 'Automated Workflows'],
+    accentColor: 'text-blue',
     accentBorder: 'border-t-blue',
-    accentText: 'text-blue',
   },
   {
     number: '03',
     division: 'Academy',
     stage: 'Equip & Upskill',
-    focus: 'Internal Workforce Capability',
-    detail:
-      'Rather than creating permanent vendor dependency, we upskill your internal teams through enterprise masterclasses and transformation curricula.',
+    icon: Award,
+    tagline: 'We train your internal teams to operate and scale the technology independently.',
+    outputs: ['Executive Masterclasses', 'Methodology Certifications', 'Knowledge Transfer'],
+    accentColor: 'text-[#007b99]',
     accentBorder: 'border-t-cyan',
-    accentText: 'text-[#007b99]',
   },
   {
     number: '04',
     division: 'Resources & Talent',
     stage: 'Staff & Scale',
-    focus: 'Embedded Specialists & Leadership',
-    detail:
-      'We supply vetted contract professionals and fractional technology executives to lead critical workstreams and sustain delivery velocity.',
+    icon: TrendingUp,
+    tagline: 'Embedded fractional leaders and specialists maintain velocity as you grow.',
+    outputs: ['Fractional Executives', 'Specialist Delivery Leads', 'High-Velocity Squads'],
+    accentColor: 'text-blue',
     accentBorder: 'border-t-blue',
-    accentText: 'text-blue',
   },
 ];
 
 export default function TransformationPipeline() {
+  const [activeStep, setActiveStep] = useState<number>(0);
+  const current = steps[activeStep];
+
   return (
     <section className="w-full bg-offwhite py-20 md:py-28 border-b border-navy/10 relative overflow-hidden">
       <div className="content-container">
         {/* Section Header */}
-        <div className="max-w-[760px] mx-auto text-center mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-navy/5 text-navy/75 text-xs font-mono tracking-widest uppercase mb-4">
+        <div className="max-w-[640px] mx-auto text-center mb-14 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white text-navy text-xs font-mono tracking-widest uppercase mb-4 shadow-2xs">
             <span className="w-1.5 h-1.5 rounded-full bg-blue" />
-            Unified Operating Model
+            End-to-End Lifecycle
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy mb-5 tracking-tight">
-            The Transformation Lifecycle: Strategy to Scale
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy mb-4 tracking-tight">
+            From Blueprint to Sustained Scale
           </h2>
-          <p className="text-ink/80 font-body text-base sm:text-lg leading-relaxed">
-            Traditional enterprise transformation stalls during handoffs between consultancies,
-            software shops, and staffing agencies. ConvergeTec closes the gaps with a single,
-            accountable transformation engine.
+          <p className="text-ink/75 font-body text-base sm:text-lg leading-relaxed">
+            Eliminating the traditional friction of handoffs between separate consultancies,
+            software developers, and recruitment agencies.
           </p>
         </div>
 
-        {/* 4-Step Connected Horizontal Pipeline */}
-        <div className="relative">
-          {/* Connecting 1px rail on desktop */}
-          <div
-            className="hidden lg:block absolute top-7 left-[8%] right-[8%] h-[2px] bg-gradient-to-r from-navy via-blue to-cyan"
-            aria-hidden="true"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {steps.map((step, index) => (
-              <motion.div
+        {/* 4-Step Interactive Stepper Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 max-w-[1140px] mx-auto">
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            const isSelected = activeStep === index;
+            return (
+              <button
                 key={step.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, ease: 'easeOut', delay: index * 0.1 }}
-                className={`relative bg-white rounded-2xl p-6 sm:p-7 border border-navy/10 border-t-4 ${step.accentBorder} shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between`}
+                type="button"
+                onClick={() => setActiveStep(index)}
+                className={`p-6 rounded-2xl text-left transition-all duration-200 cursor-pointer border flex flex-col justify-between ${
+                  isSelected
+                    ? 'bg-white border-blue shadow-lg ring-1 ring-blue/20'
+                    : 'bg-white/60 border-navy/10 hover:bg-white hover:border-navy/20'
+                }`}
               >
                 <div>
-                  {/* Step Header with Node Indicator */}
-                  <div className="flex items-center justify-between pb-4 border-b border-navy/10 mb-5">
-                    <span className="font-mono text-xs tracking-widest uppercase font-bold text-navy/60">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-navy/10">
+                    <span className="font-mono text-xs font-bold text-ink/50">
                       STEP {step.number}
                     </span>
-                    <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-medium bg-navy/5 text-navy/80">
+                    <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-navy/5 text-navy font-semibold">
                       {step.division}
                     </span>
                   </div>
-
-                  <h3 className="font-display font-bold text-xl sm:text-2xl text-navy mb-2 leading-snug">
-                    {step.stage}
-                  </h3>
-
-                  <div className={`font-mono text-xs uppercase tracking-wider font-semibold mb-4 ${step.accentText}`}>
-                    {step.focus}
+                  <div className="flex items-center gap-3 mb-2">
+                    <div
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                        isSelected ? 'bg-blue text-white' : 'bg-navy/5 text-navy'
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h3 className="font-display font-bold text-base sm:text-lg text-navy m-0">
+                      {step.stage}
+                    </h3>
                   </div>
-
-                  <p className="text-ink/75 font-body text-sm sm:text-base leading-relaxed m-0">
-                    {step.detail}
-                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+                <div className="mt-4 pt-3 border-t border-navy/5 flex items-center justify-between text-xs font-mono text-ink/60">
+                  <span>{isSelected ? 'ACTIVE VIEW' : 'CLICK TO INSPECT'}</span>
+                  <span className={`w-2 h-2 rounded-full ${isSelected ? 'bg-blue' : 'bg-navy/20'}`} />
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Detail Inspection Card */}
+        <div className="max-w-[1140px] mx-auto bg-white rounded-2xl border border-navy/10 p-6 sm:p-8 shadow-sm">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.number}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+            >
+              <div className="md:col-span-7">
+                <span className="font-mono text-xs uppercase tracking-widest text-blue font-bold block mb-1">
+                  Stage {current.number} Focus // {current.division}
+                </span>
+                <h4 className="font-display font-bold text-2xl sm:text-3xl text-navy mb-3">
+                  {current.stage}
+                </h4>
+                <p className="text-ink/80 font-body text-base leading-relaxed m-0">
+                  {current.tagline}
+                </p>
+              </div>
+
+              <div className="md:col-span-5 bg-offwhite p-5 rounded-xl border border-navy/10">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-ink/50 font-bold block mb-3">
+                  Core Stage Deliverables
+                </span>
+                <div className="space-y-2">
+                  {current.outputs.map((out) => (
+                    <div key={out} className="flex items-center gap-2 text-sm text-navy font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-blue shrink-0" />
+                      <span>{out}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
