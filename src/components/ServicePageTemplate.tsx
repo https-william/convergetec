@@ -27,14 +27,17 @@ const accentColorMap = {
   navy: {
     text: 'text-navy',
     border: 'border-t-navy',
+    heroBg: 'radial-gradient(ellipse at 80% 0%, rgba(11, 30, 77, 0.04), transparent 60%), #F7F9FC',
   },
   blue: {
     text: 'text-blue',
     border: 'border-t-blue',
+    heroBg: 'radial-gradient(ellipse at 80% 0%, rgba(0, 120, 224, 0.04), transparent 60%), #F7F9FC',
   },
   cyan: {
     text: 'text-[#007b99]', // WCAG AA compliant cyan tone (5.2:1 contrast on offwhite)
     border: 'border-t-cyan',
+    heroBg: 'radial-gradient(ellipse at 80% 0%, rgba(0, 196, 240, 0.04), transparent 60%), #F7F9FC',
   },
 };
 
@@ -55,7 +58,10 @@ export default function ServicePageTemplate({
         description={intro}
       />
       {/* A) Hero Block */}
-      <section className="w-full bg-offwhite py-16 md:py-24 border-b border-navy/10">
+      <section
+        className="w-full py-16 md:py-24 border-b border-navy/10"
+        style={{ background: accent.heroBg }}
+      >
         <div className="content-container">
           <div className="max-w-[800px]">
             {/* Eyebrow */}
