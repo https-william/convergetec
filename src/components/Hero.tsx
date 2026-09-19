@@ -8,18 +8,24 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Text Column (max-width 800px) */}
           <div className="lg:col-span-7 xl:col-span-8 max-w-[800px] relative z-10">
+            {/* Architectural System Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-navy/5 text-navy/75 text-xs font-mono tracking-widest uppercase mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+              Australian Business &amp; Technology Partner
+            </div>
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold font-display text-navy leading-[1.08] tracking-tight mb-6">
               Advise. Transform. Build. Equip. Scale.
             </h1>
 
-            <p className="text-ink font-body text-lg sm:text-xl md:text-xl leading-relaxed max-w-[640px] mb-8 sm:mb-10 text-ink/90">
+            <p className="font-body text-lg sm:text-xl leading-relaxed max-w-[640px] mb-8 sm:mb-10 text-ink/90">
               ConvergeTec is an Australian business transformation and technology
               partner — helping organisations improve how they operate, equip
               their people, and use technology to scale.
             </p>
 
-            {/* Buttons: side by side, stacked on mobile */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
+            {/* CTAs: Decisive Primary Action + Architectural Page-Progression Anchor */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
               <Button
                 to="/contact"
                 variant="primary"
@@ -27,13 +33,21 @@ export default function Hero() {
               >
                 Book a Discovery Call
               </Button>
-              <Button
-                to="/contact"
-                variant="secondary"
-                className="px-7 py-3.5 text-base sm:text-lg"
+              <a
+                href="#divisions-grid"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base sm:text-lg font-semibold text-navy hover:text-blue transition-colors duration-200 group no-underline"
               >
-                Talk to ConvergeTec
-              </Button>
+                <span>Explore the Four Divisions</span>
+                <svg
+                  className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-200 text-blue"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
             </div>
           </div>
 

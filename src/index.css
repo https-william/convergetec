@@ -25,6 +25,10 @@
     --input: rgba(11, 30, 77, 0.2);
     --ring: #0078E0;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-offwhite text-ink font-body min-h-screen antialiased;
   }
@@ -34,7 +38,7 @@
   }
 
   a {
-    @apply text-blue hover:text-navy hover:underline hover:decoration-cyan hover:decoration-2 transition-colors;
+    @apply text-blue hover:text-navy hover:underline hover:decoration-blue/40 hover:decoration-2 transition-colors;
   }
 }
 
