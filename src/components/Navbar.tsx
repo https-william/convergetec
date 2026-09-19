@@ -1,6 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Button from './Button';
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+} from '@/components/ui/navigation-menu';
 
 const serviceLinks = [
   { name: 'Consulting', path: '/services/consulting' },
@@ -12,10 +20,22 @@ const serviceLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const location = useLocation();
-  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const currentRouteItem =
+    location.pathname === '/'
+      ? 'home'
+      : location.pathname === '/about'
+      ? 'about'
+      : location.pathname.startsWith('/services')
+      ? 'services'
+      : location.pathname === '/contact'
+      ? 'contact'
+      : null;
+
+  const activeIndicator = hoveredItem || currentRouteItem;
 
   // Scroll listener for solidifying effect past 40px
   useEffect(() => {
@@ -29,26 +49,13 @@ export default function Navbar() {
 
   const closeMenus = () => {
     setMobileMenuOpen(false);
-    setDesktopDropdownOpen(false);
   };
 
-  // Close desktop dropdown on outside click
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setDesktopDropdownOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Handle ESC key to close menus
+  // Handle ESC key to close mobile menu
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
         setMobileMenuOpen(false);
-        setDesktopDropdownOpen(false);
       }
     }
     document.addEventListener('keydown', handleKeyDown);
@@ -89,131 +96,158 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-8" aria-label="Main Navigation">
-          <NavLink
-            to="/"
-            end
-            onClick={closeMenus}
-            className={({ isActive }) =>
-              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
-                isActive
-                  ? scrolled
-                    ? 'text-cyan border-cyan font-semibold'
-                    : 'text-blue border-blue font-semibold'
-                  : scrolled
-                  ? 'text-offwhite/85 hover:text-cyan border-transparent'
-                  : 'text-navy/80 hover:text-blue border-transparent'
-              }`
-            }
-          >
-            Home
-          </NavLink>
+        {/* Desktop Navigation Links with shadcn NavigationMenu & layoutId sliding circle */}
+        <nav
+          className="hidden md:flex items-center"
+          aria-label="Main Navigation"
+          onMouseLeave={() => setHoveredItem(null)}
+        >
+          <NavigationMenu>
+            <NavigationMenuList className="space-x-7">
+              {/* 1. Home Link */}
+              <NavigationMenuItem className="relative">
+                <NavLink
+                  to="/"
+                  end
+                  onClick={closeMenus}
+                  onMouseEnter={() => setHoveredItem('home')}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors no-underline px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
+                      isActive
+                        ? scrolled
+                          ? 'text-cyan font-semibold'
+                          : 'text-blue font-semibold'
+                        : scrolled
+                        ? 'text-offwhite/85 hover:text-cyan'
+                        : 'text-navy/80 hover:text-blue'
+                    }`
+                  }
+                >
+                  Home
+                </NavLink>
+                {activeIndicator === 'home' && (
+                  <motion.div
+                    layoutId="nav-indicator"
+                    className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-cyan pointer-events-none"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+                  />
+                )}
+              </NavigationMenuItem>
 
-          <NavLink
-            to="/about"
-            onClick={closeMenus}
-            className={({ isActive }) =>
-              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
-                isActive
-                  ? scrolled
-                    ? 'text-cyan border-cyan font-semibold'
-                    : 'text-blue border-blue font-semibold'
-                  : scrolled
-                  ? 'text-offwhite/85 hover:text-cyan border-transparent'
-                  : 'text-navy/80 hover:text-blue border-transparent'
-              }`
-            }
-          >
-            About
-          </NavLink>
+              {/* 2. About Link */}
+              <NavigationMenuItem className="relative">
+                <NavLink
+                  to="/about"
+                  onClick={closeMenus}
+                  onMouseEnter={() => setHoveredItem('about')}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors no-underline px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
+                      isActive
+                        ? scrolled
+                          ? 'text-cyan font-semibold'
+                          : 'text-blue font-semibold'
+                        : scrolled
+                        ? 'text-offwhite/85 hover:text-cyan'
+                        : 'text-navy/80 hover:text-blue'
+                    }`
+                  }
+                >
+                  About
+                </NavLink>
+                {activeIndicator === 'about' && (
+                  <motion.div
+                    layoutId="nav-indicator"
+                    className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-cyan pointer-events-none"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+                  />
+                )}
+              </NavigationMenuItem>
 
-          {/* Services Dropdown */}
-          <div
-            ref={dropdownRef}
-            className="relative"
-            onMouseEnter={() => setDesktopDropdownOpen(true)}
-            onMouseLeave={() => setDesktopDropdownOpen(false)}
-          >
-            <button
-              type="button"
-              onClick={() => setDesktopDropdownOpen((prev) => !prev)}
-              aria-expanded={desktopDropdownOpen}
-              aria-haspopup="true"
-              className={`flex items-center gap-1.5 text-sm font-medium transition-colors no-underline pb-1 border-b-2 bg-transparent cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
-                isServicesActive
-                  ? scrolled
-                    ? 'text-cyan border-cyan font-semibold'
-                    : 'text-blue border-blue font-semibold'
-                  : scrolled
-                  ? 'text-offwhite/85 hover:text-cyan border-transparent'
-                  : 'text-navy/80 hover:text-blue border-transparent'
-              }`}
-            >
-              Services
-              <svg
-                className={`w-4 h-4 transition-transform duration-200 ${
-                  desktopDropdownOpen
-                    ? 'rotate-180 text-cyan'
-                    : scrolled
-                    ? 'text-offwhite/60'
-                    : 'text-navy/60'
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-                aria-hidden="true"
+              {/* 3. Services Dropdown using NavigationMenu */}
+              <NavigationMenuItem
+                className="relative"
+                onMouseEnter={() => setHoveredItem('services')}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+                <NavigationMenuTrigger
+                  className={`text-sm font-medium px-1 py-1 bg-transparent hover:bg-transparent focus:bg-transparent ${
+                    isServicesActive
+                      ? scrolled
+                        ? 'text-cyan font-semibold'
+                        : 'text-blue font-semibold'
+                      : scrolled
+                      ? 'text-offwhite/85 hover:text-cyan'
+                      : 'text-navy/80 hover:text-blue'
+                  }`}
+                >
+                  Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="p-2 w-64 bg-navy-light border border-navy/40 rounded-[8px] shadow-xl backdrop-blur-md">
+                  <div className="flex flex-col space-y-1">
+                    {serviceLinks.map((service) => (
+                      <NavLink
+                        key={service.path}
+                        to={service.path}
+                        onClick={closeMenus}
+                        className={({ isActive }) =>
+                          `block px-3.5 py-2.5 text-sm font-body transition-colors rounded-[8px] no-underline focus-visible:outline-none focus-visible:bg-navy ${
+                            isActive
+                              ? 'text-cyan bg-navy font-semibold border-l-2 border-cyan'
+                              : 'text-offwhite/85 hover:text-cyan hover:bg-navy/60'
+                          }`
+                        }
+                      >
+                        {service.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+                {activeIndicator === 'services' && (
+                  <motion.div
+                    layoutId="nav-indicator"
+                    className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-cyan pointer-events-none"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+                  />
+                )}
+              </NavigationMenuItem>
 
-            {/* Dropdown Menu */}
-            {desktopDropdownOpen && (
-              <div
-                className="absolute top-full left-0 mt-2 w-56 rounded-lg bg-navy-light border border-navy/40 shadow-xl py-2 z-50 backdrop-blur-sm"
-                role="menu"
-                aria-label="Services submenu"
-              >
-                {serviceLinks.map((service) => (
-                  <NavLink
-                    key={service.path}
-                    to={service.path}
-                    role="menuitem"
-                    onClick={closeMenus}
-                    className={({ isActive }) =>
-                      `block px-4 py-2.5 text-sm transition-colors no-underline focus-visible:outline-none focus-visible:bg-navy ${
-                        isActive
-                          ? 'text-cyan bg-navy font-semibold border-l-2 border-cyan'
-                          : 'text-offwhite/80 hover:text-cyan hover:bg-navy/60'
-                      }`
-                    }
-                  >
-                    {service.name}
-                  </NavLink>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <NavLink
-            to="/contact"
-            onClick={closeMenus}
-            className={({ isActive }) =>
-              `text-sm font-medium transition-colors no-underline pb-1 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
-                isActive
-                  ? scrolled
-                    ? 'text-cyan border-cyan font-semibold'
-                    : 'text-blue border-blue font-semibold'
-                  : scrolled
-                  ? 'text-offwhite/85 hover:text-cyan border-transparent'
-                  : 'text-navy/80 hover:text-blue border-transparent'
-              }`
-            }
-          >
-            Contact
-          </NavLink>
+              {/* 4. Contact Link */}
+              <NavigationMenuItem className="relative">
+                <NavLink
+                  to="/contact"
+                  onClick={closeMenus}
+                  onMouseEnter={() => setHoveredItem('contact')}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-colors no-underline px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue rounded-sm ${
+                      isActive
+                        ? scrolled
+                          ? 'text-cyan font-semibold'
+                          : 'text-blue font-semibold'
+                        : scrolled
+                        ? 'text-offwhite/85 hover:text-cyan'
+                        : 'text-navy/80 hover:text-blue'
+                    }`
+                  }
+                >
+                  Contact
+                </NavLink>
+                {activeIndicator === 'contact' && (
+                  <motion.div
+                    layoutId="nav-indicator"
+                    className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-cyan pointer-events-none"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+                  />
+                )}
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </nav>
 
         {/* Desktop CTA Button with hover scale */}

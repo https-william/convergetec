@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --radius: 8px;
+    --background: #F7F9FC;
+    --foreground: #111827;
+    --card: #FFFFFF;
+    --card-foreground: #111827;
+    --popover: #12295F;
+    --popover-foreground: #F7F9FC;
+    --primary: #0078E0;
+    --primary-foreground: #F7F9FC;
+    --secondary: #12295F;
+    --secondary-foreground: #F7F9FC;
+    --muted: rgba(11, 30, 77, 0.06);
+    --muted-foreground: rgba(17, 24, 39, 0.7);
+    --accent: rgba(0, 196, 240, 0.12);
+    --accent-foreground: #0B1E4D;
+    --destructive: #EF4444;
+    --destructive-foreground: #F7F9FC;
+    --border: rgba(11, 30, 77, 0.15);
+    --input: rgba(11, 30, 77, 0.2);
+    --ring: #0078E0;
+  }
   body {
     @apply bg-offwhite text-ink font-body min-h-screen antialiased;
   }
