@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { DoodleUnderline } from './Doodles';
 
 export default function AboutHero() {
   return (
@@ -17,15 +16,9 @@ export default function AboutHero() {
             About ConvergeTec
           </div>
 
-          {/* Headline with Hand-drawn Doodle Underline */}
+          {/* Headline */}
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.12] tracking-tight mb-6">
-            One partner. Every stage of the{' '}
-            <span className="relative inline-block">
-              journey.
-              <span className="absolute -bottom-3 sm:-bottom-4 left-0 w-full pointer-events-none">
-                <DoodleUnderline color="#0078E0" className="w-full h-auto" />
-              </span>
-            </span>
+            One partner. Every stage of the journey.
           </h1>
 
           {/* Clean 2-Sentence Intro */}
@@ -35,20 +28,25 @@ export default function AboutHero() {
           </p>
         </motion.div>
 
-        {/* Feature Hero Image with Subtle Glassmorphic Frame */}
+        {/* Feature Hero Image with 2.5D Connected Art */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="relative rounded-2xl overflow-hidden border border-navy/15 shadow-xl shadow-navy/5 bg-navy aspect-[16/9] group">
+          <div className="relative rounded-3xl overflow-hidden border border-navy/15 shadow-2xl shadow-navy/10 bg-navy aspect-[16/9] group">
             <img
-              src="/images/about-transformation-team.jpg"
-              alt="ConvergeTec leadership and advisory team in strategic session"
+              src="/images/art-25d-about.jpg"
+              alt="2.5D editorial illustration of ConvergeTec practice leadership team presenting agile roadmap and cloud architecture"
               className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out"
               loading="eager"
             />
+            {/* Floating chip badge */}
+            <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy/85 backdrop-blur-md border border-white/20 text-offwhite text-xs font-mono tracking-wider uppercase font-semibold shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
+              Unified Practice Leadership
+            </div>
           </div>
         </motion.div>
       </div>

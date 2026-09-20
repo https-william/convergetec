@@ -1,4 +1,5 @@
 import Button from './Button';
+import { DoodleArrow } from './Doodles';
 
 export default function CTASection() {
   return (
@@ -22,7 +23,13 @@ export default function CTASection() {
             Talk to ConvergeTec partners about your organisation&apos;s strategic and technological goals.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 relative">
+            {/* Subtle corporate doodle arrow pointing to CTA */}
+            <div className="hidden lg:flex items-center gap-1.5 absolute -left-32 top-1/2 -translate-y-1/2 text-cyan pointer-events-none">
+              <span className="font-mono text-[11px] tracking-wider uppercase text-cyan/75">Talk to leads</span>
+              <DoodleArrow color="#00C4F0" className="w-8 h-6 rotate-[-10deg]" />
+            </div>
+
             <Button
               to="/contact"
               variant="primary"

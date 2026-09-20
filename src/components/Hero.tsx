@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
-import { DoodleUnderline } from './Doodles';
-import { ArrowDown, CheckCircle2, Compass, Code2, GraduationCap, Users } from 'lucide-react';
+import { DoodleArrow } from './Doodles';
+import { ArrowDown, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -12,13 +12,7 @@ export default function Hero() {
           <div className="lg:col-span-7 xl:col-span-6 relative z-10 flex flex-col justify-center">
             {/* High-Converting Outcome-Driven Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[4rem] font-bold font-display text-navy leading-[1.08] tracking-tight mb-6">
-              Turn boardroom strategy into{' '}
-              <span className="relative inline-block">
-                live production software.
-                <span className="absolute -bottom-2 sm:-bottom-3 left-0 w-full pointer-events-none">
-                  <DoodleUnderline color="#0078E0" className="w-full h-auto" />
-                </span>
-              </span>
+              Turn boardroom strategy into live production software.
               <span className="block text-blue font-semibold text-2xl sm:text-3xl md:text-[2.1rem] mt-3 sm:mt-4 tracking-tight leading-snug">
                 Without the vendor handoff friction.
               </span>
@@ -32,7 +26,7 @@ export default function Hero() {
             </p>
 
             {/* Primary & Secondary Action Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10 relative">
               <Button
                 to="/contact"
                 variant="primary"
@@ -48,6 +42,11 @@ export default function Hero() {
                 <span>Explore the 4 Divisions</span>
                 <ArrowDown className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-200 text-blue" />
               </a>
+
+              {/* Tasteful subtle hand-drawn arrow */}
+              <div className="hidden xl:block absolute -right-16 -top-5 pointer-events-none text-blue">
+                <DoodleArrow color="#0078E0" className="w-10 h-8 rotate-[-10deg]" />
+              </div>
             </div>
 
             {/* Above-the-Fold Trust Signals & Risk Reversal */}
@@ -71,82 +70,35 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Visual Proof ("The Live Transformation Showcase") */}
+          {/* Right Column: 2.5D Transformation Web Art */}
           <div className="lg:col-span-5 xl:col-span-6 relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-              className="relative rounded-3xl overflow-hidden border border-navy/15 shadow-2xl shadow-navy/10 bg-navy aspect-[16/12] sm:aspect-[16/11] lg:aspect-[4/3] group"
+              className="relative rounded-3xl overflow-hidden border border-navy/15 shadow-2xl shadow-navy/10 bg-navy aspect-[4/3] group"
             >
-              {/* Flagship Photography */}
+              {/* 2.5D Editorial Web Art Asset */}
               <img
-                src="/images/hero-enterprise-flagship.jpg"
-                alt="ConvergeTec leadership and technology partners in executive boardroom overlooking Sydney Harbour"
+                src="/images/art-25d-hero.jpg"
+                alt="2.5D editorial illustration of ConvergeTec leadership team collaborating alongside cloud architecture and enterprise roadmap UI cards"
                 className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                 loading="eager"
               />
 
-              {/* Contrast scrim */}
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/35 to-transparent pointer-events-none"
-                aria-hidden="true"
-              />
+              {/* Floating chip badge */}
+              <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy/85 backdrop-blur-md border border-white/20 text-offwhite text-xs font-mono tracking-wider uppercase font-semibold shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
+                Integrated Delivery Engine
+              </div>
 
-              {/* Integrated Transformation Command Deck (Floating Showcase) */}
-              <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-5 sm:left-5 sm:right-5 rounded-2xl bg-navy/90 backdrop-blur-xl border border-white/20 p-4 sm:p-5 text-offwhite shadow-2xl">
-                <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
-                    <span className="font-mono text-[11px] uppercase tracking-wider font-semibold text-white">
-                      Unified Delivery Engine
-                    </span>
-                  </div>
-                  <span className="font-mono text-[10px] text-offwhite/60 tracking-wider hidden sm:inline uppercase">
-                    Sydney &amp; Melbourne
-                  </span>
-                </div>
-
-                {/* 4 Connected Transformation Vectors */}
-                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mb-3">
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
-                    <Compass className="w-3.5 h-3.5 text-cyan shrink-0" />
-                    <div className="truncate">
-                      <div className="font-mono text-[10px] text-white/50 uppercase">01 Strategy</div>
-                      <div className="text-xs font-semibold text-white truncate">Target Model</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
-                    <Code2 className="w-3.5 h-3.5 text-blue shrink-0" />
-                    <div className="truncate">
-                      <div className="font-mono text-[10px] text-white/50 uppercase">02 Software</div>
-                      <div className="text-xs font-semibold text-white truncate">Production SaaS</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
-                    <GraduationCap className="w-3.5 h-3.5 text-cyan shrink-0" />
-                    <div className="truncate">
-                      <div className="font-mono text-[10px] text-white/50 uppercase">03 Academy</div>
-                      <div className="text-xs font-semibold text-white truncate">Team Capability</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10">
-                    <Users className="w-3.5 h-3.5 text-blue shrink-0" />
-                    <div className="truncate">
-                      <div className="font-mono text-[10px] text-white/50 uppercase">04 Talent</div>
-                      <div className="text-xs font-semibold text-white truncate">Fractional Squads</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Impact Metric Callout */}
-                <div className="flex items-center justify-between text-[11px] font-mono text-cyan/90 pt-2 border-t border-white/10">
-                  <span>● 3.4x Faster Path to Production</span>
-                  <span>100% IP Retained</span>
-                </div>
+              {/* Subtle bottom telemetry bar */}
+              <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-4 sm:left-4 sm:right-4 rounded-xl bg-navy/90 backdrop-blur-md border border-white/15 px-4 py-2.5 flex items-center justify-between text-xs font-mono text-offwhite shadow-lg">
+                <span className="text-cyan font-semibold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+                  Live Program Delivery
+                </span>
+                <span className="text-offwhite/80">3.4x Faster to Production</span>
               </div>
             </motion.div>
           </div>

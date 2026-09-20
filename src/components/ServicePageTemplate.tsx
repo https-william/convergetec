@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import Button from './Button';
 import CTASection from './CTASection';
 import SEO from './SEO';
-import { DoodleUnderline } from './Doodles';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 export interface Pillar {
@@ -83,12 +82,9 @@ export default function ServicePageTemplate({
                 Practice // {eyebrow}
               </div>
 
-              {/* Headline with Doodle Underline */}
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.12] tracking-tight mb-6 relative">
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.12] tracking-tight mb-6">
                 {headline}
-                <span className="block mt-2 max-w-[280px]">
-                  <DoodleUnderline color={accent.doodleColor} className="w-full h-auto" />
-                </span>
               </h1>
 
               {/* Intro Paragraph */}
