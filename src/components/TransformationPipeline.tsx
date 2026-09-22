@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Compass, Code2, GraduationCap, Users, ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Compass, Code2, GraduationCap, Users, ArrowRight } from 'lucide-react';
 
 const steps = [
   {
@@ -10,8 +10,6 @@ const steps = [
     icon: Compass,
     headline: 'Operating Model & Architecture',
     description: 'Deconstruct legacy bottlenecks, architect target operating models, and structure executable technical roadmaps.',
-    deliverables: ['Target Operating Model (TOM)', 'Architecture Feasibility Matrix', 'Board Execution Roadmap'],
-    kpi: '3.4x Faster to Exec Sign-off',
   },
   {
     number: '02',
@@ -20,8 +18,6 @@ const steps = [
     icon: Code2,
     headline: 'Production Cloud Software',
     description: 'Engineers co-located with strategic advisors translate blueprints directly into high-throughput cloud SaaS and APIs.',
-    deliverables: ['Cloud-Native Microservices', 'Enterprise API Gateways', 'Zero-Downtime CI/CD Pipelines'],
-    kpi: '99.95% Availability SLA',
   },
   {
     number: '03',
@@ -30,8 +26,6 @@ const steps = [
     icon: GraduationCap,
     headline: 'Workforce IP Retention',
     description: 'Workforce cohorts and executive masterclasses ensure your in-house teams maintain, operate, and scale the technology.',
-    deliverables: ['Enterprise Agile Masterclasses', 'Architecture Certifications', 'Internal IP Playbooks'],
-    kpi: '100% Retained Enterprise IP',
   },
   {
     number: '04',
@@ -40,8 +34,6 @@ const steps = [
     icon: Users,
     headline: 'Embedded Fractional Squads',
     description: 'Deploy vetted fractional CTOs, engineering leads, and specialist pods directly into workstreams to maintain velocity.',
-    deliverables: ['Fractional CTO / Heads of Eng', 'Lead Full-Stack Triads', 'Embedded Agile Delivery Leads'],
-    kpi: '< 48h Deployment SLA',
   },
 ];
 
@@ -122,30 +114,15 @@ export default function TransformationPipeline() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
                       {step.description}
                     </p>
-
-                    {/* Deliverable Checkpoints */}
-                    <div className="space-y-1.5 pt-3 border-t border-slate-100">
-                      {step.deliverables.map((item) => (
-                        <div key={item} className="flex items-start gap-1.5 text-xs text-slate-700 font-medium">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-blue shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
 
-                  {/* Bottom Metric */}
-                  <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-xs font-mono">
-                    <span className="text-slate-900 font-semibold">
-                      {step.kpi}
-                    </span>
-                    <span className="text-slate-400 group-hover:text-slate-700 transition-colors flex items-center gap-0.5">
-                      Details
-                      <ChevronRight className="w-3 h-3" />
-                    </span>
+                  {/* Clean Card Action */}
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500 group-hover:text-blue transition-colors">
+                    <span>Explore Practice</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </motion.div>
               );

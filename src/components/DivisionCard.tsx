@@ -13,7 +13,7 @@ interface DivisionCardProps {
   icon: LucideIcon;
   image: string;
   imageAlt: string;
-  badges: string[];
+  badges?: string[];
   isWide?: boolean;
   className?: string;
   delay?: number;
@@ -28,7 +28,6 @@ export default function DivisionCard({
   href,
   image,
   imageAlt,
-  badges = [],
   isWide = false,
   className = '',
   delay = 0,
@@ -57,33 +56,25 @@ export default function DivisionCard({
           />
         </div>
 
-        {/* Division Category & Number */}
-        <div className="flex items-center justify-between text-xs font-semibold tracking-wider uppercase text-slate-400 mb-3">
-          <span>{divisionTag}</span>
-          <span className="font-mono text-slate-400">{divisionNumber}</span>
+        {/* Pop Print Editorial Header: Graphic Numeral & Category */}
+        <div className="flex items-baseline justify-between mb-3">
+          <span className="text-xs font-bold tracking-wider uppercase text-blue">
+            {divisionTag}
+          </span>
+          <span className="font-display font-black text-2xl sm:text-3xl text-slate-300 group-hover:text-blue/40 transition-colors">
+            {divisionNumber}
+          </span>
         </div>
 
-        {/* Title */}
-        <h3 className="text-xl sm:text-2xl font-bold text-navy group-hover:text-blue transition-colors mb-2.5 leading-snug">
+        {/* Pop Print Title */}
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-navy tracking-tight group-hover:text-blue transition-colors mb-3 leading-tight">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-5 font-normal">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 font-normal">
           {description}
         </p>
-
-        {/* Capability Areas */}
-        {badges.length > 0 && (
-          <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500 font-medium mb-6">
-            {badges.map((badge, i) => (
-              <span key={badge} className="flex items-center gap-1.5">
-                {i > 0 && <span className="text-slate-300">•</span>}
-                <span>{badge}</span>
-              </span>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Action Footer */}

@@ -43,18 +43,18 @@ export default function ServicePageTemplate({
       />
 
       {/* A) Hero Block */}
-      <section className="relative w-full py-16 md:py-24 border-b border-slate-200/80 overflow-hidden bg-grid-pattern bg-offwhite">
+      <section className="relative w-full py-16 md:py-24 border-b border-slate-200/80 overflow-hidden bg-offwhite">
         <div className="content-container relative z-10">
           <div className={heroImage ? 'grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center' : ''}>
             <div className={heroImage ? 'lg:col-span-7 xl:col-span-7 max-w-[660px]' : 'max-w-[760px]'}>
-              {/* Minimal Eyebrow (Non-Pill) */}
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 font-semibold mb-5">
-                <span className="w-2 h-2 bg-blue inline-block" />
-                <span>Practice // {eyebrow}</span>
+              {/* Pop Print Eyebrow */}
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+                <span>Practice Division — {eyebrow}</span>
               </div>
 
-              {/* Headline */}
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold font-display text-navy leading-[1.12] tracking-tight mb-6">
+              {/* Pop Print Headline */}
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-navy leading-[1.08] tracking-tight mb-6">
                 {headline}
               </h1>
 

@@ -13,7 +13,6 @@ const divisions = [
     icon: Compass,
     image: '/images/practice-consulting.jpg',
     imageAlt: 'Senior executive partners reviewing enterprise transformation roadmap in Sydney',
-    badges: ['Operating Models', 'Executive Advisory', 'Transformation Roadmaps'],
     isWide: true,
     colSpan: 'lg:col-span-7',
   },
@@ -28,7 +27,6 @@ const divisions = [
     icon: Code2,
     image: '/images/practice-software.jpg',
     imageAlt: 'Lead software architect and cloud engineer collaborating in modern tech studio',
-    badges: ['Cloud Native SaaS', 'Microservices', 'Enterprise APIs'],
     isWide: false,
     colSpan: 'lg:col-span-5',
   },
@@ -43,7 +41,6 @@ const divisions = [
     icon: GraduationCap,
     image: '/images/practice-academy.jpg',
     imageAlt: 'Executive capability masterclass and training session with corporate professionals',
-    badges: ['Executive Masterclasses', 'Agile Systems', 'Workforce Upskilling'],
     isWide: false,
     colSpan: 'lg:col-span-5',
   },
@@ -58,7 +55,6 @@ const divisions = [
     icon: Users,
     image: '/images/practice-talent.jpg',
     imageAlt: 'Senior fractional technology executives and delivery leads in Sydney corporate lounge',
-    badges: ['Fractional CXOs', 'Lead Architects', 'Embedded Delivery Squads'],
     isWide: true,
     colSpan: 'lg:col-span-7',
   },
@@ -97,7 +93,6 @@ export default function DivisionsGrid() {
               icon={division.icon}
               image={division.image}
               imageAlt={division.imageAlt}
-              badges={division.badges}
               isWide={division.isWide}
               className={division.colSpan}
               delay={index * 0.08}

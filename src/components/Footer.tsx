@@ -19,7 +19,7 @@ export default function Footer() {
           </Link>
 
           <div className="flex flex-wrap items-center gap-5 text-xs text-slate-400 font-medium">
-            <span>Sydney &amp; Melbourne</span>
+            <span>Sydney · Melbourne · Queensland · Nigeria</span>
             <span className="text-slate-700">•</span>
             <span>Enterprise Advisory &amp; Cloud Systems</span>
             <span className="text-slate-700">•</span>
@@ -107,25 +107,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Headquarters */}
+          {/* Column 3: Locations */}
           <div>
             <h4 className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">
               Locations
             </h4>
-            <div className="space-y-3.5 text-sm text-slate-300">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-blue shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-semibold text-white">Sydney Practice</div>
-                  <div className="text-xs text-slate-400">Level 28, Barangaroo International Towers</div>
-                </div>
+            <div className="space-y-3 text-sm text-slate-300">
+              <div className="flex items-center gap-2.5">
+                <MapPin className="w-4 h-4 text-blue shrink-0" />
+                <span className="font-semibold text-white">Sydney Practice</span>
               </div>
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-blue shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-semibold text-white">Melbourne Practice</div>
-                  <div className="text-xs text-slate-400">Collins Square, 727 Collins Street</div>
-                </div>
+              <div className="flex items-center gap-2.5">
+                <MapPin className="w-4 h-4 text-blue shrink-0" />
+                <span className="font-semibold text-white">Melbourne Practice</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <MapPin className="w-4 h-4 text-blue shrink-0" />
+                <span className="font-semibold text-white">Queensland Practice</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <MapPin className="w-4 h-4 text-blue shrink-0" />
+                <span className="font-semibold text-white">Nigeria Practice</span>
               </div>
             </div>
           </div>
@@ -167,7 +169,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span>Australian Business Number (ABN) Verified</span>
             <span>•</span>
-            <span>Sydney &amp; Melbourne</span>
+            <span>Sydney · Melbourne · Queensland · Nigeria</span>
           </div>
         </div>
       </div>

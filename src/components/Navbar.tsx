@@ -17,9 +17,17 @@ const serviceLinks = [
   { name: 'Resources & Talent', desc: 'Fractional executives & specialist squads', path: '/services/resources-talent' },
 ];
 
+const productLinks = [
+  { name: 'Motor App', desc: 'Automated motor claims, fleet telematics & assessment', path: '/products#motor-app' },
+  { name: 'Policy Vault', desc: 'Enterprise compliance repository & policy governance', path: '/products#policy-vault' },
+  { name: 'Big Converge', desc: 'Unified real-time data pipeline & integration engine', path: '/products#big-converge' },
+  { name: 'Remicon', desc: 'Automated high-volume remittance & ledger reconciliation', path: '/products#remicon' },
+];
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
+  const [mobileProductsAccordionOpen, setMobileProductsAccordionOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const location = useLocation();
 
@@ -30,6 +38,8 @@ export default function Navbar() {
       ? 'about'
       : location.pathname.startsWith('/services')
       ? 'services'
+      : location.pathname.startsWith('/products')
+      ? 'products'
       : location.pathname === '/contact'
       ? 'contact'
       : null;
@@ -52,6 +62,7 @@ export default function Navbar() {
   }, []);
 
   const isServicesActive = location.pathname.startsWith('/services');
+  const isProductsActive = location.pathname.startsWith('/products');
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
@@ -174,6 +185,55 @@ export default function Navbar() {
                   </div>
                 </NavigationMenuContent>
                 {activeIndicator === 'services' && (
+                  <motion.div
+                    layoutId="nav-underline"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.15 }}
+                  />
+                )}
+              </NavigationMenuItem>
+
+              {/* 3b. Our Products Dropdown */}
+              <NavigationMenuItem
+                className="relative py-2"
+                onMouseEnter={() => setHoveredItem('products')}
+              >
+                <NavigationMenuTrigger
+                  className={`text-sm font-medium px-1 py-1 bg-transparent hover:bg-transparent focus:bg-transparent ${
+                    isProductsActive ? 'text-blue font-semibold' : 'text-slate-700 hover:text-navy'
+                  }`}
+                >
+                  Our Products
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="p-3 w-84 bg-white border border-slate-200 rounded-xl shadow-xl">
+                  <div className="flex flex-col space-y-1">
+                    {productLinks.map((product) => (
+                      <NavLink
+                        key={product.name}
+                        to={product.path}
+                        onClick={closeMenus}
+                        className="block px-3.5 py-2.5 rounded-lg no-underline transition-colors text-slate-700 hover:bg-slate-50 hover:text-navy"
+                      >
+                        <span className="block text-sm font-semibold">{product.name}</span>
+                        <span className="block text-xs text-slate-500 font-normal mt-0.5">
+                          {product.desc}
+                        </span>
+                      </NavLink>
+                    ))}
+                    <div className="pt-2 mt-1 border-t border-slate-100">
+                      <Link
+                        to="/products"
+                        onClick={closeMenus}
+                        className="block px-3.5 py-1.5 text-xs font-semibold text-blue hover:text-navy no-underline"
+                      >
+                        View All Products Overview &rarr;
+                      </Link>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+                {activeIndicator === 'products' && (
                   <motion.div
                     layoutId="nav-underline"
                     className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue"
@@ -322,6 +382,58 @@ export default function Navbar() {
                         {service.name}
                       </NavLink>
                     ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Products Mobile Accordion */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setMobileProductsAccordionOpen((prev) => !prev)}
+                  className={`w-full flex items-center justify-between py-2 text-left font-display text-xl transition-colors cursor-pointer bg-transparent border-none ${
+                    isProductsActive ? 'text-blue font-bold' : 'text-slate-800 hover:text-blue'
+                  }`}
+                  aria-expanded={mobileProductsAccordionOpen}
+                >
+                  <span>Our Products</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-200 ${
+                      mobileProductsAccordionOpen ? 'rotate-180 text-blue' : 'text-slate-400'
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {mobileProductsAccordionOpen && (
+                  <div className="pl-4 mt-2 space-y-2 border-l-2 border-slate-200">
+                    {productLinks.map((product) => (
+                      <NavLink
+                        key={product.name}
+                        to={product.path}
+                        onClick={closeMenus}
+                        className={({ isActive }) =>
+                          `block py-2 text-base font-body transition-colors no-underline ${
+                            isActive ? 'text-blue font-semibold' : 'text-slate-600 hover:text-blue'
+                          }`
+                        }
+                      >
+                        {product.name}
+                      </NavLink>
+                    ))}
+                    <Link
+                      to="/products"
+                      onClick={closeMenus}
+                      className="block py-2 text-sm font-semibold text-blue no-underline"
+                    >
+                      View All Products &rarr;
+                    </Link>
                   </div>
                 )}
               </div>
