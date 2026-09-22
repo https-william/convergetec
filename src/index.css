@@ -80,7 +80,7 @@
   }
 
   a {
-    @apply text-blue hover:text-navy hover:underline hover:decoration-blue/40 hover:decoration-2 transition-colors;
+    @apply text-blue hover:text-navy transition-colors;
   }
 }
 

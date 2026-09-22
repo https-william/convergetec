@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://convergetec.com.au/sitemap.xml

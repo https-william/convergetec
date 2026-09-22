@@ -42,7 +42,7 @@ export default function ResourcesTalent() {
       pillars={pillars}
       crossSell={crossSell}
       heroImage="/images/practice-talent.jpg"
-      imageCaption="Talent & Leadership // Fractional & Contract Executives"
+      imageCaption="Talent & Leadership — Fractional & Contract Executives"
     />
   );
 }

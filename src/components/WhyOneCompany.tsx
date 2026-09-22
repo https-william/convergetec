@@ -30,8 +30,8 @@ export default function WhyOneCompany() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center max-w-[660px] mx-auto mb-16 md:mb-20"
         >
-          <div className="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 font-semibold mb-3">
-            <span className="w-2 h-2 bg-blue inline-block" />
+          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-wider text-slate-500 font-bold mb-3">
+            <span className="w-2 h-2 bg-blue inline-block rounded-full" />
             <span>Integrated Value Advantage</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy tracking-tight mb-4">

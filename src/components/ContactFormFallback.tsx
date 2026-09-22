@@ -31,7 +31,7 @@ export default function ContactFormFallback() {
       <div className="content-container">
         <div className="max-w-[720px] mx-auto bg-white rounded-2xl shadow-xl shadow-navy/5 border border-navy/10 p-8 sm:p-12">
           <div className="mb-10">
-            <span className="font-mono text-xs uppercase tracking-wider text-blue font-bold block mb-2">
+            <span className="text-xs uppercase tracking-wider text-blue font-bold block mb-2">
               Direct Inquiries
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-navy mb-3">
@@ -72,7 +72,7 @@ export default function ContactFormFallback() {
                         key={topic}
                         type="button"
                         onClick={() => setSelectedTopic(topic)}
-                        className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer border ${
+                        className={`px-4 py-2 rounded-xl text-xs font-medium transition-all duration-200 cursor-pointer border ${
                           isSelected
                             ? 'bg-blue text-white border-blue shadow-sm'
                             : 'bg-offwhite text-navy/70 border-navy/10 hover:border-navy/30'

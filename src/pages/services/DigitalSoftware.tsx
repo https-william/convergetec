@@ -42,7 +42,7 @@ export default function DigitalSoftware() {
       pillars={pillars}
       crossSell={crossSell}
       heroImage="/images/practice-software.jpg"
-      imageCaption="Software Engineering // Cloud Architecture & Systems"
+      imageCaption="Software Engineering — Cloud Architecture & Systems"
     />
   );
 }

@@ -83,7 +83,7 @@ export default function TransformationPipeline() {
                     <div className="flex items-center justify-between pb-3.5 border-b border-slate-100 mb-5">
                       <div className="flex items-center gap-2">
                         <span
-                          className={`font-mono text-xs font-bold px-2 py-0.5 rounded ${
+                          className={`text-xs font-bold px-2 py-0.5 rounded ${
                             isCurrent
                               ? 'bg-blue text-white'
                               : 'bg-slate-100 text-slate-700'
@@ -91,7 +91,7 @@ export default function TransformationPipeline() {
                         >
                           {step.number}
                         </span>
-                        <span className="font-mono text-xs uppercase tracking-wider text-slate-500 font-medium">
+                        <span className="text-xs uppercase tracking-wider text-slate-500 font-semibold">
                           {step.division}
                         </span>
                       </div>

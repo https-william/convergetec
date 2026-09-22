@@ -42,7 +42,7 @@ export default function Consulting() {
       pillars={pillars}
       crossSell={crossSell}
       heroImage="/images/practice-consulting.jpg"
-      imageCaption="Advisory Practice // Enterprise Operating Model & Architecture"
+      imageCaption="Advisory Practice — Enterprise Operating Model & Architecture"
     />
   );
 }

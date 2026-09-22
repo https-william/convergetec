@@ -21,87 +21,103 @@ export default function BookingEmbed({
               />
             </div>
           ) : (
-            <div className="w-full rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-xl overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                {/* Executive Scheduling Console */}
-                <div className="lg:col-span-6 relative rounded-xl overflow-hidden bg-navy text-offwhite p-6 border border-navy-light shadow-md flex flex-col justify-between">
-                  <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-blue inline-block rounded-full" />
-                      <span className="text-xs tracking-wider uppercase font-semibold text-offwhite/90">
-                        ConvergeTec Executive Intake
+            <div className="w-full rounded-2xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-xl">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                {/* Left Column: Clean Executive Consultation Briefing */}
+                <div className="lg:col-span-6 rounded-xl bg-slate-50/80 border border-slate-200/90 p-7 sm:p-8 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-5">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-blue" />
+                        <span className="text-xs font-bold uppercase tracking-wider text-navy">
+                          Executive Consultation
+                        </span>
+                      </div>
+                      <span className="text-xs font-semibold text-slate-500 bg-white px-2.5 py-1 rounded-md border border-slate-200">
+                        30 Min Discovery
                       </span>
                     </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-white/10 text-offwhite border border-white/15">
-                      AEST (UTC+10/11)
-                    </span>
-                  </div>
 
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <span className="text-[11px] uppercase text-offwhite/50 block mb-1">Duration &amp; Format</span>
-                      <p className="text-sm font-semibold text-white">
-                        30-Min Executive Diagnostic Session
-                      </p>
-                      <p className="text-xs text-offwhite/70">
-                        Confidential virtual session or in-person across our Australian &amp; International practices.
-                      </p>
-                    </div>
+                    <div className="space-y-4 mb-6">
+                      <div>
+                        <h4 className="font-bold text-navy text-lg mb-1">
+                          Direct Partner-Led Advisory
+                        </h4>
+                        <p className="text-slate-600 text-sm leading-relaxed">
+                          Conducted virtually via Microsoft Teams or in-person across our Sydney, Melbourne, Queensland, and Nigeria practices.
+                        </p>
+                      </div>
 
-                    <div>
-                      <span className="text-[11px] uppercase text-offwhite/50 block mb-1.5">Focus Areas Available</span>
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-offwhite">Operating Models (TOM)</span>
-                        <span className="text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-offwhite">Cloud SaaS Architecture</span>
-                        <span className="text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-offwhite">Workforce Academy</span>
-                        <span className="text-[11px] px-2 py-1 rounded bg-white/5 border border-white/10 text-offwhite">Fractional Bench</span>
+                      <div className="pt-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                          Diagnostic Scope:
+                        </span>
+                        <ul className="space-y-2 text-xs text-slate-700 font-medium list-none p-0 m-0">
+                          <li className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
+                            <span>Target Operating Model &amp; Architecture Review</span>
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
+                            <span>Custom Cloud SaaS &amp; Microservices Scoping</span>
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
+                            <span>Workforce Academy &amp; In-House IP Retention</span>
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
+                            <span>Fractional Executives &amp; Pod Deployment</span>
+                          </li>
+                        </ul>
                       </div>
                     </div>
-
-                    <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-3 text-xs text-offwhite/80">
-                      <span>Led By: Practice Partners</span>
-                      <span className="text-white font-medium shrink-0">Strict NDA Standard</span>
-                    </div>
                   </div>
 
-                  <div className="p-3 rounded-lg bg-white/5 border border-white/10 text-xs text-offwhite text-center">
-                    AVAILABILITY: Current sprint slots open
+                  <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                    <span className="font-semibold text-slate-700">Strict NDA Protected</span>
+                    <span>No Obligation Feasibility</span>
                   </div>
                 </div>
 
-                {/* Scheduling Overview & Agenda */}
+                {/* Right Column: Scheduling Overview & Direct Action */}
                 <div className="lg:col-span-6 flex flex-col justify-center text-left">
-                  <span className="text-xs uppercase tracking-wider text-blue font-bold mb-2">
-                    Executive Consultation &amp; Advisory
-                  </span>
-                  <h3 className="font-extrabold text-navy text-2xl sm:text-3xl mb-3 leading-snug">
-                    Direct Access to Practice Leadership
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue mb-2.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+                    <span>Executive Intake</span>
+                  </div>
+
+                  <h3 className="font-extrabold text-navy text-2xl sm:text-3xl lg:text-4xl mb-4 leading-tight tracking-tight">
+                    Schedule Your Discovery Session
                   </h3>
+
                   <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 font-normal">
-                    Speak directly with our senior partners and cloud architects to diagnose operating model bottlenecks, scope custom engineering, or mobilize fractional delivery teams.
+                    Connect directly with senior practice leadership to diagnose operating bottlenecks, scope bespoke engineering, and architect executable technical roadmaps.
                   </p>
 
-                  <div className="space-y-2.5 mb-6 text-xs sm:text-sm text-slate-700 font-medium">
+                  <div className="space-y-3 mb-8 text-xs sm:text-sm text-slate-700 font-medium">
                     <div className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
-                      <span>Zero-obligation architectural &amp; strategy diagnostic</span>
+                      <span>Confidential board-level feasibility diagnosis</span>
                     </div>
                     <div className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
-                      <span>Australian &amp; International practice leads directly</span>
+                      <span>Direct partner access — no intermediaries</span>
                     </div>
                     <div className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
-                      <span>Board-ready execution feasibility scoping</span>
+                      <span>Guaranteed follow-up within one business day</span>
                     </div>
                   </div>
 
-                  <a
-                    href="#contact-form-section"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-blue text-white font-semibold font-display text-sm hover:bg-navy transition-all no-underline shadow-sm w-fit"
-                  >
-                    <span>Request Discovery Session Below</span>
-                  </a>
+                  <div>
+                    <a
+                      href="#contact-form-section"
+                      className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md bg-navy hover:bg-blue text-white font-semibold text-sm transition-colors no-underline shadow-sm"
+                    >
+                      <span>Complete Intake Form Below</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

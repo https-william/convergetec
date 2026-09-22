@@ -23,7 +23,7 @@ export default function Footer() {
             <span className="text-slate-700">•</span>
             <span>Enterprise Advisory &amp; Cloud Systems</span>
             <span className="text-slate-700">•</span>
-            <span className="font-mono text-slate-500">ABN 88 642 918 203</span>
+            <span className="text-slate-500 font-medium">ABN 88 642 918 203</span>
           </div>
         </div>
 
@@ -150,7 +150,7 @@ export default function Footer() {
               </Link>
               <a
                 href="mailto:contact@convergetec.com.au"
-                className="flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-white transition-colors no-underline pt-1"
+                className="flex items-center gap-2 text-xs font-medium text-slate-400 hover:text-white transition-colors no-underline pt-1"
               >
                 <Mail className="w-3.5 h-3.5 text-slate-400" />
                 <span>contact@convergetec.com.au</span>

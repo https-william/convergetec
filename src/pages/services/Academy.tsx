@@ -42,7 +42,7 @@ export default function Academy() {
       pillars={pillars}
       crossSell={crossSell}
       heroImage="/images/practice-academy.jpg"
-      imageCaption="Capability Academy // Executive Agile Delivery Framework"
+      imageCaption="Capability Academy — Executive Agile Delivery Framework"
     />
   );
 }

@@ -94,7 +94,7 @@ export default function ServicePageTemplate({
 
                 {/* Clean Caption Below Image */}
                 {imageCaption && (
-                  <div className="mt-3 flex items-center justify-between text-xs font-mono text-slate-500">
+                  <div className="mt-3 flex items-center justify-between text-xs text-slate-500 font-medium">
                     <span>{imageCaption}</span>
                     <span className="text-slate-400 hidden sm:inline">Active Practice</span>
                   </div>
@@ -109,8 +109,8 @@ export default function ServicePageTemplate({
       <section className="w-full bg-white py-20 md:py-28 border-b border-slate-200/80">
         <div className="content-container">
           <div className="max-w-[640px] mb-14 sm:mb-16">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 font-semibold mb-2">
-              <span className="w-2 h-2 bg-blue inline-block" />
+            <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-500 font-bold mb-2">
+              <span className="w-2 h-2 bg-blue inline-block rounded-full" />
               <span>Capabilities &amp; Deliverables</span>
             </div>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy">
@@ -130,7 +130,7 @@ export default function ServicePageTemplate({
               >
                 <div>
                   <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 mb-4">
-                    <span className="font-mono text-xs tracking-wider uppercase font-semibold text-slate-500">
+                    <span className="text-xs tracking-wider uppercase font-semibold text-slate-500">
                       Pillar 0{index + 1}
                     </span>
                     <CheckCircle2 className="w-4 h-4 text-slate-400 group-hover:text-blue transition-colors" />
@@ -152,8 +152,8 @@ export default function ServicePageTemplate({
       {/* C) Cross-Sell Strip */}
       <section className="w-full bg-[#0B132B] text-slate-300 py-16 md:py-20 border-t border-slate-800">
         <div className="content-container text-center">
-          <div className="flex items-center justify-center gap-2 text-xs font-mono tracking-widest uppercase text-slate-400 font-semibold mb-3">
-            <span className="w-2 h-2 bg-blue inline-block" />
+          <div className="flex items-center justify-center gap-2 text-xs tracking-wider uppercase text-slate-400 font-bold mb-3">
+            <span className="w-2 h-2 bg-blue inline-block rounded-full" />
             <span>Interlocking Capabilities</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">

@@ -18,11 +18,11 @@ export default function VisionMission() {
               <div className="flex items-center justify-between pb-5 border-b border-navy-light/80 mb-6">
                 <div className="flex items-center gap-2.5 text-blue">
                   <Compass className="w-5 h-5" />
-                  <span className="font-mono text-xs tracking-widest uppercase font-bold text-white">
+                  <span className="text-xs tracking-wider uppercase font-bold text-white">
                     Strategic Vision
                   </span>
                 </div>
-                <span className="w-2 h-2 bg-blue inline-block" />
+                <span className="w-2 h-2 bg-blue inline-block rounded-full" />
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
                 To be Australia&apos;s definitive transformation engine.
@@ -45,11 +45,11 @@ export default function VisionMission() {
               <div className="flex items-center justify-between pb-5 border-b border-navy-light/80 mb-6">
                 <div className="flex items-center gap-2.5 text-blue">
                   <Target className="w-5 h-5" />
-                  <span className="font-mono text-xs tracking-widest uppercase font-bold text-white">
+                  <span className="text-xs tracking-wider uppercase font-bold text-white">
                     Operational Mission
                   </span>
                 </div>
-                <span className="w-2 h-2 bg-blue inline-block" />
+                <span className="w-2 h-2 bg-blue inline-block rounded-full" />
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
                 Turn boardroom strategy into live production outcomes.

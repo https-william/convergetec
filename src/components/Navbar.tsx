@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import Button from './Button';
 import {
   NavigationMenu,
@@ -28,23 +27,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
   const [mobileProductsAccordionOpen, setMobileProductsAccordionOpen] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const location = useLocation();
-
-  const currentRouteItem =
-    location.pathname === '/'
-      ? 'home'
-      : location.pathname === '/about'
-      ? 'about'
-      : location.pathname.startsWith('/services')
-      ? 'services'
-      : location.pathname.startsWith('/products')
-      ? 'products'
-      : location.pathname === '/contact'
-      ? 'contact'
-      : null;
-
-  const activeIndicator = hoveredItem || currentRouteItem;
 
   const closeMenus = () => {
     setMobileMenuOpen(false);
@@ -84,7 +67,7 @@ export default function Navbar() {
             <span className="font-display font-bold text-2xl tracking-tight text-navy group-hover:text-blue transition-colors leading-none">
               ConvergeTec
             </span>
-            <span className="text-[10px] font-mono tracking-wider uppercase text-slate-500 font-medium mt-0.5">
+            <span className="text-[11px] font-semibold tracking-wider uppercase text-slate-400 mt-0.5">
               Transformation &amp; Technology
             </span>
           </div>
@@ -94,84 +77,66 @@ export default function Navbar() {
         <nav
           className="hidden md:flex items-center"
           aria-label="Main Navigation"
-          onMouseLeave={() => setHoveredItem(null)}
         >
           <NavigationMenu>
-            <NavigationMenuList className="space-x-8">
+            <NavigationMenuList className="space-x-1">
               {/* 1. Home Link */}
-              <NavigationMenuItem className="relative py-2">
+              <NavigationMenuItem>
                 <NavLink
                   to="/"
                   end
                   onClick={closeMenus}
-                  onMouseEnter={() => setHoveredItem('home')}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-colors no-underline px-1 py-1 focus-visible:outline-none ${
-                      isActive ? 'text-blue font-semibold' : 'text-slate-700 hover:text-navy'
+                    `text-sm font-medium transition-colors no-underline px-3.5 py-2 rounded-lg ${
+                      isActive
+                        ? 'text-navy font-semibold bg-slate-100/80'
+                        : 'text-slate-600 hover:text-navy hover:bg-slate-50'
                     }`
                   }
                 >
                   Home
                 </NavLink>
-                {activeIndicator === 'home' && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.15 }}
-                  />
-                )}
               </NavigationMenuItem>
 
               {/* 2. About Link */}
-              <NavigationMenuItem className="relative py-2">
+              <NavigationMenuItem>
                 <NavLink
                   to="/about"
                   onClick={closeMenus}
-                  onMouseEnter={() => setHoveredItem('about')}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-colors no-underline px-1 py-1 focus-visible:outline-none ${
-                      isActive ? 'text-blue font-semibold' : 'text-slate-700 hover:text-navy'
+                    `text-sm font-medium transition-colors no-underline px-3.5 py-2 rounded-lg ${
+                      isActive
+                        ? 'text-navy font-semibold bg-slate-100/80'
+                        : 'text-slate-600 hover:text-navy hover:bg-slate-50'
                     }`
                   }
                 >
                   About
                 </NavLink>
-                {activeIndicator === 'about' && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.15 }}
-                  />
-                )}
               </NavigationMenuItem>
 
-              {/* 3. Services Dropdown */}
-              <NavigationMenuItem
-                className="relative py-2"
-                onMouseEnter={() => setHoveredItem('services')}
-              >
+              {/* 3. Practice Divisions Dropdown */}
+              <NavigationMenuItem>
                 <NavigationMenuTrigger
-                  className={`text-sm font-medium px-1 py-1 bg-transparent hover:bg-transparent focus:bg-transparent ${
-                    isServicesActive ? 'text-blue font-semibold' : 'text-slate-700 hover:text-navy'
+                  className={`text-sm font-medium px-3.5 py-2 rounded-lg bg-transparent transition-colors ${
+                    isServicesActive
+                      ? 'text-navy font-semibold bg-slate-100/80'
+                      : 'text-slate-600 hover:text-navy hover:bg-slate-50'
                   }`}
                 >
                   Practice Divisions
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="p-3 w-80 bg-white border border-slate-200 rounded-xl shadow-xl">
-                  <div className="flex flex-col space-y-1">
+                <NavigationMenuContent className="p-2.5 bg-white rounded-2xl shadow-xl">
+                  <div className="flex flex-col space-y-1 w-[360px]">
                     {serviceLinks.map((service) => (
                       <NavLink
                         key={service.path}
                         to={service.path}
                         onClick={closeMenus}
                         className={({ isActive }) =>
-                          `block px-3.5 py-2.5 rounded-lg no-underline transition-colors ${
+                          `block px-3.5 py-2.5 rounded-xl no-underline transition-colors ${
                             isActive
-                              ? 'bg-slate-50 text-blue font-semibold border-l-2 border-blue'
+                              ? 'bg-blue/5 text-blue font-semibold'
                               : 'text-slate-700 hover:bg-slate-50 hover:text-navy'
                           }`
                         }
@@ -184,37 +149,27 @@ export default function Navbar() {
                     ))}
                   </div>
                 </NavigationMenuContent>
-                {activeIndicator === 'services' && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.15 }}
-                  />
-                )}
               </NavigationMenuItem>
 
-              {/* 3b. Our Products Dropdown */}
-              <NavigationMenuItem
-                className="relative py-2"
-                onMouseEnter={() => setHoveredItem('products')}
-              >
+              {/* 4. Our Products Dropdown */}
+              <NavigationMenuItem>
                 <NavigationMenuTrigger
-                  className={`text-sm font-medium px-1 py-1 bg-transparent hover:bg-transparent focus:bg-transparent ${
-                    isProductsActive ? 'text-blue font-semibold' : 'text-slate-700 hover:text-navy'
+                  className={`text-sm font-medium px-3.5 py-2 rounded-lg bg-transparent transition-colors ${
+                    isProductsActive
+                      ? 'text-navy font-semibold bg-slate-100/80'
+                      : 'text-slate-600 hover:text-navy hover:bg-slate-50'
                   }`}
                 >
                   Our Products
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="p-3 w-84 bg-white border border-slate-200 rounded-xl shadow-xl">
-                  <div className="flex flex-col space-y-1">
+                <NavigationMenuContent className="p-2.5 bg-white rounded-2xl shadow-xl">
+                  <div className="flex flex-col space-y-1 w-[380px]">
                     {productLinks.map((product) => (
                       <NavLink
                         key={product.name}
                         to={product.path}
                         onClick={closeMenus}
-                        className="block px-3.5 py-2.5 rounded-lg no-underline transition-colors text-slate-700 hover:bg-slate-50 hover:text-navy"
+                        className="block px-3.5 py-2.5 rounded-xl no-underline transition-colors text-slate-700 hover:bg-slate-50 hover:text-navy"
                       >
                         <span className="block text-sm font-semibold">{product.name}</span>
                         <span className="block text-xs text-slate-500 font-normal mt-0.5">
@@ -226,47 +181,30 @@ export default function Navbar() {
                       <Link
                         to="/products"
                         onClick={closeMenus}
-                        className="block px-3.5 py-1.5 text-xs font-semibold text-blue hover:text-navy no-underline"
+                        className="block px-3.5 py-2 text-xs font-semibold text-blue hover:text-navy no-underline rounded-lg hover:bg-slate-50"
                       >
                         View All Products Overview &rarr;
                       </Link>
                     </div>
                   </div>
                 </NavigationMenuContent>
-                {activeIndicator === 'products' && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.15 }}
-                  />
-                )}
               </NavigationMenuItem>
 
-              {/* 4. Contact Link */}
-              <NavigationMenuItem className="relative py-2">
+              {/* 5. Contact Link */}
+              <NavigationMenuItem>
                 <NavLink
                   to="/contact"
                   onClick={closeMenus}
-                  onMouseEnter={() => setHoveredItem('contact')}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-colors no-underline px-1 py-1 focus-visible:outline-none ${
-                      isActive ? 'text-blue font-semibold' : 'text-slate-700 hover:text-navy'
+                    `text-sm font-medium transition-colors no-underline px-3.5 py-2 rounded-lg ${
+                      isActive
+                        ? 'text-navy font-semibold bg-slate-100/80'
+                        : 'text-slate-600 hover:text-navy hover:bg-slate-50'
                     }`
                   }
                 >
                   Contact
                 </NavLink>
-                {activeIndicator === 'contact' && (
-                  <motion.div
-                    layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-blue"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.15 }}
-                  />
-                )}
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
