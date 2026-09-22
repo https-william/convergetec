@@ -26,41 +26,15 @@ export interface ServicePageTemplateProps {
   imageCaption?: string;
 }
 
-const accentColorMap = {
-  navy: {
-    text: 'text-navy',
-    border: 'border-t-navy',
-    pillBg: 'bg-navy/5 text-navy border-navy/15',
-    doodleColor: '#0B1E4D',
-    heroBg: 'radial-gradient(ellipse at 80% 0%, rgba(11, 30, 77, 0.04), transparent 60%), #F7F9FC',
-  },
-  blue: {
-    text: 'text-blue',
-    border: 'border-t-blue',
-    pillBg: 'bg-blue/10 text-blue border-blue/20',
-    doodleColor: '#0078E0',
-    heroBg: 'radial-gradient(ellipse at 80% 0%, rgba(0, 120, 224, 0.04), transparent 60%), #F7F9FC',
-  },
-  cyan: {
-    text: 'text-[#007b99]',
-    border: 'border-t-cyan',
-    pillBg: 'bg-cyan/15 text-[#007b99] border-cyan/30',
-    doodleColor: '#00C4F0',
-    heroBg: 'radial-gradient(ellipse at 80% 0%, rgba(0, 196, 240, 0.04), transparent 60%), #F7F9FC',
-  },
-};
-
 export default function ServicePageTemplate({
-  accentColor,
   eyebrow,
   headline,
   intro,
   pillars,
   crossSell,
   heroImage,
+  imageCaption,
 }: ServicePageTemplateProps) {
-  const accent = accentColorMap[accentColor] || accentColorMap.blue;
-
   return (
     <div className="w-full">
       <SEO
@@ -69,17 +43,14 @@ export default function ServicePageTemplate({
       />
 
       {/* A) Hero Block */}
-      <section
-        className="w-full py-20 md:py-28 lg:py-32 border-b border-navy/10"
-        style={{ background: accent.heroBg }}
-      >
-        <div className="content-container">
+      <section className="relative w-full py-16 md:py-24 border-b border-slate-200/80 overflow-hidden bg-grid-pattern bg-offwhite">
+        <div className="content-container relative z-10">
           <div className={heroImage ? 'grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center' : ''}>
             <div className={heroImage ? 'lg:col-span-7 xl:col-span-7 max-w-[660px]' : 'max-w-[760px]'}>
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white text-navy text-xs font-mono tracking-widest uppercase mb-6 shadow-2xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue" />
-                Practice // {eyebrow}
+              {/* Minimal Eyebrow (Non-Pill) */}
+              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 font-semibold mb-5">
+                <span className="w-2 h-2 bg-blue inline-block" />
+                <span>Practice // {eyebrow}</span>
               </div>
 
               {/* Headline */}
@@ -88,7 +59,7 @@ export default function ServicePageTemplate({
               </h1>
 
               {/* Intro Paragraph */}
-              <p className="text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
+              <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
                 {intro}
               </p>
 
@@ -97,14 +68,14 @@ export default function ServicePageTemplate({
                 <Button
                   to="/contact"
                   variant="primary"
-                  className="px-8 py-4 text-base font-display font-semibold shadow-lg shadow-blue/20"
+                  className="px-7 py-3.5 text-base font-display font-semibold rounded-md shadow-sm"
                 >
                   Book a Practice Discovery Call
                 </Button>
               </div>
             </div>
 
-            {/* Right Column: Clean Hero Photograph */}
+            {/* Right Column: Clean Hero Photograph (No Subtitles or Pills on the Image) */}
             {heroImage && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -112,7 +83,7 @@ export default function ServicePageTemplate({
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
                 className="lg:col-span-5 xl:col-span-5 relative"
               >
-                <div className="relative rounded-2xl overflow-hidden border border-navy/15 shadow-xl shadow-navy/5 bg-navy aspect-[4/3] group">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl shadow-navy/5 bg-navy aspect-[4/3] group">
                   <img
                     src={heroImage}
                     alt={headline}
@@ -120,6 +91,14 @@ export default function ServicePageTemplate({
                     loading="eager"
                   />
                 </div>
+
+                {/* Clean Caption Below Image */}
+                {imageCaption && (
+                  <div className="mt-3 flex items-center justify-between text-xs font-mono text-slate-500">
+                    <span>{imageCaption}</span>
+                    <span className="text-slate-400 hidden sm:inline">Active Practice</span>
+                  </div>
+                )}
               </motion.div>
             )}
           </div>
@@ -127,39 +106,40 @@ export default function ServicePageTemplate({
       </section>
 
       {/* B) Pillars Grid */}
-      <section className="w-full bg-white py-24 md:py-32 border-b border-navy/10">
+      <section className="w-full bg-white py-20 md:py-28 border-b border-slate-200/80">
         <div className="content-container">
           <div className="max-w-[640px] mb-14 sm:mb-16">
-            <span className="font-mono text-xs uppercase tracking-wider text-ink/50 font-bold block mb-2">
-              Capabilities &amp; Deliverables
-            </span>
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 font-semibold mb-2">
+              <span className="w-2 h-2 bg-blue inline-block" />
+              <span>Capabilities &amp; Deliverables</span>
+            </div>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy">
               Core Practice Pillars
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {pillars.map((pillar, index) => (
               <motion.div
                 key={pillar.title}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, ease: 'easeOut', delay: index * 0.08 }}
-                className="group bg-offwhite rounded-2xl p-8 sm:p-9 border border-navy/10 hover:border-navy/20 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+                transition={{ duration: 0.4, ease: 'easeOut', delay: index * 0.06 }}
+                className="group bg-slate-50/70 rounded-xl p-7 sm:p-8 border border-slate-200/90 hover:border-slate-300 hover:bg-white hover:shadow-md transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-navy/10 mb-4">
-                    <span className="font-mono text-xs tracking-wider uppercase font-bold text-navy/60">
+                  <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 mb-4">
+                    <span className="font-mono text-xs tracking-wider uppercase font-semibold text-slate-500">
                       Pillar 0{index + 1}
                     </span>
-                    <CheckCircle2 className="w-4 h-4 text-navy/30 group-hover:text-blue transition-colors" />
+                    <CheckCircle2 className="w-4 h-4 text-slate-400 group-hover:text-blue transition-colors" />
                   </div>
 
-                  <h3 className="font-display font-bold text-xl sm:text-2xl text-navy mb-3 leading-snug">
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-navy mb-2.5 leading-snug">
                     {pillar.title}
                   </h3>
-                  <p className="text-ink/75 text-base sm:text-lg leading-relaxed m-0">
+                  <p className="text-slate-600 text-base leading-relaxed m-0">
                     {pillar.description}
                   </p>
                 </div>
@@ -170,22 +150,22 @@ export default function ServicePageTemplate({
       </section>
 
       {/* C) Cross-Sell Strip */}
-      <section data-glow-zone="true" className="w-full bg-navy text-offwhite py-20 md:py-24 border-t border-navy-light">
+      <section className="w-full bg-[#0B132B] text-slate-300 py-16 md:py-20 border-t border-slate-800">
         <div className="content-container text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan/20 bg-cyan/5 text-cyan text-xs font-mono tracking-widest uppercase mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
-            Interlocking Capabilities
+          <div className="flex items-center justify-center gap-2 text-xs font-mono tracking-widest uppercase text-slate-400 font-semibold mb-3">
+            <span className="w-2 h-2 bg-blue inline-block" />
+            <span>Interlocking Capabilities</span>
           </div>
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
             Explore our complementary divisions
           </h2>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 max-w-2xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 max-w-2xl mx-auto">
             {crossSell.map((item) => (
               <Link
                 key={item.route}
                 to={item.route}
-                className="rounded-xl border border-offwhite/20 bg-offwhite/5 text-offwhite hover:bg-white hover:text-navy px-6 py-3 text-sm font-display font-semibold transition-all duration-200 no-underline inline-flex items-center gap-2 shadow-sm"
+                className="rounded-md border border-white/15 bg-white/5 text-slate-200 hover:bg-white hover:text-navy px-5 py-2.5 text-sm font-semibold transition-all no-underline inline-flex items-center gap-2"
               >
                 <span>{item.name}</span>
                 <ArrowRight className="w-3.5 h-3.5" />

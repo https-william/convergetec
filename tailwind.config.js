@@ -15,13 +15,9 @@ export default {
         ink: '#111827',           // body text on light backgrounds
       },
       fontFamily: {
-        display: ['"Outfit"', 'sans-serif'],
-        outfit: ['"Outfit"', 'sans-serif'],
-        sans: ['"Outfit"', 'sans-serif'],
-        body: ['"Outfit"', 'sans-serif'],
-        tiempos: ['"Outfit"', 'sans-serif'],
-        claude: ['"Outfit"', 'sans-serif'],
-        serif: ['"Outfit"', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       spacing: {

@@ -1,48 +1,55 @@
 import Button from './Button';
-import { DoodleArrow } from './Doodles';
+import { ArrowRight, ShieldCheck, Mail, Calendar } from 'lucide-react';
 
 export default function CTASection() {
   return (
-    <section
-      data-glow-zone="true"
-      className="relative w-full bg-navy text-offwhite py-24 md:py-32 border-t border-navy-light/60 overflow-hidden"
-    >
+    <section className="relative w-full bg-slate-50 py-20 md:py-28 border-t border-slate-200/80">
       <div className="content-container relative z-10 text-center">
-        <div className="max-w-2xl mx-auto">
-          {/* Status Indicator */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan/20 bg-cyan/5 text-cyan text-xs font-mono tracking-widest uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
-            Executive Leadership
+        <div className="max-w-3xl mx-auto bg-white border border-slate-200/90 rounded-2xl p-8 sm:p-12 md:p-16 shadow-xl text-left sm:text-center">
+          {/* Category Tag */}
+          <div className="flex items-center sm:justify-center gap-2 text-xs font-semibold tracking-wider text-slate-500 uppercase mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+            <span>Executive Practice Intake</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-white mb-5 tracking-tight">
-            Ready to move from advice to live outcomes?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display text-navy mb-4 tracking-tight leading-tight">
+            Ready to transition strategy into production reality?
           </h2>
 
-          <p className="text-lg sm:text-xl text-offwhite/80 max-w-lg mx-auto mb-10 leading-relaxed font-normal">
-            Talk to ConvergeTec partners about your organisation&apos;s strategic and technological goals.
+          <p className="text-base sm:text-lg text-slate-600 max-w-xl sm:mx-auto mb-9 leading-relaxed font-normal">
+            Consult directly with ConvergeTec practice partners in Sydney and Melbourne to assess your
+            operating model, cloud systems, and delivery velocity.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 relative">
-            {/* Subtle corporate doodle arrow pointing to CTA */}
-            <div className="hidden lg:flex items-center gap-1.5 absolute -left-32 top-1/2 -translate-y-1/2 text-cyan pointer-events-none">
-              <span className="font-mono text-[11px] tracking-wider uppercase text-cyan/75">Talk to leads</span>
-              <DoodleArrow color="#00C4F0" className="w-8 h-6 rotate-[-10deg]" />
-            </div>
-
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 max-w-md sm:mx-auto mb-8">
             <Button
               to="/contact"
               variant="primary"
-              className="px-9 py-4 text-base font-display font-semibold shadow-xl shadow-blue/25 w-full sm:w-auto"
+              className="px-7 py-3.5 text-base font-display font-semibold rounded-md shadow-sm gap-2"
             >
-              Book a Discovery Call
+              <Calendar className="w-4 h-4" />
+              <span>Book Practice Discovery</span>
+              <ArrowRight className="w-4 h-4" />
             </Button>
+
             <a
               href="mailto:contact@convergetec.com.au"
-              className="px-5 py-4 text-sm font-mono tracking-wider text-offwhite/60 hover:text-white transition-colors no-underline"
+              className="px-5 py-3.5 text-sm font-medium text-slate-700 hover:text-navy hover:bg-slate-100 transition-colors no-underline inline-flex items-center justify-center gap-2 border border-slate-200 rounded-md bg-white"
             >
-              contact@convergetec.com.au
+              <Mail className="w-4 h-4 text-slate-500" />
+              <span>contact@convergetec.com.au</span>
             </a>
+          </div>
+
+          <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-500 font-medium">
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-slate-400" />
+              Direct Partner-Led Advisory
+            </span>
+            <span className="hidden sm:inline text-slate-300">•</span>
+            <span>Non-Disclosure Protected</span>
+            <span className="hidden sm:inline text-slate-300">•</span>
+            <span>Sydney &amp; Melbourne</span>
           </div>
         </div>
       </div>

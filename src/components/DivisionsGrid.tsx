@@ -5,14 +5,14 @@ const divisions = [
   {
     id: 'division-tile-1',
     divisionNumber: '01',
-    divisionTag: 'Strategy & Delivery',
+    divisionTag: 'Strategy & Advisory',
     title: 'ConvergeTec Consulting',
     description:
       'Executive advisory, business architecture, and transformation roadmaps structured for immediate technical execution.',
     href: '/services/consulting',
     icon: Compass,
-    image: '/images/bento-consulting.jpg',
-    imageAlt: 'Senior executive partners reviewing enterprise transformation roadmap overlooking Sydney Harbour',
+    image: '/images/practice-consulting.jpg',
+    imageAlt: 'Senior executive partners reviewing enterprise transformation roadmap in Sydney',
     badges: ['Operating Models', 'Executive Advisory', 'Transformation Roadmaps'],
     isWide: true,
     colSpan: 'lg:col-span-7',
@@ -26,8 +26,8 @@ const divisions = [
       'Custom cloud SaaS, enterprise API microservices, and workflow automations engineered around how your business actually runs.',
     href: '/services/digital-software',
     icon: Code2,
-    image: '/images/bento-digital.jpg',
-    imageAlt: 'Lead software architect and cloud engineer collaborating in modern tech laboratory',
+    image: '/images/practice-software.jpg',
+    imageAlt: 'Lead software architect and cloud engineer collaborating in modern tech studio',
     badges: ['Cloud Native SaaS', 'Microservices', 'Enterprise APIs'],
     isWide: false,
     colSpan: 'lg:col-span-5',
@@ -41,8 +41,8 @@ const divisions = [
       'Executive masterclasses and workforce certifications that institutionalise transformation capabilities internally.',
     href: '/services/academy',
     icon: GraduationCap,
-    image: '/images/bento-academy.jpg',
-    imageAlt: 'Executive masterclass on agile systems thinking in architectural amphitheatre',
+    image: '/images/practice-academy.jpg',
+    imageAlt: 'Executive capability masterclass and training session with corporate professionals',
     badges: ['Executive Masterclasses', 'Agile Systems', 'Workforce Upskilling'],
     isWide: false,
     colSpan: 'lg:col-span-5',
@@ -56,8 +56,8 @@ const divisions = [
       'Pre-vetted fractional executives, delivery leads, and technical specialists embedded directly into mission-critical initiatives.',
     href: '/services/resources-talent',
     icon: Users,
-    image: '/images/bento-talent.jpg',
-    imageAlt: 'Senior technology specialists and fractional leaders in Melbourne corporate atrium',
+    image: '/images/practice-talent.jpg',
+    imageAlt: 'Senior fractional technology executives and delivery leads in Sydney corporate lounge',
     badges: ['Fractional CXOs', 'Lead Architects', 'Embedded Delivery Squads'],
     isWide: true,
     colSpan: 'lg:col-span-7',
@@ -66,18 +66,18 @@ const divisions = [
 
 export default function DivisionsGrid() {
   return (
-    <section id="divisions-grid" className="w-full py-24 md:py-32 bg-white border-b border-navy/10">
+    <section id="divisions-grid" className="w-full py-16 md:py-20 bg-white border-b border-slate-200/80">
       <div className="content-container">
         {/* Section Header */}
-        <div className="text-center max-w-[680px] mx-auto mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-offwhite text-navy text-xs font-mono tracking-widest uppercase mb-4">
+        <div className="text-center max-w-[680px] mx-auto mb-12 md:mb-16">
+          <div className="flex items-center justify-center gap-2 text-xs font-semibold tracking-wider text-slate-500 uppercase mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-blue" />
-            Integrated Capabilities
+            <span>Integrated Capabilities</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy mb-4 tracking-tight">
             One Company. Four Divisions.
           </h2>
-          <p className="text-ink/75 text-lg sm:text-xl leading-relaxed">
+          <p className="text-slate-600 text-lg sm:text-xl leading-relaxed">
             Rather than juggling multiple fragmented suppliers, ConvergeTec unites strategy, software,
             training, and talent into one accountable engine.
           </p>

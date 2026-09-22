@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Compass, Code2, GraduationCap, Users } from 'lucide-react';
+import { Compass, Code2, GraduationCap, Users, ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
 
 const steps = [
   {
@@ -7,87 +8,168 @@ const steps = [
     stage: 'Advise & Diagnose',
     division: 'Consulting',
     icon: Compass,
-    description: 'Uncovering operational bottlenecks and architecting executable technical roadmaps.',
+    headline: 'Operating Model & Architecture',
+    description: 'Deconstruct legacy bottlenecks, architect target operating models, and structure executable technical roadmaps.',
+    deliverables: ['Target Operating Model (TOM)', 'Architecture Feasibility Matrix', 'Board Execution Roadmap'],
+    kpi: '3.4x Faster to Exec Sign-off',
   },
   {
     number: '02',
     stage: 'Architect & Build',
     division: 'Digital & Software',
     icon: Code2,
-    description: 'Engineering production-ready custom cloud software directly from the strategic blueprint.',
+    headline: 'Production Cloud Software',
+    description: 'Engineers co-located with strategic advisors translate blueprints directly into high-throughput cloud SaaS and APIs.',
+    deliverables: ['Cloud-Native Microservices', 'Enterprise API Gateways', 'Zero-Downtime CI/CD Pipelines'],
+    kpi: '99.95% Availability SLA',
   },
   {
     number: '03',
     stage: 'Equip & Upskill',
     division: 'Academy',
     icon: GraduationCap,
-    description: 'Training internal workforce capability so your teams own and operate the systems.',
+    headline: 'Workforce IP Retention',
+    description: 'Workforce cohorts and executive masterclasses ensure your in-house teams maintain, operate, and scale the technology.',
+    deliverables: ['Enterprise Agile Masterclasses', 'Architecture Certifications', 'Internal IP Playbooks'],
+    kpi: '100% Retained Enterprise IP',
   },
   {
     number: '04',
     stage: 'Staff & Scale',
     division: 'Resources & Talent',
     icon: Users,
-    description: 'Deploying embedded fractional leaders and specialist squads to sustain velocity.',
+    headline: 'Embedded Fractional Squads',
+    description: 'Deploy vetted fractional CTOs, engineering leads, and specialist pods directly into workstreams to maintain velocity.',
+    deliverables: ['Fractional CTO / Heads of Eng', 'Lead Full-Stack Triads', 'Embedded Agile Delivery Leads'],
+    kpi: '< 48h Deployment SLA',
   },
 ];
 
 export default function TransformationPipeline() {
+  const [activeStep, setActiveStep] = useState<number>(0);
+
   return (
-    <section className="w-full bg-offwhite py-24 md:py-32 border-b border-navy/10 relative overflow-hidden">
-      <div className="content-container">
+    <section className="w-full bg-offwhite py-16 sm:py-20 border-b border-slate-200/80 relative overflow-hidden">
+      <div className="content-container relative z-10">
         {/* Section Header */}
-        <div className="max-w-[660px] mx-auto text-center mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white text-navy text-xs font-mono tracking-widest uppercase mb-4 shadow-xs">
+        <div className="max-w-[720px] mx-auto text-center mb-12 sm:mb-16">
+          <div className="flex items-center justify-center gap-2 text-xs font-semibold tracking-wider text-slate-500 uppercase mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-blue" />
-            Operating Model
+            <span>Delivery Lifecycle</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy mb-4 tracking-tight">
-            The Transformation Lifecycle
+            The Continuous Delivery Lifecycle
           </h2>
-          <p className="text-ink/75 text-lg sm:text-xl leading-relaxed">
-            A cohesive path from strategic diagnosis to sustained operational scale — with zero vendor friction.
+          <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-[620px] mx-auto font-normal">
+            A cohesive lifecycle that connects strategic diagnosis directly to
+            running production code and in-house operational ownership.
           </p>
         </div>
 
-        {/* 4-Step Clean Horizontal Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-[1140px] mx-auto">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-7 sm:p-8 border border-navy/10 hover:border-navy/20 hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between pb-4 border-b border-navy/5 mb-5">
-                    <span className="font-mono text-sm font-bold text-blue">
-                      {step.number}
-                    </span>
-                    <span className="font-mono text-[11px] px-2.5 py-1 rounded-md bg-offwhite text-navy/70 uppercase tracking-wider font-semibold">
-                      {step.division}
-                    </span>
+        {/* Connected Architectural Pipeline Grid */}
+        <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              const isCurrent = activeStep === index;
+              return (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  onClick={() => setActiveStep(index)}
+                  className={`group cursor-pointer rounded-xl p-6 sm:p-7 border transition-all duration-200 flex flex-col justify-between ${
+                    isCurrent
+                      ? 'bg-white border-blue shadow-lg ring-1 ring-blue'
+                      : 'bg-white hover:bg-white border-slate-200 hover:border-slate-300 shadow-xs'
+                  }`}
+                >
+                  <div>
+                    {/* Top Step Header */}
+                    <div className="flex items-center justify-between pb-3.5 border-b border-slate-100 mb-5">
+                      <div className="flex items-center gap-2">
+                        <span
+                          className={`font-mono text-xs font-bold px-2 py-0.5 rounded ${
+                            isCurrent
+                              ? 'bg-blue text-white'
+                              : 'bg-slate-100 text-slate-700'
+                          }`}
+                        >
+                          {step.number}
+                        </span>
+                        <span className="font-mono text-xs uppercase tracking-wider text-slate-500 font-medium">
+                          {step.division}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Icon & Stage Title */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <div
+                        className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors shrink-0 ${
+                          isCurrent
+                            ? 'bg-blue text-white'
+                            : 'bg-slate-100 text-slate-700 group-hover:bg-slate-200'
+                        }`}
+                      >
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h3 className="font-display font-bold text-lg sm:text-xl text-navy leading-tight">
+                        {step.stage}
+                      </h3>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                      {step.description}
+                    </p>
+
+                    {/* Deliverable Checkpoints */}
+                    <div className="space-y-1.5 pt-3 border-t border-slate-100">
+                      {step.deliverables.map((item) => (
+                        <div key={item} className="flex items-start gap-1.5 text-xs text-slate-700 font-medium">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-blue shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="w-11 h-11 rounded-xl bg-offwhite text-navy flex items-center justify-center mb-4 border border-navy/10">
-                    <Icon className="w-5 h-5" />
+                  {/* Bottom Metric */}
+                  <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-xs font-mono">
+                    <span className="text-slate-900 font-semibold">
+                      {step.kpi}
+                    </span>
+                    <span className="text-slate-400 group-hover:text-slate-700 transition-colors flex items-center gap-0.5">
+                      Details
+                      <ChevronRight className="w-3 h-3" />
+                    </span>
                   </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
 
-                  <h3 className="font-display font-bold text-xl text-navy mb-2">
-                    {step.stage}
-                  </h3>
-
-                  <p className="text-ink/75 text-sm sm:text-base leading-relaxed m-0">
-                    {step.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* Closed-Loop Feedback Band */}
+        <div className="mt-8 p-5 rounded-xl bg-white border border-slate-200/80 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 max-w-4xl mx-auto">
+          <div>
+            <div className="font-bold text-sm sm:text-base text-navy">
+              Closed-Loop Operational Continuity
+            </div>
+            <div className="text-xs text-slate-600 mt-0.5">
+              Staffed specialists continuously feed operational and architecture metrics back into executive roadmaps.
+            </div>
+          </div>
+          <a
+            href="/services/consulting"
+            className="shrink-0 text-xs font-semibold text-navy hover:text-blue inline-flex items-center gap-1.5 no-underline"
+          >
+            <span>Read Delivery Governance Whitepaper</span>
+            <ArrowRight className="w-3.5 h-3.5 text-blue" />
+          </a>
         </div>
       </div>
     </section>

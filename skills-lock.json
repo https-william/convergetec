@@ -7,6 +7,13 @@
       "sourceType": "github",
       "skillPath": "skills/prompt-images/SKILL.md",
       "computedHash": "82253e3dea73850d33185aa2182c980fa86e34eb0dda50c9b071181123534c70"
+    },
+    "awesome-design-md": {
+      "source": "VoltAgent/awesome-design-md",
+      "ref": "main",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/awesome-design-md/SKILL.md",
+      "computedHash": "local"
     }
   }
 }

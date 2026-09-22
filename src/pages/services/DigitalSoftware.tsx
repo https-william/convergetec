@@ -41,8 +41,8 @@ export default function DigitalSoftware() {
       intro="Custom software, SaaS products, automation and systems integration."
       pillars={pillars}
       crossSell={crossSell}
-      heroImage="/images/digital-software-architecture.jpg"
-      imageCaption="Software Engineering // Cloud Systems & Architecture"
+      heroImage="/images/practice-software.jpg"
+      imageCaption="Software Engineering // Cloud Architecture & Systems"
     />
   );
 }

@@ -26,7 +26,6 @@ export default function DivisionCard({
   title,
   description,
   href,
-  icon: Icon,
   image,
   imageAlt,
   badges = [],
@@ -37,86 +36,64 @@ export default function DivisionCard({
   return (
     <motion.div
       id={id}
-      initial={{ opacity: 0, y: 15 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, ease: 'easeOut', delay }}
-      className={`group relative bg-white rounded-3xl p-6 sm:p-8 border border-navy/10 hover:border-navy/20 hover:shadow-2xl hover:shadow-navy/5 transition-all duration-300 flex flex-col justify-between h-full ${className}`}
+      transition={{ duration: 0.5, ease: 'easeOut', delay }}
+      className={`group relative bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between h-full overflow-hidden ${className}`}
     >
       <div>
-        {/* Supporting Photographic Visual Stage */}
+        {/* Supporting Visual: Clean Authentic Editorial Photo (No Information Pills or Overlays) */}
         <div
-          className={`relative w-full rounded-2xl overflow-hidden mb-6 border border-navy/10 bg-navy ${
+          className={`relative w-full rounded-xl overflow-hidden mb-6 bg-slate-100 border border-slate-200/60 ${
             isWide ? 'aspect-[16/10] sm:aspect-[21/10]' : 'aspect-[16/10] sm:aspect-[4/3]'
           }`}
         >
           <img
             src={image}
             alt={imageAlt}
-            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+            className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700 ease-out"
             loading="lazy"
           />
-          {/* Subtle Contrast Gradient */}
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent pointer-events-none"
-            aria-hidden="true"
-          />
-
-          {/* Floating Division Chip */}
-          <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy/85 backdrop-blur-md border border-white/20 text-offwhite text-[11px] sm:text-xs font-mono tracking-wider uppercase font-semibold shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
-            {divisionTag}
-          </div>
-
-          {/* Floating Division Number Index */}
-          <div className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 font-mono text-[11px] sm:text-xs font-bold text-offwhite/90 px-2.5 py-1 rounded-full bg-navy/85 backdrop-blur-md border border-white/20">
-            {divisionNumber}
-          </div>
         </div>
 
-        {/* Title & Icon */}
-        <div className="flex items-start gap-3.5 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-offwhite border border-navy/10 text-navy flex items-center justify-center group-hover:bg-blue group-hover:text-white group-hover:border-blue transition-colors duration-200 shrink-0 mt-0.5">
-            <Icon className="w-5 h-5" />
-          </div>
-          <div>
-            <Link
-              to={href}
-              className="font-display font-bold text-xl sm:text-2xl text-navy group-hover:text-blue transition-colors block no-underline leading-snug"
-            >
-              {title}
-            </Link>
-          </div>
+        {/* Division Category & Number */}
+        <div className="flex items-center justify-between text-xs font-semibold tracking-wider uppercase text-slate-400 mb-3">
+          <span>{divisionTag}</span>
+          <span className="font-mono text-slate-400">{divisionNumber}</span>
         </div>
 
-        {/* Concise Description */}
-        <p className="text-ink/75 text-sm sm:text-base leading-relaxed mb-5">
+        {/* Title */}
+        <h3 className="text-xl sm:text-2xl font-bold text-navy group-hover:text-blue transition-colors mb-2.5 leading-snug">
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-5 font-normal">
           {description}
         </p>
 
-        {/* Deliverable Capability Badges */}
+        {/* Capability Areas */}
         {badges.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-6">
-            {badges.map((badge) => (
-              <span
-                key={badge}
-                className="font-mono text-[11px] text-navy/80 bg-offwhite px-2.5 py-1 rounded-md border border-navy/10 font-medium"
-              >
-                {badge}
+          <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500 font-medium mb-6">
+            {badges.map((badge, i) => (
+              <span key={badge} className="flex items-center gap-1.5">
+                {i > 0 && <span className="text-slate-300">•</span>}
+                <span>{badge}</span>
               </span>
             ))}
           </div>
         )}
       </div>
 
-      {/* Clean Link Footer */}
-      <div className="pt-4 border-t border-navy/5 mt-auto flex items-center justify-between">
+      {/* Action Footer */}
+      <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
         <Link
           to={href}
-          className="text-sm font-display font-semibold text-blue group-hover:text-navy transition-colors inline-flex items-center gap-2 no-underline"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-navy group-hover:text-blue transition-colors no-underline"
         >
-          <span>Explore Practice</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />
+          <span>Explore Practice Capabilities</span>
+          <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
         </Link>
       </div>
     </motion.div>

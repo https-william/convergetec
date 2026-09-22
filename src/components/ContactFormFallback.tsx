@@ -47,7 +47,7 @@ export default function ContactFormFallback() {
               role="alert"
               className="rounded-2xl bg-blue/5 border border-blue/20 p-8 text-center"
             >
-              <div className="w-12 h-12 rounded-full bg-blue/10 text-blue mx-auto flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-blue/10 text-blue mx-auto flex items-center justify-center mb-4">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
               <h3 className="font-display text-navy font-bold text-xl mb-2">

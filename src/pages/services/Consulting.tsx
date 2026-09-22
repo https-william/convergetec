@@ -41,8 +41,8 @@ export default function Consulting() {
       intro="Advisory, transformation and implementation services across business analysis, project delivery, change management, data and AI."
       pillars={pillars}
       crossSell={crossSell}
-      heroImage="/images/consulting-strategy.jpg"
-      imageCaption="Advisory Practice // Enterprise Operating Model"
+      heroImage="/images/practice-consulting.jpg"
+      imageCaption="Advisory Practice // Enterprise Operating Model & Architecture"
     />
   );
 }

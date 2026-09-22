@@ -1,7 +1,7 @@
 import { type ReactNode, type ButtonHTMLAttributes } from 'react';
 import { Link } from 'react-router-dom';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'inverted';
+export type ButtonVariant = 'primary' | 'secondary' | 'inverted' | 'glow';
 
 interface BaseButtonProps {
   children?: ReactNode;
@@ -26,11 +26,13 @@ export type ButtonProps = LinkButtonProps | RegularButtonProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-blue text-offwhite hover:bg-cyan hover:text-navy shadow-sm',
+    'bg-navy text-white hover:bg-[#12295F] border border-navy/20 shadow-xs active:bg-[#09173D]',
+  glow:
+    'bg-blue text-white hover:bg-[#006fd6] border border-blue/20 shadow-xs active:bg-[#005fb8]',
   secondary:
-    'bg-transparent border border-navy text-navy hover:bg-navy hover:text-offwhite',
+    'bg-white border border-slate-200 text-navy hover:bg-slate-50 hover:border-slate-300 shadow-xs active:bg-slate-100',
   inverted:
-    'bg-offwhite text-navy hover:bg-navy hover:text-offwhite shadow-md',
+    'bg-white text-navy hover:bg-slate-100 border border-transparent shadow-xs',
 };
 
 export default function Button(props: ButtonProps) {
@@ -42,7 +44,7 @@ export default function Button(props: ButtonProps) {
   } = props;
 
   const baseClasses =
-    'inline-flex items-center justify-center font-semibold text-center transition-all duration-150 ease-out hover:scale-[1.03] active:scale-[0.98] rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 no-underline';
+    'inline-flex items-center justify-center font-medium text-center transition-colors duration-150 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 no-underline';
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${className}`.trim();
 

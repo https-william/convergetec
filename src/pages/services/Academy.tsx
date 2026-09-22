@@ -41,8 +41,8 @@ export default function Academy() {
       intro="Corporate training, professional development and online learning across business analysis, project management, transformation, technology and leadership."
       pillars={pillars}
       crossSell={crossSell}
-      heroImage="/images/academy-masterclass.jpg"
-      imageCaption="Capability Academy // Executive Transformation Masterclass"
+      heroImage="/images/practice-academy.jpg"
+      imageCaption="Capability Academy // Executive Agile Delivery Framework"
     />
   );
 }

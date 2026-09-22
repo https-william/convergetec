@@ -2,18 +2,18 @@ import { motion } from 'framer-motion';
 
 export default function AboutHero() {
   return (
-    <section className="w-full bg-offwhite pt-24 pb-16 md:pt-32 md:pb-24 border-b border-navy/10">
-      <div className="content-container">
+    <section className="relative w-full bg-offwhite pt-16 pb-16 md:pt-24 md:pb-24 border-b border-slate-200/80 overflow-hidden bg-grid-pattern">
+      <div className="content-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="max-w-[760px] mx-auto text-center mb-14 sm:mb-20"
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-navy/15 bg-white text-navy text-xs font-mono tracking-widest uppercase mb-6 shadow-2xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue" />
-            About ConvergeTec
+          {/* Minimal Eyebrow (Non-Pill) */}
+          <div className="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 font-semibold mb-4">
+            <span className="w-2 h-2 bg-blue inline-block" />
+            <span>About ConvergeTec // Operating Framework</span>
           </div>
 
           {/* Headline */}
@@ -21,32 +21,33 @@ export default function AboutHero() {
             One partner. Every stage of the journey.
           </h1>
 
-          {/* Clean 2-Sentence Intro */}
-          <p className="text-xl sm:text-2xl text-ink/80 leading-relaxed max-w-[640px] mx-auto font-normal">
+          {/* Intro */}
+          <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-[640px] mx-auto font-normal">
             ConvergeTec unifies strategic advisory, custom software engineering,
             corporate training, and specialist talent to deliver lasting enterprise scale.
           </p>
         </motion.div>
 
-        {/* Feature Hero Image with 2.5D Connected Art */}
+        {/* Feature Hero Image: Clean Authentic Photo Without Subtitles or Overlays */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="relative rounded-3xl overflow-hidden border border-navy/15 shadow-2xl shadow-navy/10 bg-navy aspect-[16/9] group">
+          <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-2xl shadow-navy/10 bg-navy aspect-[16/9] group">
             <img
-              src="/images/art-25d-about.jpg"
-              alt="2.5D editorial illustration of ConvergeTec practice leadership team presenting agile roadmap and cloud architecture"
+              src="/images/about-transformation-team.jpg"
+              alt="ConvergeTec leadership and advisory team conducting enterprise transformation roadmap planning in Sydney"
               className="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-700 ease-out"
               loading="eager"
             />
-            {/* Floating chip badge */}
-            <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy/85 backdrop-blur-md border border-white/20 text-offwhite text-xs font-mono tracking-wider uppercase font-semibold shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse" />
-              Unified Practice Leadership
-            </div>
+          </div>
+
+          {/* Clean Editorial Caption Below Image */}
+          <div className="mt-3.5 flex items-center justify-between text-xs font-mono text-slate-500">
+            <span>ConvergeTec Advisory Directorate // Sydney &amp; Melbourne Practice Leadership</span>
+            <span className="hidden sm:inline">100% Retained IP Standard</span>
           </div>
         </motion.div>
       </div>
