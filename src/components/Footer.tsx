@@ -3,7 +3,7 @@ import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#091124] text-slate-300 border-t border-slate-800">
+    <footer className="w-full bg-[#091124] dark:bg-[#050A18] text-slate-300 border-t border-slate-800 transition-colors duration-200">
       <div className="content-container py-14 md:py-20">
         {/* Top Brand Row */}
         <div className="mb-12 pb-10 border-b border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-6">

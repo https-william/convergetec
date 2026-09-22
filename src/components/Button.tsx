@@ -26,13 +26,13 @@ export type ButtonProps = LinkButtonProps | RegularButtonProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-navy text-white hover:bg-[#12295F] border border-navy/20 shadow-xs active:bg-[#09173D]',
+    'bg-navy text-white hover:bg-[#12295F] border border-navy/20 dark:bg-blue dark:border-blue/30 dark:hover:bg-[#006fd6] shadow-xs active:bg-[#09173D]',
   glow:
     'bg-blue text-white hover:bg-[#006fd6] border border-blue/20 shadow-xs active:bg-[#005fb8]',
   secondary:
-    'bg-white border border-slate-200 text-navy hover:bg-slate-50 hover:border-slate-300 shadow-xs active:bg-slate-100',
+    'bg-white border border-slate-200 text-navy hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-800 dark:border-slate-700 dark:text-white dark:hover:bg-slate-700 shadow-xs active:bg-slate-100',
   inverted:
-    'bg-white text-navy hover:bg-slate-100 border border-transparent shadow-xs',
+    'bg-white text-navy hover:bg-slate-100 border border-transparent shadow-xs dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800',
 };
 
 export default function Button(props: ButtonProps) {

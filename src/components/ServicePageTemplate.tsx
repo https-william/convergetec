@@ -43,23 +43,23 @@ export default function ServicePageTemplate({
       />
 
       {/* A) Hero Block */}
-      <section className="relative w-full py-16 md:py-24 border-b border-slate-200/80 overflow-hidden bg-offwhite">
+      <section className="relative w-full py-16 md:py-24 border-b border-slate-200/80 dark:border-slate-800 overflow-hidden bg-offwhite dark:bg-[#070D1E] transition-colors duration-200">
         <div className="content-container relative z-10">
           <div className={heroImage ? 'grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center' : ''}>
             <div className={heroImage ? 'lg:col-span-7 xl:col-span-7 max-w-[660px]' : 'max-w-[760px]'}>
               {/* Pop Print Eyebrow */}
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue dark:text-cyan mb-4 px-3 py-1 rounded-full bg-blue/5 dark:bg-cyan/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
                 <span>Practice Division — {eyebrow}</span>
               </div>
 
               {/* Pop Print Headline */}
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-navy leading-[1.08] tracking-tight mb-6">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-navy dark:text-white leading-[1.08] tracking-tight mb-6">
                 {headline}
               </h1>
 
               {/* Intro Paragraph */}
-              <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
+              <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
                 {intro}
               </p>
 
@@ -68,14 +68,14 @@ export default function ServicePageTemplate({
                 <Button
                   to="/contact"
                   variant="primary"
-                  className="px-7 py-3.5 text-base font-display font-semibold rounded-md shadow-sm"
+                  className="px-7 py-3.5 text-base font-display font-semibold rounded-xl shadow-sm"
                 >
                   Book a Practice Discovery Call
                 </Button>
               </div>
             </div>
 
-            {/* Right Column: Clean Hero Photograph (No Subtitles or Pills on the Image) */}
+            {/* Right Column: Clean Hero Photograph */}
             {heroImage && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ export default function ServicePageTemplate({
                 transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
                 className="lg:col-span-5 xl:col-span-5 relative"
               >
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl shadow-navy/5 bg-navy aspect-[4/3] group">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-xl shadow-navy/5 dark:shadow-2xl bg-navy dark:bg-slate-900 aspect-[4/3] group">
                   <img
                     src={heroImage}
                     alt={headline}
@@ -94,9 +94,9 @@ export default function ServicePageTemplate({
 
                 {/* Clean Caption Below Image */}
                 {imageCaption && (
-                  <div className="mt-3 flex items-center justify-between text-xs text-slate-500 font-medium">
+                  <div className="mt-3 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
                     <span>{imageCaption}</span>
-                    <span className="text-slate-400 hidden sm:inline">Active Practice</span>
+                    <span className="text-slate-400 dark:text-slate-500 hidden sm:inline">Active Practice</span>
                   </div>
                 )}
               </motion.div>
@@ -106,14 +106,14 @@ export default function ServicePageTemplate({
       </section>
 
       {/* B) Pillars Grid */}
-      <section className="w-full bg-white py-20 md:py-28 border-b border-slate-200/80">
+      <section className="w-full bg-white dark:bg-[#070D1E] py-20 md:py-28 border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
         <div className="content-container">
           <div className="max-w-[640px] mb-14 sm:mb-16">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-500 font-bold mb-2">
-              <span className="w-2 h-2 bg-blue inline-block rounded-full" />
+            <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold mb-2">
+              <span className="w-2 h-2 bg-blue dark:bg-cyan inline-block rounded-full" />
               <span>Capabilities &amp; Deliverables</span>
             </div>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-navy dark:text-white">
               Core Practice Pillars
             </h2>
           </div>
@@ -126,20 +126,20 @@ export default function ServicePageTemplate({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: 'easeOut', delay: index * 0.06 }}
-                className="group bg-slate-50/70 rounded-xl p-7 sm:p-8 border border-slate-200/90 hover:border-slate-300 hover:bg-white hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+                className="group bg-slate-50/70 dark:bg-[#0D162B] rounded-xl p-7 sm:p-8 border border-slate-200/90 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-[#121E38] hover:shadow-md dark:hover:shadow-black/40 transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 mb-4">
-                    <span className="text-xs tracking-wider uppercase font-semibold text-slate-500">
+                  <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 dark:border-slate-800 mb-4">
+                    <span className="text-xs tracking-wider uppercase font-semibold text-slate-500 dark:text-slate-400">
                       Pillar 0{index + 1}
                     </span>
-                    <CheckCircle2 className="w-4 h-4 text-slate-400 group-hover:text-blue transition-colors" />
+                    <CheckCircle2 className="w-4 h-4 text-slate-400 group-hover:text-blue dark:group-hover:text-cyan transition-colors" />
                   </div>
 
-                  <h3 className="font-display font-bold text-xl sm:text-2xl text-navy mb-2.5 leading-snug">
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-navy dark:text-white mb-2.5 leading-snug">
                     {pillar.title}
                   </h3>
-                  <p className="text-slate-600 text-base leading-relaxed m-0">
+                  <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed m-0">
                     {pillar.description}
                   </p>
                 </div>
@@ -150,10 +150,10 @@ export default function ServicePageTemplate({
       </section>
 
       {/* C) Cross-Sell Strip */}
-      <section className="w-full bg-[#0B132B] text-slate-300 py-16 md:py-20 border-t border-slate-800">
+      <section className="w-full bg-[#0B132B] dark:bg-[#050A18] text-slate-300 py-16 md:py-20 border-t border-slate-800 transition-colors duration-200">
         <div className="content-container text-center">
           <div className="flex items-center justify-center gap-2 text-xs tracking-wider uppercase text-slate-400 font-bold mb-3">
-            <span className="w-2 h-2 bg-blue inline-block rounded-full" />
+            <span className="w-2 h-2 bg-blue dark:bg-cyan inline-block rounded-full" />
             <span>Interlocking Capabilities</span>
           </div>
           <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">

@@ -61,17 +61,40 @@
     --input: rgba(11, 30, 77, 0.2);
     --ring: #0078E0;
   }
+
+  .dark {
+    --background: #070D1E;
+    --foreground: #F8FAFC;
+    --card: #0D162B;
+    --card-foreground: #F8FAFC;
+    --popover: #0D162B;
+    --popover-foreground: #F8FAFC;
+    --primary: #0078E0;
+    --primary-foreground: #FFFFFF;
+    --secondary: #12295F;
+    --secondary-foreground: #F8FAFC;
+    --muted: rgba(255, 255, 255, 0.08);
+    --muted-foreground: rgba(248, 250, 252, 0.65);
+    --accent: rgba(0, 196, 240, 0.15);
+    --accent-foreground: #00C4F0;
+    --destructive: #EF4444;
+    --destructive-foreground: #FFFFFF;
+    --border: rgba(255, 255, 255, 0.12);
+    --input: rgba(255, 255, 255, 0.18);
+    --ring: #0078E0;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-offwhite text-ink min-h-screen antialiased;
+    @apply bg-offwhite text-ink dark:bg-[#070D1E] dark:text-slate-100 min-h-screen antialiased;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   h1, h2, h3, h4 {
-    @apply text-navy tracking-tight;
+    @apply text-navy dark:text-white tracking-tight;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
@@ -80,7 +103,7 @@
   }
 
   a {
-    @apply text-blue hover:text-navy transition-colors;
+    @apply text-blue hover:text-navy dark:hover:text-cyan transition-colors;
   }
 }
 

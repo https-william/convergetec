@@ -62,18 +62,18 @@ const divisions = [
 
 export default function DivisionsGrid() {
   return (
-    <section id="divisions-grid" className="w-full py-16 md:py-20 bg-white border-b border-slate-200/80">
+    <section id="divisions-grid" className="w-full py-16 md:py-20 bg-white dark:bg-[#070D1E] border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
       <div className="content-container">
         {/* Section Header */}
         <div className="text-center max-w-[680px] mx-auto mb-12 md:mb-16">
-          <div className="flex items-center justify-center gap-2 text-xs font-semibold tracking-wider text-slate-500 uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue" />
+          <div className="flex items-center justify-center gap-2 text-xs font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
             <span>Integrated Capabilities</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy dark:text-white mb-4 tracking-tight">
             One Company. Four Divisions.
           </h2>
-          <p className="text-slate-600 text-lg sm:text-xl leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
             Rather than juggling multiple fragmented suppliers, ConvergeTec unites strategy, software,
             training, and talent into one accountable engine.
           </p>

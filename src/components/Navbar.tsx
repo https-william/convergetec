@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Button from './Button';
+import ThemeToggle from './ThemeToggle';
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -40,15 +41,15 @@ export default function Navbar() {
         setMobileMenuOpen(false);
       }
     }
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const isServicesActive = location.pathname.startsWith('/services');
   const isProductsActive = location.pathname.startsWith('/products');
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
+    <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-[#070D1E]/95 backdrop-blur-md border-b border-slate-200/90 dark:border-slate-800 shadow-xs transition-colors duration-200">
       {/* Main Architectural Navigation Bar */}
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 py-3.5 sm:py-4 flex items-center justify-between">
         {/* Brand Identity */}
@@ -64,18 +65,18 @@ export default function Navbar() {
             className="h-8 w-8 object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
           />
           <div className="flex flex-col">
-            <span className="font-display font-bold text-2xl tracking-tight text-navy group-hover:text-blue transition-colors leading-none">
+            <span className="font-display font-bold text-2xl tracking-tight text-navy dark:text-white group-hover:text-blue transition-colors leading-none">
               ConvergeTec
             </span>
-            <span className="text-[11px] font-semibold tracking-wider uppercase text-slate-400 mt-0.5">
+            <span className="text-[11px] font-semibold tracking-wider uppercase text-slate-400 dark:text-slate-400 mt-0.5">
               Transformation &amp; Technology
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links (Switches at lg: 1024px to prevent tablet crowding) */}
         <nav
-          className="hidden md:flex items-center"
+          className="hidden lg:flex items-center"
           aria-label="Main Navigation"
         >
           <NavigationMenu>
@@ -89,8 +90,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `text-sm font-medium transition-colors no-underline px-3.5 py-2 rounded-lg ${
                       isActive
-                        ? 'text-navy font-semibold bg-slate-100/80'
-                        : 'text-slate-600 hover:text-navy hover:bg-slate-50'
+                        ? 'text-navy dark:text-white font-semibold bg-slate-100/80 dark:bg-slate-800'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60'
                     }`
                   }
                 >
@@ -106,8 +107,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `text-sm font-medium transition-colors no-underline px-3.5 py-2 rounded-lg ${
                       isActive
-                        ? 'text-navy font-semibold bg-slate-100/80'
-                        : 'text-slate-600 hover:text-navy hover:bg-slate-50'
+                        ? 'text-navy dark:text-white font-semibold bg-slate-100/80 dark:bg-slate-800'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60'
                     }`
                   }
                 >
@@ -120,13 +121,13 @@ export default function Navbar() {
                 <NavigationMenuTrigger
                   className={`text-sm font-medium px-3.5 py-2 rounded-lg bg-transparent transition-colors ${
                     isServicesActive
-                      ? 'text-navy font-semibold bg-slate-100/80'
-                      : 'text-slate-600 hover:text-navy hover:bg-slate-50'
+                      ? 'text-navy dark:text-white font-semibold bg-slate-100/80 dark:bg-slate-800'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60'
                   }`}
                 >
                   Practice Divisions
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="p-2.5 bg-white rounded-2xl shadow-xl">
+                <NavigationMenuContent className="p-2.5 bg-white dark:bg-[#0D162B] rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800">
                   <div className="flex flex-col space-y-1 w-[360px]">
                     {serviceLinks.map((service) => (
                       <NavLink
@@ -136,13 +137,13 @@ export default function Navbar() {
                         className={({ isActive }) =>
                           `block px-3.5 py-2.5 rounded-xl no-underline transition-colors ${
                             isActive
-                              ? 'bg-blue/5 text-blue font-semibold'
-                              : 'text-slate-700 hover:bg-slate-50 hover:text-navy'
+                              ? 'bg-blue/5 dark:bg-blue/15 text-blue font-semibold'
+                              : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-navy dark:hover:text-white'
                           }`
                         }
                       >
                         <span className="block text-sm font-semibold">{service.name}</span>
-                        <span className="block text-xs text-slate-500 font-normal mt-0.5">
+                        <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
                           {service.desc}
                         </span>
                       </NavLink>
@@ -156,32 +157,32 @@ export default function Navbar() {
                 <NavigationMenuTrigger
                   className={`text-sm font-medium px-3.5 py-2 rounded-lg bg-transparent transition-colors ${
                     isProductsActive
-                      ? 'text-navy font-semibold bg-slate-100/80'
-                      : 'text-slate-600 hover:text-navy hover:bg-slate-50'
+                      ? 'text-navy dark:text-white font-semibold bg-slate-100/80 dark:bg-slate-800'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60'
                   }`}
                 >
                   Our Products
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="p-2.5 bg-white rounded-2xl shadow-xl">
+                <NavigationMenuContent className="p-2.5 bg-white dark:bg-[#0D162B] rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800">
                   <div className="flex flex-col space-y-1 w-[380px]">
                     {productLinks.map((product) => (
                       <NavLink
                         key={product.name}
                         to={product.path}
                         onClick={closeMenus}
-                        className="block px-3.5 py-2.5 rounded-xl no-underline transition-colors text-slate-700 hover:bg-slate-50 hover:text-navy"
+                        className="block px-3.5 py-2.5 rounded-xl no-underline transition-colors text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-navy dark:hover:text-white"
                       >
                         <span className="block text-sm font-semibold">{product.name}</span>
-                        <span className="block text-xs text-slate-500 font-normal mt-0.5">
+                        <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
                           {product.desc}
                         </span>
                       </NavLink>
                     ))}
-                    <div className="pt-2 mt-1 border-t border-slate-100">
+                    <div className="pt-2 mt-1 border-t border-slate-100 dark:border-slate-800">
                       <Link
                         to="/products"
                         onClick={closeMenus}
-                        className="block px-3.5 py-2 text-xs font-semibold text-blue hover:text-navy no-underline rounded-lg hover:bg-slate-50"
+                        className="block px-3.5 py-2 text-xs font-semibold text-blue dark:text-cyan hover:text-navy dark:hover:text-white no-underline rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60"
                       >
                         View All Products Overview &rarr;
                       </Link>
@@ -198,8 +199,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `text-sm font-medium transition-colors no-underline px-3.5 py-2 rounded-lg ${
                       isActive
-                        ? 'text-navy font-semibold bg-slate-100/80'
-                        : 'text-slate-600 hover:text-navy hover:bg-slate-50'
+                        ? 'text-navy dark:text-white font-semibold bg-slate-100/80 dark:bg-slate-800'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60'
                     }`
                   }
                 >
@@ -210,26 +211,28 @@ export default function Navbar() {
           </NavigationMenu>
         </nav>
 
-        {/* Desktop Action CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Desktop Action CTA & Theme Toggle */}
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4">
+          <ThemeToggle />
           <Button
             to="/contact"
             variant="primary"
             onClick={closeMenus}
-            className="px-5 py-2.5 text-sm font-display font-semibold rounded-md shadow-sm"
+            className="px-5 py-2.5 text-sm font-display font-semibold rounded-md shadow-sm whitespace-nowrap"
           >
             Book Discovery Call
           </Button>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="flex md:hidden items-center">
+        {/* Mobile & Tablet Toggle + Theme Toggle (< 1024px) */}
+        <div className="flex lg:hidden items-center gap-2">
+          <ThemeToggle />
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="p-2 text-slate-700 hover:text-navy focus:outline-none"
+            className="p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none"
           >
             {mobileMenuOpen ? (
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -244,10 +247,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile & Tablet Drawer Navigation (< 1024px) */}
       {mobileMenuOpen && (
         <div
-          className="md:hidden fixed inset-x-0 top-[73px] bottom-0 bg-white text-navy overflow-y-auto z-40 border-t border-slate-200"
+          className="lg:hidden fixed inset-x-0 top-[73px] h-[calc(100dvh-73px)] bg-white dark:bg-[#070D1E] text-navy dark:text-white overflow-y-auto z-40 border-t border-slate-200 dark:border-slate-800 transition-colors duration-200"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
@@ -260,7 +263,9 @@ export default function Navbar() {
                 onClick={closeMenus}
                 className={({ isActive }) =>
                   `py-2 transition-colors no-underline ${
-                    isActive ? 'text-blue font-bold pl-2 border-l-4 border-blue' : 'text-slate-800 hover:text-blue'
+                    isActive
+                      ? 'text-blue font-bold pl-2 border-l-4 border-blue'
+                      : 'text-slate-800 dark:text-slate-200 hover:text-blue'
                   }`
                 }
               >
@@ -272,7 +277,9 @@ export default function Navbar() {
                 onClick={closeMenus}
                 className={({ isActive }) =>
                   `py-2 transition-colors no-underline ${
-                    isActive ? 'text-blue font-bold pl-2 border-l-4 border-blue' : 'text-slate-800 hover:text-blue'
+                    isActive
+                      ? 'text-blue font-bold pl-2 border-l-4 border-blue'
+                      : 'text-slate-800 dark:text-slate-200 hover:text-blue'
                   }`
                 }
               >
@@ -285,7 +292,7 @@ export default function Navbar() {
                   type="button"
                   onClick={() => setMobileAccordionOpen((prev) => !prev)}
                   className={`w-full flex items-center justify-between py-2 text-left font-display text-xl transition-colors cursor-pointer bg-transparent border-none ${
-                    isServicesActive ? 'text-blue font-bold' : 'text-slate-800 hover:text-blue'
+                    isServicesActive ? 'text-blue font-bold' : 'text-slate-800 dark:text-slate-200 hover:text-blue'
                   }`}
                   aria-expanded={mobileAccordionOpen}
                 >
@@ -305,7 +312,7 @@ export default function Navbar() {
                 </button>
 
                 {mobileAccordionOpen && (
-                  <div className="pl-4 mt-2 space-y-2 border-l-2 border-slate-200">
+                  <div className="pl-4 mt-2 space-y-2 border-l-2 border-slate-200 dark:border-slate-800">
                     {serviceLinks.map((service) => (
                       <NavLink
                         key={service.path}
@@ -313,7 +320,7 @@ export default function Navbar() {
                         onClick={closeMenus}
                         className={({ isActive }) =>
                           `block py-2 text-base font-body transition-colors no-underline ${
-                            isActive ? 'text-blue font-semibold' : 'text-slate-600 hover:text-blue'
+                            isActive ? 'text-blue font-semibold' : 'text-slate-600 dark:text-slate-400 hover:text-blue'
                           }`
                         }
                       >
@@ -330,7 +337,7 @@ export default function Navbar() {
                   type="button"
                   onClick={() => setMobileProductsAccordionOpen((prev) => !prev)}
                   className={`w-full flex items-center justify-between py-2 text-left font-display text-xl transition-colors cursor-pointer bg-transparent border-none ${
-                    isProductsActive ? 'text-blue font-bold' : 'text-slate-800 hover:text-blue'
+                    isProductsActive ? 'text-blue font-bold' : 'text-slate-800 dark:text-slate-200 hover:text-blue'
                   }`}
                   aria-expanded={mobileProductsAccordionOpen}
                 >
@@ -350,7 +357,7 @@ export default function Navbar() {
                 </button>
 
                 {mobileProductsAccordionOpen && (
-                  <div className="pl-4 mt-2 space-y-2 border-l-2 border-slate-200">
+                  <div className="pl-4 mt-2 space-y-2 border-l-2 border-slate-200 dark:border-slate-800">
                     {productLinks.map((product) => (
                       <NavLink
                         key={product.name}
@@ -358,7 +365,7 @@ export default function Navbar() {
                         onClick={closeMenus}
                         className={({ isActive }) =>
                           `block py-2 text-base font-body transition-colors no-underline ${
-                            isActive ? 'text-blue font-semibold' : 'text-slate-600 hover:text-blue'
+                            isActive ? 'text-blue font-semibold' : 'text-slate-600 dark:text-slate-400 hover:text-blue'
                           }`
                         }
                       >
@@ -368,7 +375,7 @@ export default function Navbar() {
                     <Link
                       to="/products"
                       onClick={closeMenus}
-                      className="block py-2 text-sm font-semibold text-blue no-underline"
+                      className="block py-2 text-sm font-semibold text-blue dark:text-cyan no-underline"
                     >
                       View All Products &rarr;
                     </Link>
@@ -381,7 +388,9 @@ export default function Navbar() {
                 onClick={closeMenus}
                 className={({ isActive }) =>
                   `py-2 transition-colors no-underline ${
-                    isActive ? 'text-blue font-bold pl-2 border-l-4 border-blue' : 'text-slate-800 hover:text-blue'
+                    isActive
+                      ? 'text-blue font-bold pl-2 border-l-4 border-blue'
+                      : 'text-slate-800 dark:text-slate-200 hover:text-blue'
                   }`
                 }
               >
@@ -389,12 +398,12 @@ export default function Navbar() {
               </NavLink>
             </nav>
 
-            <div className="pt-8 mt-8 border-t border-slate-200">
+            <div className="pt-8 mt-8 border-t border-slate-200 dark:border-slate-800">
               <Button
                 to="/contact"
                 variant="primary"
                 onClick={closeMenus}
-                className="w-full py-3.5 text-base font-display rounded-md"
+                className="w-full py-3.5 text-base font-display rounded-xl"
               >
                 Book a Discovery Call
               </Button>

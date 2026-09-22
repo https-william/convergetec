@@ -1,18 +1,18 @@
-import { useState, type FormEvent } from 'react';
+import { useState } from 'react';
+import { Send, CheckCircle2 } from 'lucide-react';
 import Button from './Button';
-import { CheckCircle2, Send } from 'lucide-react';
 
 const topics = [
-  'Strategic Advisory',
-  'Custom Cloud Software',
-  'Workforce Academy',
-  'Embedded Talent',
-  'Full Transformation',
+  'Operating Model Transformation',
+  'Custom Software & Cloud Systems',
+  'Workforce Capability Academy',
+  'Fractional Leadership & Talent',
+  'Product Partnership / Joint Venture',
 ];
 
 export default function ContactFormFallback() {
-  const [selectedTopic, setSelectedTopic] = useState<string>('Full Transformation');
   const [submitted, setSubmitted] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState(topics[0]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,24 +20,24 @@ export default function ContactFormFallback() {
     message: '',
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submission:', { ...formData, topic: selectedTopic });
+    if (!formData.name || !formData.email || !formData.message) return;
     setSubmitted(true);
   };
 
   return (
-    <section className="w-full bg-offwhite py-16 sm:py-24 border-t border-navy/10">
+    <section id="contact-form-section" className="w-full bg-offwhite dark:bg-[#070D1E] py-16 sm:py-24 border-t border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
       <div className="content-container">
-        <div className="max-w-[720px] mx-auto bg-white rounded-2xl shadow-xl shadow-navy/5 border border-navy/10 p-8 sm:p-12">
+        <div className="max-w-[720px] mx-auto bg-white dark:bg-[#0D162B] rounded-2xl shadow-xl shadow-navy/5 dark:shadow-2xl border border-slate-200/90 dark:border-slate-800 p-8 sm:p-12 transition-colors duration-200">
           <div className="mb-10">
-            <span className="text-xs uppercase tracking-wider text-blue font-bold block mb-2">
+            <span className="text-xs uppercase tracking-wider text-blue dark:text-cyan font-bold block mb-2">
               Direct Inquiries
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold font-display text-navy mb-3">
+            <h2 className="text-2xl sm:text-3xl font-bold font-display text-navy dark:text-white mb-3">
               Send a Direct Message
             </h2>
-            <p className="text-ink/75 text-base sm:text-lg m-0 leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg m-0 leading-relaxed">
               Our Sydney &amp; Melbourne leadership responds within one business day.
             </p>
           </div>
@@ -45,15 +45,15 @@ export default function ContactFormFallback() {
           {submitted ? (
             <div
               role="alert"
-              className="rounded-2xl bg-blue/5 border border-blue/20 p-8 text-center"
+              className="rounded-2xl bg-blue/5 dark:bg-blue/10 border border-blue/20 dark:border-blue/30 p-8 text-center"
             >
-              <div className="w-12 h-12 rounded-xl bg-blue/10 text-blue mx-auto flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-blue/10 dark:bg-blue/20 text-blue dark:text-cyan mx-auto flex items-center justify-center mb-4">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
-              <h3 className="font-display text-navy font-bold text-xl mb-2">
+              <h3 className="font-display text-navy dark:text-white font-bold text-xl mb-2">
                 Inquiry Dispatched
               </h3>
-              <p className="text-ink/80 text-base max-w-sm mx-auto m-0 leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-base max-w-sm mx-auto m-0 leading-relaxed">
                 Thank you. A ConvergeTec practice lead will follow up with you within one business day.
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function ContactFormFallback() {
             <form onSubmit={handleSubmit} className="space-y-7" noValidate={false}>
               {/* Interactive Topic Selector */}
               <div>
-                <label className="block font-display text-xs font-semibold uppercase tracking-wider text-navy mb-3">
+                <label className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-3">
                   How can we help?
                 </label>
                 <div className="flex flex-wrap gap-2.5">
@@ -75,7 +75,7 @@ export default function ContactFormFallback() {
                         className={`px-4 py-2 rounded-xl text-xs font-medium transition-all duration-200 cursor-pointer border ${
                           isSelected
                             ? 'bg-blue text-white border-blue shadow-sm'
-                            : 'bg-offwhite text-navy/70 border-navy/10 hover:border-navy/30'
+                            : 'bg-offwhite dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600'
                         }`}
                       >
                         {topic}
@@ -90,9 +90,9 @@ export default function ContactFormFallback() {
                 <div>
                   <label
                     htmlFor="contact-name"
-                    className="block font-display text-xs font-semibold uppercase tracking-wider text-navy mb-2"
+                    className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-2"
                   >
-                    Your Name <span className="text-blue" aria-hidden="true">*</span>
+                    Your Name <span className="text-blue dark:text-cyan" aria-hidden="true">*</span>
                   </label>
                   <input
                     type="text"
@@ -102,7 +102,7 @@ export default function ContactFormFallback() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Jane Doe"
-                    className="w-full rounded-xl border border-navy/15 bg-offwhite/50 px-4 py-3.5 font-body text-ink text-base transition-all focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent focus:bg-white"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-offwhite/50 dark:bg-slate-900/80 px-4 py-3.5 font-body text-slate-900 dark:text-white text-base transition-all focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent focus:bg-white dark:focus:bg-slate-900"
                   />
                 </div>
 
@@ -110,9 +110,9 @@ export default function ContactFormFallback() {
                 <div>
                   <label
                     htmlFor="contact-email"
-                    className="block font-display text-xs font-semibold uppercase tracking-wider text-navy mb-2"
+                    className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-2"
                   >
-                    Work Email <span className="text-blue" aria-hidden="true">*</span>
+                    Work Email <span className="text-blue dark:text-cyan" aria-hidden="true">*</span>
                   </label>
                   <input
                     type="email"
@@ -122,7 +122,7 @@ export default function ContactFormFallback() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="jane@enterprise.com.au"
-                    className="w-full rounded-xl border border-navy/15 bg-offwhite/50 px-4 py-3.5 font-body text-ink text-base transition-all focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent focus:bg-white"
+                    className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-offwhite/50 dark:bg-slate-900/80 px-4 py-3.5 font-body text-slate-900 dark:text-white text-base transition-all focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent focus:bg-white dark:focus:bg-slate-900"
                   />
                 </div>
               </div>
@@ -131,7 +131,7 @@ export default function ContactFormFallback() {
               <div>
                 <label
                   htmlFor="contact-company"
-                  className="block font-display text-xs font-semibold uppercase tracking-wider text-navy mb-2"
+                  className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-2"
                 >
                   Organisation
                 </label>
@@ -142,7 +142,7 @@ export default function ContactFormFallback() {
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   placeholder="Company or Department Name"
-                  className="w-full rounded-xl border border-navy/15 bg-offwhite/50 px-4 py-3.5 font-body text-ink text-base transition-all focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent focus:bg-white"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-offwhite/50 dark:bg-slate-900/80 px-4 py-3.5 font-body text-slate-900 dark:text-white text-base transition-all focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent focus:bg-white dark:focus:bg-slate-900"
                 />
               </div>
 
@@ -150,9 +150,9 @@ export default function ContactFormFallback() {
               <div>
                 <label
                   htmlFor="contact-message"
-                  className="block font-display text-xs font-semibold uppercase tracking-wider text-navy mb-2"
+                  className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-2"
                 >
-                  Project Context <span className="text-blue" aria-hidden="true">*</span>
+                  Project Context <span className="text-blue dark:text-cyan" aria-hidden="true">*</span>
                 </label>
                 <textarea
                   id="contact-message"
@@ -162,7 +162,7 @@ export default function ContactFormFallback() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us about the initiative or challenge..."
-                  className="w-full rounded-xl border border-navy/15 bg-offwhite/50 px-4 py-3.5 font-body text-ink text-base transition-all focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent focus:bg-white resize-y leading-relaxed"
+                  className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-offwhite/50 dark:bg-slate-900/80 px-4 py-3.5 font-body text-slate-900 dark:text-white text-base transition-all focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent focus:bg-white dark:focus:bg-slate-900 resize-y leading-relaxed"
                 />
               </div>
 

@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { ThemeProvider } from './context/ThemeContext';
 
 
 // Code-split route components with React.lazy
@@ -68,7 +69,7 @@ function AnimatedRoutes() {
 
 function Layout() {
   return (
-    <div className="flex flex-col min-h-screen bg-offwhite text-ink font-body">
+    <div className="flex flex-col min-h-screen bg-offwhite text-ink dark:bg-[#070D1E] dark:text-slate-100 font-body transition-colors duration-200">
       {/* Skip to Main Content Link for Keyboard Users */}
       <a
         href="#main-content"
@@ -91,10 +92,12 @@ function Layout() {
 export default function App() {
   return (
     <HelmetProvider>
-      <Router>
-        <ScrollToTop />
-        <Layout />
-      </Router>
+      <ThemeProvider>
+        <Router>
+          <ScrollToTop />
+          <Layout />
+        </Router>
+      </ThemeProvider>
     </HelmetProvider>
   );
 }
