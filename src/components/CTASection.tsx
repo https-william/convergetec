@@ -7,7 +7,7 @@ export default function CTASection() {
       <div className="content-container relative z-10 text-center">
         <div className="max-w-5xl mx-auto bg-white dark:bg-[#0D162B] border border-slate-200/90 dark:border-slate-800 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl shadow-navy/5 dark:shadow-2xl text-center transition-all duration-200">
           {/* Eyebrow */}
-          <div className="inline-flex items-center justify-center gap-2 text-xs font-bold tracking-wider text-blue dark:text-cyan uppercase mb-5 px-3 py-1 rounded-full bg-blue/5 dark:bg-cyan/10">
+          <div className="inline-flex items-center justify-center gap-2 text-sm font-bold tracking-wide text-blue dark:text-cyan uppercase mb-5 px-3.5 py-1.5 rounded-full bg-blue/5 dark:bg-cyan/10">
             <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
             <span>Executive Practice Intake</span>
           </div>
@@ -18,7 +18,7 @@ export default function CTASection() {
           </h2>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
             Consult directly with ConvergeTec practice partners in Sydney, Melbourne, Queensland, and Nigeria to assess your
             operating model, cloud systems, and delivery velocity.
           </p>
@@ -37,15 +37,15 @@ export default function CTASection() {
 
             <a
               href="mailto:contact@convergetec.com.au"
-              className="w-full sm:w-auto px-6 py-3.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors no-underline inline-flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-900/60 shadow-xs whitespace-nowrap"
+              className="w-full sm:w-auto px-6 py-3.5 text-sm font-medium text-slate-800 dark:text-slate-100 hover:text-navy dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors no-underline inline-flex items-center justify-center gap-2 border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-900/60 shadow-xs whitespace-nowrap"
             >
-              <Mail className="w-4 h-4 text-slate-500 dark:text-slate-400" />
+              <Mail className="w-4 h-4 text-slate-600 dark:text-slate-300" />
               <span>contact@convergetec.com.au</span>
             </a>
           </div>
 
           {/* Trust strip */}
-          <div className="pt-8 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs text-slate-500 dark:text-slate-400 font-medium">
+          <div className="pt-8 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-slate-700 dark:text-slate-300 font-medium">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-blue dark:text-cyan" />
               Direct Partner-Led Advisory

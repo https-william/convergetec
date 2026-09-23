@@ -48,7 +48,7 @@ export default function ServicePageTemplate({
           <div className={heroImage ? 'grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center' : ''}>
             <div className={heroImage ? 'lg:col-span-7 xl:col-span-7 max-w-[660px]' : 'max-w-[760px]'}>
               {/* Pop Print Eyebrow */}
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue dark:text-cyan mb-4 px-3 py-1 rounded-full bg-blue/5 dark:bg-cyan/10">
+              <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-blue dark:text-cyan mb-4 px-3.5 py-1.5 rounded-full bg-blue/5 dark:bg-cyan/10">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
                 <span>Practice Division — {eyebrow}</span>
               </div>
@@ -59,7 +59,7 @@ export default function ServicePageTemplate({
               </h1>
 
               {/* Intro Paragraph */}
-              <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
+              <p className="text-lg sm:text-xl text-slate-700 dark:text-slate-200 leading-relaxed max-w-[620px] mb-8 sm:mb-10 font-normal">
                 {intro}
               </p>
 
@@ -94,9 +94,9 @@ export default function ServicePageTemplate({
 
                 {/* Clean Caption Below Image */}
                 {imageCaption && (
-                  <div className="mt-3 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  <div className="mt-3 flex items-center justify-between text-sm text-slate-600 dark:text-slate-300 font-medium">
                     <span>{imageCaption}</span>
-                    <span className="text-slate-400 dark:text-slate-500 hidden sm:inline">Active Practice</span>
+                    <span className="text-slate-500 dark:text-slate-400 hidden sm:inline">Active Practice</span>
                   </div>
                 )}
               </motion.div>
@@ -109,7 +109,7 @@ export default function ServicePageTemplate({
       <section className="w-full bg-white dark:bg-[#070D1E] py-20 md:py-28 border-b border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
         <div className="content-container">
           <div className="max-w-[640px] mb-14 sm:mb-16">
-            <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold mb-2">
+            <div className="flex items-center gap-2 text-sm uppercase tracking-wide text-slate-700 dark:text-slate-200 font-bold mb-2">
               <span className="w-2 h-2 bg-blue dark:bg-cyan inline-block rounded-full" />
               <span>Capabilities &amp; Deliverables</span>
             </div>
@@ -130,16 +130,16 @@ export default function ServicePageTemplate({
               >
                 <div>
                   <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 dark:border-slate-800 mb-4">
-                    <span className="text-xs tracking-wider uppercase font-semibold text-slate-500 dark:text-slate-400">
+                    <span className="text-xs tracking-wider uppercase font-bold text-slate-700 dark:text-slate-300">
                       Pillar 0{index + 1}
                     </span>
-                    <CheckCircle2 className="w-4 h-4 text-slate-400 group-hover:text-blue dark:group-hover:text-cyan transition-colors" />
+                    <CheckCircle2 className="w-4 h-4 text-blue dark:text-cyan transition-colors" />
                   </div>
 
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-navy dark:text-white mb-2.5 leading-snug">
                     {pillar.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed m-0">
+                  <p className="text-slate-700 dark:text-slate-200 text-base leading-relaxed m-0">
                     {pillar.description}
                   </p>
                 </div>
@@ -152,7 +152,7 @@ export default function ServicePageTemplate({
       {/* C) Cross-Sell Strip */}
       <section className="w-full bg-[#0B132B] dark:bg-[#050A18] text-slate-300 py-16 md:py-20 border-t border-slate-800 transition-colors duration-200">
         <div className="content-container text-center">
-          <div className="flex items-center justify-center gap-2 text-xs tracking-wider uppercase text-slate-400 font-bold mb-3">
+          <div className="flex items-center justify-center gap-2 text-sm tracking-wide uppercase text-slate-300 font-bold mb-3">
             <span className="w-2 h-2 bg-blue dark:bg-cyan inline-block rounded-full" />
             <span>Interlocking Capabilities</span>
           </div>

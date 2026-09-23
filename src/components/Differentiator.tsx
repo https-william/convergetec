@@ -39,7 +39,7 @@ export default function Differentiator() {
       <div className="content-container">
         {/* Section Header */}
         <div className="max-w-[760px] mx-auto text-center mb-16 sm:mb-20">
-          <div className="flex items-center justify-center gap-2 text-xs font-bold tracking-wider text-blue dark:text-cyan uppercase mb-3">
+          <div className="flex items-center justify-center gap-2 text-sm font-bold tracking-wide text-blue dark:text-cyan uppercase mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
             <span>The Accountability Advantage</span>
           </div>
@@ -49,7 +49,7 @@ export default function Differentiator() {
             Multi-Vendor Fragmentation vs. One Cohesive Engine
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-[640px] mx-auto">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed font-normal max-w-[640px] mx-auto">
             Traditional transformations collapse in the handoff gaps between strategy firms, development agencies, and recruitment vendors. ConvergeTec closes those gaps under a single accountable partnership.
           </p>
         </div>
@@ -66,10 +66,10 @@ export default function Differentiator() {
           >
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                <span className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                   Status Quo Approach
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800/60 px-2.5 py-1 rounded-md">
+                <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800/60 px-2.5 py-1 rounded-md">
                   <AlertTriangle className="w-3.5 h-3.5" />
                   Fragmented Sourcing
                 </span>
@@ -78,20 +78,20 @@ export default function Differentiator() {
               <h3 className="text-2xl font-bold text-navy dark:text-white mb-3">
                 Where Transformations Bleed Velocity
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+              <p className="text-base text-slate-700 dark:text-slate-200 leading-relaxed mb-8">
                 Juggling multiple specialized suppliers creates friction, misaligned incentives, and conflicting milestones.
               </p>
 
               <div className="space-y-6">
                 {differences.map((item) => (
                   <div key={item.topic} className="pb-5 border-b border-slate-200/70 dark:border-slate-800/80 last:border-0 last:pb-0">
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 block mb-1">
                       {item.topic}
                     </span>
                     <h4 className="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5">
                       {item.traditionalTitle}
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed m-0">
+                    <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed m-0">
                       {item.traditionalDesc}
                     </p>
                   </div>
@@ -99,7 +99,7 @@ export default function Differentiator() {
               </div>
             </div>
 
-            <div className="pt-6 mt-8 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
+            <div className="pt-6 mt-8 border-t border-slate-200 dark:border-slate-800 text-sm text-slate-700 dark:text-slate-300 font-medium">
               Typical outcome: Scope creep, delayed launch, and reliance on external staff.
             </div>
           </motion.div>
@@ -114,10 +114,10 @@ export default function Differentiator() {
           >
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-700/60 mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-blue dark:text-cyan">
+                <span className="text-sm font-bold uppercase tracking-wider text-blue dark:text-cyan">
                   ConvergeTec Operating Model
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue dark:text-cyan bg-blue/10 dark:bg-cyan/15 border border-blue/20 dark:border-cyan/30 px-2.5 py-1 rounded-md">
+                <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-blue dark:text-cyan bg-blue/10 dark:bg-cyan/15 border border-blue/20 dark:border-cyan/30 px-2.5 py-1 rounded-md">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   Unified Enterprise Partner
                 </span>
@@ -126,7 +126,7 @@ export default function Differentiator() {
               <h3 className="text-2xl font-bold text-navy dark:text-white mb-3">
                 The Single-Engine Advantage
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+              <p className="text-base text-slate-700 dark:text-slate-200 leading-relaxed mb-8">
                 All four disciplines — strategy, engineering, academy, and talent — aligned under one direct contract.
               </p>
 
@@ -139,7 +139,7 @@ export default function Differentiator() {
                     <h4 className="text-base font-bold text-navy dark:text-white mb-1.5">
                       {item.convergeTitle}
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed m-0">
+                    <p className="text-sm sm:text-base text-slate-800 dark:text-slate-100 leading-relaxed m-0">
                       {item.convergeDesc}
                     </p>
                   </div>
@@ -148,13 +148,13 @@ export default function Differentiator() {
             </div>
 
             <div className="pt-6 mt-8 border-t border-slate-100 dark:border-slate-700/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <span className="text-xs font-semibold text-navy dark:text-white">
+              <span className="text-sm font-semibold text-navy dark:text-white">
                 Board accountability backed by delivery milestones.
               </span>
               <Button
                 to="/contact"
                 variant="primary"
-                className="px-5 py-2.5 text-xs font-semibold rounded-md shadow-xs gap-1.5"
+                className="px-5 py-2.5 text-sm font-semibold rounded-md shadow-xs gap-1.5"
               >
                 <span>Schedule Architecture Audit</span>
                 <ArrowRight className="w-3.5 h-3.5" />

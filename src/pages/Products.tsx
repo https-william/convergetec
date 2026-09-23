@@ -82,7 +82,7 @@ export default function Products() {
       {/* Hero Section */}
       <section className="relative w-full py-16 md:py-24 border-b border-slate-200/80 dark:border-slate-800 bg-offwhite dark:bg-[#070D1E] transition-colors duration-200">
         <div className="content-container text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-blue dark:text-cyan mb-4 px-3 py-1 rounded-full bg-blue/5 dark:bg-cyan/10">
+          <div className="inline-flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wide text-blue dark:text-cyan mb-4 px-3.5 py-1.5 rounded-full bg-blue/5 dark:bg-cyan/10">
             <Sparkles className="w-4 h-4 text-blue dark:text-cyan" />
             <span>Proprietary Software Solutions</span>
           </div>
@@ -92,7 +92,7 @@ export default function Products() {
             Built for enterprise reality.
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto mb-8 font-normal">
+          <p className="text-lg sm:text-xl text-slate-700 dark:text-slate-200 leading-relaxed max-w-2xl mx-auto mb-8 font-normal">
             ConvergeTec designs, builds, and deploys purpose-built software platforms that automate complex workflows, govern regulatory policies, and reconcile high-volume enterprise operations.
           </p>
 
@@ -133,7 +133,7 @@ export default function Products() {
                           <Icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <span className="text-xs font-bold uppercase tracking-wider text-blue dark:text-cyan block">
+                          <span className="text-sm font-bold uppercase tracking-wide text-blue dark:text-cyan block mb-0.5">
                             {product.category}
                           </span>
                           <h2 className="text-2xl sm:text-3xl font-extrabold text-navy dark:text-white tracking-tight leading-tight">
@@ -142,21 +142,21 @@ export default function Products() {
                         </div>
                       </div>
 
-                      <p className="text-base sm:text-lg font-medium text-slate-800 dark:text-slate-200 mb-4 leading-snug">
+                      <p className="text-base sm:text-lg font-medium text-slate-800 dark:text-slate-100 mb-4 leading-snug">
                         {product.tagline}
                       </p>
 
-                      <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                      <p className="text-slate-700 dark:text-slate-200 text-base leading-relaxed mb-6 font-normal">
                         {product.description}
                       </p>
 
                       <div className="pt-2">
-                        <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 block mb-3 uppercase tracking-wider">
+                        <span className="text-sm font-bold text-slate-700 dark:text-slate-200 block mb-3 uppercase tracking-wide">
                           Key Platform Capabilities:
                         </span>
-                        <div className="space-y-2">
+                        <div className="space-y-2.5">
                           {product.capabilities.map((cap) => (
-                            <div key={cap} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                            <div key={cap} className="flex items-start gap-2.5 text-sm text-slate-800 dark:text-slate-100 font-medium">
                               <CheckCircle2 className="w-4 h-4 text-blue dark:text-cyan shrink-0 mt-0.5" />
                               <span>{cap}</span>
                             </div>
@@ -168,20 +168,20 @@ export default function Products() {
                     {/* Right Card / CTA */}
                     <div className="lg:col-span-5 bg-white dark:bg-[#121E38] rounded-xl border border-slate-200 dark:border-slate-800 p-6 sm:p-7 shadow-sm flex flex-col justify-between h-full transition-colors duration-200">
                       <div>
-                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 block mb-2">
                           Deployment Profile
                         </span>
                         <h3 className="text-lg font-bold text-navy dark:text-white mb-3">
                           Enterprise Ready
                         </h3>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                        <p className="text-sm text-slate-700 dark:text-slate-200 leading-relaxed mb-5">
                           Available as managed multi-tenant cloud SaaS or deployed directly into your dedicated AWS/Azure private cloud.
                         </p>
 
-                        <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 mb-6 text-xs text-slate-700 dark:text-slate-300 space-y-2">
+                        <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 mb-6 text-sm text-slate-800 dark:text-slate-200 space-y-2">
                           <div>
-                            <span className="font-semibold text-slate-900 dark:text-white block">Designed For:</span>
-                            <span className="text-slate-600 dark:text-slate-400">{product.idealFor}</span>
+                            <span className="font-semibold text-slate-900 dark:text-white block mb-0.5">Designed For:</span>
+                            <span className="text-slate-700 dark:text-slate-300">{product.idealFor}</span>
                           </div>
                         </div>
                       </div>

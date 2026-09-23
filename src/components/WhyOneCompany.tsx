@@ -30,14 +30,14 @@ export default function WhyOneCompany() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center max-w-[660px] mx-auto mb-16 md:mb-20"
         >
-          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold mb-3">
+          <div className="flex items-center justify-center gap-2 text-sm uppercase tracking-wide text-slate-700 dark:text-slate-200 font-bold mb-3">
             <span className="w-2 h-2 bg-blue dark:bg-cyan inline-block rounded-full" />
             <span>Integrated Value Advantage</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy dark:text-white tracking-tight mb-4">
             Why one company, four divisions?
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-200 text-lg sm:text-xl leading-relaxed">
             By keeping all four disciplines under one roof, we eliminate the structural friction that derails typical corporate transformations.
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ export default function WhyOneCompany() {
                 <h3 className="font-display font-bold text-xl text-navy dark:text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed m-0">
+                <p className="text-slate-700 dark:text-slate-200 text-base leading-relaxed m-0">
                   {item.description}
                 </p>
               </motion.div>

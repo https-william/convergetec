@@ -10,7 +10,7 @@ export default function Hero() {
           {/* Left Column: Command & Strategic Narrative (6 Cols) */}
           <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
             {/* Editorial Eyebrow */}
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase mb-5">
+            <div className="flex items-center gap-2 text-sm font-semibold tracking-wide text-slate-700 dark:text-slate-200 uppercase mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
               <span>Enterprise Transformation &amp; Technology</span>
             </div>
@@ -24,7 +24,7 @@ export default function Hero() {
             </h1>
 
             {/* Value Proposition */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-[540px] mb-8 font-normal">
+            <p className="text-base sm:text-lg text-slate-800 dark:text-slate-200 leading-relaxed max-w-[540px] mb-8 font-normal">
               ConvergeTec closes the divide between high-level management consulting, custom software engineering, and talent resourcing. We unite executive advisory, engineering squads, and capability academies into one accountable partner.
             </p>
 
@@ -50,12 +50,12 @@ export default function Hero() {
 
             {/* Enterprise Sector Trust Strip */}
             <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 max-w-[540px]">
-              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 block mb-2">
+              <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 block mb-2.5">
                 Delivering across mission-critical sectors:
               </span>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-slate-600 dark:text-slate-400 font-medium">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-800 dark:text-slate-200 font-medium">
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-slate-400 dark:text-cyan" />
+                  <ShieldCheck className="w-4 h-4 text-blue dark:text-cyan" />
                   Banking &amp; Financial Services
                 </span>
                 <span className="text-slate-300 dark:text-slate-700">•</span>

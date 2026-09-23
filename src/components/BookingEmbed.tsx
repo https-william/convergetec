@@ -29,11 +29,11 @@ export default function BookingEmbed({
                     <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-5">
                       <div className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-blue dark:bg-cyan" />
-                        <span className="text-xs font-bold uppercase tracking-wider text-navy dark:text-white">
+                        <span className="text-sm font-bold uppercase tracking-wide text-navy dark:text-white">
                           Executive Consultation
                         </span>
                       </div>
-                      <span className="text-xs font-semibold text-slate-500 dark:text-slate-300 bg-white dark:bg-slate-800 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700">
+                      <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-700">
                         30 Min Discovery
                       </span>
                     </div>
@@ -43,16 +43,16 @@ export default function BookingEmbed({
                         <h4 className="font-bold text-navy dark:text-white text-lg mb-1">
                           Direct Partner-Led Advisory
                         </h4>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed">
                           Conducted virtually via Microsoft Teams or in-person across our Sydney, Melbourne, Queensland, and Nigeria practices.
                         </p>
                       </div>
 
                       <div className="pt-2">
-                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 block mb-2">
                           Diagnostic Scope:
                         </span>
-                        <ul className="space-y-2 text-xs text-slate-700 dark:text-slate-200 font-medium list-none p-0 m-0">
+                        <ul className="space-y-2 text-sm text-slate-800 dark:text-slate-100 font-medium list-none p-0 m-0">
                           <li className="flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan shrink-0" />
                             <span>Target Operating Model &amp; Architecture Review</span>
@@ -74,15 +74,15 @@ export default function BookingEmbed({
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-                    <span className="font-semibold text-slate-700 dark:text-slate-300">Strict NDA Protected</span>
+                  <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">Strict NDA Protected</span>
                     <span>No Obligation Feasibility</span>
                   </div>
                 </div>
 
                 {/* Right Column: Scheduling Overview & Direct Action */}
                 <div className="lg:col-span-6 flex flex-col justify-center text-left">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue dark:text-cyan mb-2.5">
+                  <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-blue dark:text-cyan mb-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
                     <span>Executive Intake</span>
                   </div>
@@ -91,11 +91,11 @@ export default function BookingEmbed({
                     Schedule Your Discovery Session
                   </h3>
 
-                  <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                  <p className="text-slate-700 dark:text-slate-200 text-base leading-relaxed mb-6 font-normal">
                     Connect directly with senior practice leadership to diagnose operating bottlenecks, scope bespoke engineering, and architect executable technical roadmaps.
                   </p>
 
-                  <div className="space-y-3 mb-8 text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-medium">
+                  <div className="space-y-3 mb-8 text-sm sm:text-base text-slate-800 dark:text-slate-100 font-medium">
                     <div className="flex items-center gap-2.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan shrink-0" />
                       <span>Confidential board-level feasibility diagnosis</span>

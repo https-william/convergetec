@@ -11,7 +11,7 @@ export default function AboutHero() {
           className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 md:mb-20"
         >
           {/* Clean Human Eyebrow */}
-          <div className="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-blue dark:text-cyan mb-4 px-3 py-1 rounded-full bg-blue/5 dark:bg-cyan/10">
+          <div className="inline-flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wide text-blue dark:text-cyan mb-4 px-3.5 py-1.5 rounded-full bg-blue/5 dark:bg-cyan/10">
             <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
             <span>About ConvergeTec Operating Model</span>
           </div>
@@ -22,7 +22,7 @@ export default function AboutHero() {
           </h1>
 
           {/* Intro */}
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-700 dark:text-slate-200 leading-relaxed max-w-2xl mx-auto font-normal">
             ConvergeTec unifies strategic advisory, custom software engineering,
             corporate training, and specialist talent to deliver lasting enterprise scale.
           </p>

@@ -51,14 +51,14 @@ export default function TransformationPipeline() {
       <div className="content-container relative z-10">
         {/* Section Header */}
         <div className="max-w-[720px] mx-auto text-center mb-12 sm:mb-16">
-          <div className="flex items-center justify-center gap-2 text-xs font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase mb-3">
+          <div className="flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-slate-700 dark:text-slate-200 uppercase mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
             <span>Delivery Lifecycle</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy dark:text-white mb-4 tracking-tight">
             The Continuous Delivery Lifecycle
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed max-w-[620px] mx-auto font-normal">
+          <p className="text-slate-700 dark:text-slate-200 text-lg sm:text-xl leading-relaxed max-w-[620px] mx-auto font-normal">
             A cohesive lifecycle that connects strategic diagnosis directly to
             running production code and in-house operational ownership.
           </p>
@@ -97,7 +97,7 @@ export default function TransformationPipeline() {
                         >
                           {step.number}
                         </span>
-                        <span className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
+                        <span className="text-xs uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">
                           {step.division}
                         </span>
                       </div>
@@ -120,13 +120,13 @@ export default function TransformationPipeline() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                    <p className="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
                       {step.description}
                     </p>
                   </div>
 
                   {/* Clean Card Action */}
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400 group-hover:text-blue dark:group-hover:text-cyan transition-colors">
+                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-blue dark:group-hover:text-cyan transition-colors">
                     <span>Explore Practice</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -142,7 +142,7 @@ export default function TransformationPipeline() {
             <div className="font-bold text-sm sm:text-base text-navy dark:text-white">
               Closed-Loop Operational Continuity
             </div>
-            <div className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+            <div className="text-sm text-slate-700 dark:text-slate-200 mt-0.5">
               Staffed specialists continuously feed operational and architecture metrics back into executive roadmaps.
             </div>
           </div>

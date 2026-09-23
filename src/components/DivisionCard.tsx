@@ -58,10 +58,10 @@ export default function DivisionCard({
 
         {/* Pop Print Editorial Header: Graphic Numeral & Category */}
         <div className="flex items-baseline justify-between mb-3">
-          <span className="text-xs font-bold tracking-wider uppercase text-blue dark:text-cyan">
+          <span className="text-sm font-bold tracking-wide uppercase text-blue dark:text-cyan">
             {divisionTag}
           </span>
-          <span className="font-display font-black text-2xl sm:text-3xl text-slate-300 dark:text-slate-700 group-hover:text-blue/40 dark:group-hover:text-cyan/40 transition-colors">
+          <span className="font-display font-black text-2xl sm:text-3xl text-slate-400 dark:text-slate-600 group-hover:text-blue/40 dark:group-hover:text-cyan/40 transition-colors">
             {divisionNumber}
           </span>
         </div>
@@ -72,7 +72,7 @@ export default function DivisionCard({
         </h3>
 
         {/* Description */}
-        <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+        <p className="text-slate-700 dark:text-slate-200 text-base leading-relaxed mb-6 font-normal">
           {description}
         </p>
       </div>

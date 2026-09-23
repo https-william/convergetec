@@ -53,13 +53,13 @@ export default function ContactFormFallback() {
       <div className="content-container">
         <div className="max-w-[720px] mx-auto bg-white dark:bg-[#0D162B] rounded-2xl shadow-xl shadow-navy/5 dark:shadow-2xl border border-slate-200/90 dark:border-slate-800 p-8 sm:p-12 transition-colors duration-200">
           <div className="mb-10">
-            <span className="text-xs uppercase tracking-wider text-blue dark:text-cyan font-bold block mb-2">
+            <span className="text-sm uppercase tracking-wide text-blue dark:text-cyan font-bold block mb-2">
               Direct Inquiries
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold font-display text-navy dark:text-white mb-3">
               Send a Direct Message
             </h2>
-            <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg m-0 leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-200 text-base sm:text-lg m-0 leading-relaxed">
               Our Sydney &amp; Melbourne leadership responds within one business day.
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function ContactFormFallback() {
               <h3 className="font-display text-navy dark:text-white font-bold text-xl mb-2">
                 Inquiry Dispatched
               </h3>
-              <p className="text-slate-600 dark:text-slate-300 text-base max-w-sm mx-auto m-0 leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 text-base max-w-sm mx-auto m-0 leading-relaxed">
                 Thank you. A ConvergeTec practice lead will follow up with you within one business day.
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function ContactFormFallback() {
             <form onSubmit={handleSubmit} className="space-y-7" noValidate={false}>
               {/* Interactive Topic Selector */}
               <div>
-                <label className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-3">
+                <label className="block font-display text-sm font-bold uppercase tracking-wider text-navy dark:text-white mb-3">
                   How can we help?
                 </label>
                 <div className="flex flex-wrap gap-2.5">
@@ -94,10 +94,10 @@ export default function ContactFormFallback() {
                         key={topic}
                         type="button"
                         onClick={() => setSelectedTopic(topic)}
-                        className={`px-4 py-2 rounded-xl text-xs font-medium transition-all duration-200 cursor-pointer border ${
+                        className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer border ${
                           isSelected
                             ? 'bg-blue text-white border-blue shadow-sm'
-                            : 'bg-offwhite dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600'
+                            : 'bg-offwhite dark:bg-slate-800 text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600'
                         }`}
                       >
                         {topic}
@@ -112,7 +112,7 @@ export default function ContactFormFallback() {
                 <div>
                   <label
                     htmlFor="contact-name"
-                    className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-2"
+                    className="block font-display text-sm font-bold uppercase tracking-wider text-navy dark:text-white mb-2"
                   >
                     Your Name <span className="text-blue dark:text-cyan" aria-hidden="true">*</span>
                   </label>
@@ -132,7 +132,7 @@ export default function ContactFormFallback() {
                 <div>
                   <label
                     htmlFor="contact-email"
-                    className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-2"
+                    className="block font-display text-sm font-bold uppercase tracking-wider text-navy dark:text-white mb-2"
                   >
                     Work Email <span className="text-blue dark:text-cyan" aria-hidden="true">*</span>
                   </label>
@@ -153,7 +153,7 @@ export default function ContactFormFallback() {
               <div>
                 <label
                   htmlFor="contact-company"
-                  className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-2"
+                  className="block font-display text-sm font-bold uppercase tracking-wider text-navy dark:text-white mb-2"
                 >
                   Organisation
                 </label>
@@ -172,7 +172,7 @@ export default function ContactFormFallback() {
               <div>
                 <label
                   htmlFor="contact-message"
-                  className="block font-display text-xs font-semibold uppercase tracking-wider text-navy dark:text-white mb-2"
+                  className="block font-display text-sm font-bold uppercase tracking-wider text-navy dark:text-white mb-2"
                 >
                   Project Context <span className="text-blue dark:text-cyan" aria-hidden="true">*</span>
                 </label>
