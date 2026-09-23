@@ -18,10 +18,10 @@ const serviceLinks = [
 ];
 
 const productLinks = [
-  { name: 'Motor App', desc: 'Automated motor claims, fleet telematics & assessment', path: '/products#motor-app' },
+  { name: 'MOTA App', desc: 'Automated motor claims, fleet telematics & assessment', path: '/products#mota-app' },
+  { name: 'Care Converge', desc: 'Unified care management & clinical compliance workflow', path: '/products#care-converge' },
   { name: 'Policy Vault', desc: 'Enterprise compliance repository & policy governance', path: '/products#policy-vault' },
-  { name: 'Big Converge', desc: 'Unified real-time data pipeline & integration engine', path: '/products#big-converge' },
-  { name: 'Remicon', desc: 'Automated high-volume remittance & ledger reconciliation', path: '/products#remicon' },
+  { name: 'RemiCon', desc: 'Automated high-volume remittance & ledger reconciliation', path: '/products#remicon' },
 ];
 
 export default function Navbar() {

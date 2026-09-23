@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import Button from '../components/Button';
-import { Car, ShieldCheck, Database, Layers, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Car, ShieldCheck, HeartPulse, Layers, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const products = [
   {
-    id: 'motor-app',
-    name: 'Motor App',
+    id: 'mota-app',
+    name: 'MOTA App',
     category: 'Fleet & Motor Automation',
     tagline: 'Automated Motor Insurance Claims, Fleet Telematics & Assessment Workflow',
     description:
-      'Motor App streamlines the end-to-end lifecycle for commercial motor insurers, fleet operators, and assessment panels. By replacing manual paperwork with automated FNOL triage, repairer allocation, and real-time telematics inspection, claims cycle times drop from weeks to hours.',
+      'MOTA App streamlines the end-to-end lifecycle for commercial motor insurers, fleet operators, and assessment panels. By replacing manual paperwork with automated FNOL triage, repairer allocation, and real-time telematics inspection, claims cycle times drop from weeks to hours.',
     icon: Car,
     capabilities: [
       'Instant FNOL digital capture & mobile photo assessment',
@@ -19,6 +19,22 @@ const products = [
       'APRA & regulatory compliance audit trails built-in',
     ],
     idealFor: 'Insurers, Fleet Operators, Broker Networks & Underwriters',
+  },
+  {
+    id: 'care-converge',
+    name: 'Care Converge',
+    category: 'Healthcare & Care Operations',
+    tagline: 'Unified Care Management, Clinical Workflow Orchestration & Compliance Telemetry',
+    description:
+      'Care Converge unifies participant and patient records, shift rostering, incident reporting, and service tracking into one connected platform. Engineered for aged care operators, NDIS providers, and clinical organizations, it eliminates fragmented paperwork, safeguards service compliance, and elevates quality of care.',
+    icon: HeartPulse,
+    capabilities: [
+      'Connected participant & patient care plans with real-time shift logging',
+      'Automated NDIS & Aged Care Quality Standards compliance reporting',
+      'Incident management, clinical auditing & rapid triage workflows',
+      'Interoperable electronic health records (EHR) & billing integrations',
+    ],
+    idealFor: 'Aged Care Operators, NDIS Providers, Hospital Networks & Allied Health Clinics',
   },
   {
     id: 'policy-vault',
@@ -37,28 +53,12 @@ const products = [
     idealFor: 'Chief Risk Officers, Legal Counsel & Enterprise Compliance Teams',
   },
   {
-    id: 'big-converge',
-    name: 'Big Converge',
-    category: 'Data & Systems Integration',
-    tagline: 'Unified Enterprise Integration Engine & Real-Time Operational Telemetry',
-    description:
-      'Big Converge deconstructs enterprise data silos by seamlessly orchestrating real-time data sync across disparate legacy systems, core banking engines, modern cloud SaaS, and specialized ERPs. It provides executives with a single pane of glass over operational performance.',
-    icon: Database,
-    capabilities: [
-      'High-throughput microservices pipeline & zero-downtime event streaming',
-      'Pre-built connectors for legacy on-prem systems & modern cloud APIs',
-      'Automated schema reconciliation & real-time deduplication',
-      'Executive dashboard telemetry with latency-free KPI monitoring',
-    ],
-    idealFor: 'Enterprise CIOs, Chief Data Officers & Solutions Architects',
-  },
-  {
     id: 'remicon',
-    name: 'Remicon',
+    name: 'RemiCon',
     category: 'Financial Infrastructure',
     tagline: 'Automated High-Volume Remittance Routing & Financial Ledger Reconciliation',
     description:
-      'Remicon is the institutional engine for reconciling millions of transaction lines across multi-currency bank feeds, payment gateways, and balance sheet accounts. It automates 99.4% of exception handling, eliminating manual spreadsheet matching and balance discrepancies.',
+      'RemiCon is the institutional engine for reconciling millions of transaction lines across multi-currency bank feeds, payment gateways, and balance sheet accounts. It automates 99.4% of exception handling, eliminating manual spreadsheet matching and balance discrepancies.',
     icon: Layers,
     capabilities: [
       'Sub-second matching engine for high-volume banking & card feeds',
@@ -75,7 +75,7 @@ export default function Products() {
     <>
       <SEO
         title="Our Products | Enterprise Software Platforms | ConvergeTec"
-        description="Explore ConvergeTec's proprietary enterprise software platforms: Motor App, Policy Vault, Big Converge, and Remicon."
+        description="Explore ConvergeTec's proprietary enterprise software platforms: MOTA App, Care Converge, Policy Vault, and RemiCon."
         path="/products"
       />
 

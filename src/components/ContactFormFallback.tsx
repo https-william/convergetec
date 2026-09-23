@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Send, CheckCircle2 } from 'lucide-react';
 import Button from './Button';
 
@@ -7,10 +8,19 @@ const topics = [
   'Custom Software & Cloud Systems',
   'Workforce Capability Academy',
   'Fractional Leadership & Talent',
+  'Product Demonstration',
   'Product Partnership / Joint Venture',
 ];
 
+const productMap: Record<string, string> = {
+  'mota-app': 'MOTA App',
+  'care-converge': 'Care Converge',
+  'policy-vault': 'Policy Vault',
+  'remicon': 'RemiCon',
+};
+
 export default function ContactFormFallback() {
+  const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState(topics[0]);
   const [formData, setFormData] = useState({
@@ -19,6 +29,18 @@ export default function ContactFormFallback() {
     company: '',
     message: '',
   });
+
+  useEffect(() => {
+    const productParam = searchParams.get('product');
+    if (productParam && productMap[productParam]) {
+      const productName = productMap[productParam];
+      setSelectedTopic('Product Demonstration');
+      setFormData((prev) => ({
+        ...prev,
+        message: prev.message || `We would like to request an executive demonstration and discovery session for ${productName}.`,
+      }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
