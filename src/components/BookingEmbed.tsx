@@ -4,7 +4,7 @@ interface BookingEmbedProps {
 }
 
 export default function BookingEmbed({
-  src = import.meta.env.VITE_GHL_FORM_URL || '',
+  src = import.meta.env.VITE_GHL_CALENDAR_URL || import.meta.env.VITE_GHL_FORM_URL || '',
   title = 'ConvergeTec Discovery Call Booking',
 }: BookingEmbedProps) {
   return (

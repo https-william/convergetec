@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { Send, CheckCircle2, Loader2 } from 'lucide-react';
 import Button from './Button';
 
 const topics = [
@@ -22,6 +22,7 @@ const productMap: Record<string, string> = {
 export default function ContactFormFallback() {
   const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [selectedTopic, setSelectedTopic] = useState(topics[0]);
   const [formData, setFormData] = useState({
     name: '',
@@ -42,9 +43,35 @@ export default function ContactFormFallback() {
     }
   }, [searchParams]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
+
+    const webhookUrl = import.meta.env.VITE_GHL_WEBHOOK_URL;
+    if (webhookUrl) {
+      try {
+        setLoading(true);
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            company: formData.company || 'Not Specified',
+            topic: selectedTopic,
+            message: formData.message,
+            source: 'ConvergeTec Website Contact Form',
+            submittedAt: new Date().toISOString(),
+          }),
+        });
+      } catch (err) {
+        console.warn('GHL Webhook submission notice:', err);
+      } finally {
+        setLoading(false);
+      }
+    }
     setSubmitted(true);
   };
 
@@ -193,10 +220,11 @@ export default function ContactFormFallback() {
                 <Button
                   type="submit"
                   variant="primary"
-                  className="w-full sm:w-auto px-9 py-4 text-base font-display font-semibold flex items-center justify-center gap-2.5 shadow-lg shadow-blue/20"
+                  disabled={loading}
+                  className="w-full sm:w-auto px-9 py-4 text-base font-display font-semibold flex items-center justify-center gap-2.5 shadow-lg shadow-blue/20 disabled:opacity-75 disabled:cursor-not-allowed"
                 >
-                  <span>Send Message</span>
-                  <Send className="w-4 h-4" />
+                  <span>{loading ? 'Transmitting...' : 'Send Message'}</span>
+                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                 </Button>
               </div>
             </form>
