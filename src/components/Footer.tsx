@@ -82,6 +82,22 @@ export default function Footer() {
             <ul className="space-y-3 list-none p-0 m-0">
               <li>
                 <Link
+                  to="/services"
+                  className="text-sm text-slate-300 hover:text-white transition-colors no-underline"
+                >
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/products"
+                  className="text-sm text-slate-300 hover:text-white transition-colors no-underline"
+                >
+                  Our Products
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/about"
                   className="text-sm text-slate-300 hover:text-white transition-colors no-underline"
                 >
@@ -93,16 +109,8 @@ export default function Footer() {
                   to="/contact"
                   className="text-sm text-slate-300 hover:text-white transition-colors no-underline"
                 >
-                  Leadership &amp; Advisory Team
+                  Contact &amp; Discovery
                 </Link>
-              </li>
-              <li>
-                <a
-                  href="#divisions-grid"
-                  className="text-sm text-slate-300 hover:text-white transition-colors no-underline"
-                >
-                  The Transformation Model
-                </a>
               </li>
             </ul>
           </div>

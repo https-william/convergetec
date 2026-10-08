@@ -10,11 +10,12 @@ import {
   NavigationMenuContent,
 } from '@/components/ui/navigation-menu';
 
-const serviceLinks = [
-  { name: 'Consulting', desc: 'Operating models & strategic advisory', path: '/services/consulting' },
-  { name: 'Digital & Software', desc: 'Custom cloud SaaS & enterprise APIs', path: '/services/digital-software' },
-  { name: 'Academy', desc: 'Workforce transformation masterclasses', path: '/services/academy' },
-  { name: 'Resources & Talent', desc: 'Fractional executives & specialist squads', path: '/services/resources-talent' },
+const serviceOfferings = [
+  { name: 'Business Analysis', desc: 'Clarity before change & requirements', path: '/services#business-analysis' },
+  { name: 'Product Management', desc: 'From idea to products that deliver value', path: '/services#product-management' },
+  { name: 'Artificial Intelligence', desc: 'Practical AI for smarter business operations', path: '/services#artificial-intelligence' },
+  { name: 'Data Analysis', desc: 'Clear insights & better decisions', path: '/services#data-analysis' },
+  { name: 'DevOps Engineering', desc: 'Reliable systems & consistent delivery', path: '/services#devops-engineering' },
 ];
 
 const productLinks = [
@@ -116,7 +117,7 @@ export default function Navbar() {
                 </NavLink>
               </NavigationMenuItem>
 
-              {/* 3. Practice Divisions Dropdown */}
+              {/* 3. Our Services Dropdown */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={`text-sm font-medium px-3.5 py-2 rounded-lg bg-transparent transition-colors ${
@@ -125,13 +126,13 @@ export default function Navbar() {
                       : 'text-slate-600 dark:text-slate-300 hover:text-navy dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/60'
                   }`}
                 >
-                  Practice Divisions
+                  Our Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="p-2.5 bg-white dark:bg-[#0D162B] rounded-2xl shadow-xl border border-slate-200/90 dark:border-slate-800">
-                  <div className="flex flex-col space-y-1 w-[360px]">
-                    {serviceLinks.map((service) => (
+                  <div className="flex flex-col space-y-1 w-[380px]">
+                    {serviceOfferings.map((service) => (
                       <NavLink
-                        key={service.path}
+                        key={service.name}
                         to={service.path}
                         onClick={closeMenus}
                         className={({ isActive }) =>
@@ -148,6 +149,15 @@ export default function Navbar() {
                         </span>
                       </NavLink>
                     ))}
+                    <div className="pt-2 mt-1 border-t border-slate-100 dark:border-slate-800">
+                      <Link
+                        to="/services"
+                        onClick={closeMenus}
+                        className="block px-3.5 py-2 text-sm font-semibold text-blue dark:text-cyan hover:text-navy dark:hover:text-white no-underline rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                      >
+                        View All Services Overview &rarr;
+                      </Link>
+                    </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -296,7 +306,7 @@ export default function Navbar() {
                   }`}
                   aria-expanded={mobileAccordionOpen}
                 >
-                  <span>Practice Divisions</span>
+                  <span>Our Services</span>
                   <svg
                     className={`w-5 h-5 transition-transform duration-200 ${
                       mobileAccordionOpen ? 'rotate-180 text-blue' : 'text-slate-400'
@@ -313,13 +323,20 @@ export default function Navbar() {
 
                 {mobileAccordionOpen && (
                   <div className="pl-4 mt-2 space-y-2 border-l-2 border-slate-200 dark:border-slate-800">
-                    {serviceLinks.map((service) => (
+                    <NavLink
+                      to="/services"
+                      onClick={closeMenus}
+                      className="block py-2 text-base font-semibold text-blue dark:text-cyan transition-colors no-underline"
+                    >
+                      All Services Overview &rarr;
+                    </NavLink>
+                    {serviceOfferings.map((service) => (
                       <NavLink
-                        key={service.path}
+                        key={service.name}
                         to={service.path}
                         onClick={closeMenus}
                         className={({ isActive }) =>
-                          `block py-2 text-base font-body transition-colors no-underline ${
+                          `block py-1.5 text-base font-body transition-colors no-underline ${
                             isActive ? 'text-blue font-semibold' : 'text-slate-800 dark:text-slate-200 hover:text-blue'
                           }`
                         }

@@ -4,12 +4,14 @@ import { Send, CheckCircle2, Loader2 } from 'lucide-react';
 import Button from './Button';
 
 const topics = [
+  'Business Analysis',
+  'Product Management',
+  'Artificial Intelligence',
+  'Data Analysis',
+  'DevOps Engineering',
   'Operating Model Transformation',
-  'Custom Software & Cloud Systems',
-  'Workforce Capability Academy',
-  'Fractional Leadership & Talent',
   'Product Demonstration',
-  'Product Partnership / Joint Venture',
+  'Custom Software & Cloud Systems',
 ];
 
 const productMap: Record<string, string> = {
@@ -17,6 +19,14 @@ const productMap: Record<string, string> = {
   'care-converge': 'Care Converge',
   'policy-vault': 'Policy Vault',
   'remicon': 'RemiCon',
+};
+
+const serviceMap: Record<string, string> = {
+  'business-analysis': 'Business Analysis',
+  'product-management': 'Product Management',
+  'artificial-intelligence': 'Artificial Intelligence',
+  'data-analysis': 'Data Analysis',
+  'devops-engineering': 'DevOps Engineering',
 };
 
 export default function ContactFormFallback() {
@@ -33,12 +43,20 @@ export default function ContactFormFallback() {
 
   useEffect(() => {
     const productParam = searchParams.get('product');
+    const serviceParam = searchParams.get('service');
     if (productParam && productMap[productParam]) {
       const productName = productMap[productParam];
       setSelectedTopic('Product Demonstration');
       setFormData((prev) => ({
         ...prev,
         message: prev.message || `We would like to request an executive demonstration and discovery session for ${productName}.`,
+      }));
+    } else if (serviceParam && serviceMap[serviceParam]) {
+      const serviceName = serviceMap[serviceParam];
+      setSelectedTopic(serviceName);
+      setFormData((prev) => ({
+        ...prev,
+        message: prev.message || `We would like to discuss our requirements and explore support for ${serviceName}.`,
       }));
     }
   }, [searchParams]);

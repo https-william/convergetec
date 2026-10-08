@@ -10,6 +10,7 @@ import { ThemeProvider } from './context/ThemeContext';
 // Code-split route components with React.lazy
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
 const Consulting = lazy(() => import('./pages/services/Consulting'));
 const DigitalSoftware = lazy(() => import('./pages/services/DigitalSoftware'));
 const Academy = lazy(() => import('./pages/services/Academy'));
@@ -54,6 +55,7 @@ function AnimatedRoutes() {
           <Routes location={location}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/services/consulting" element={<Consulting />} />
             <Route path="/services/digital-software" element={<DigitalSoftware />} />
             <Route path="/services/academy" element={<Academy />} />
