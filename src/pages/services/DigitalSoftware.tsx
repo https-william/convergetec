@@ -36,7 +36,7 @@ export default function DigitalSoftware() {
   return (
     <ServicePageTemplate
       accentColor="blue"
-      eyebrow="ConvergeTec Digital & Software"
+      eyebrow="Digital & Software"
       headline="Technology built around how your business actually runs"
       intro="Custom software, SaaS products, automation and systems integration."
       pillars={pillars}

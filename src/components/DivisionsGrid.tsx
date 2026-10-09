@@ -6,7 +6,7 @@ const divisions = [
     id: 'division-tile-1',
     divisionNumber: '01',
     divisionTag: 'Strategy & Advisory',
-    title: 'ConvergeTec Consulting',
+    title: 'Consulting',
     description:
       'Executive advisory, business architecture, and transformation roadmaps structured for immediate technical execution.',
     href: '/services/consulting',
@@ -20,7 +20,7 @@ const divisions = [
     id: 'division-tile-2',
     divisionNumber: '02',
     divisionTag: 'Engineering & Cloud',
-    title: 'ConvergeTec Digital & Software',
+    title: 'Digital & Software',
     description:
       'Custom cloud SaaS, enterprise API microservices, and workflow automations engineered around how your business actually runs.',
     href: '/services/digital-software',
@@ -34,7 +34,7 @@ const divisions = [
     id: 'division-tile-3',
     divisionNumber: '03',
     divisionTag: 'Workforce Capability',
-    title: 'ConvergeTec Academy',
+    title: 'Academy',
     description:
       'Executive masterclasses and workforce certifications that institutionalise transformation capabilities internally.',
     href: '/services/academy',
@@ -48,7 +48,7 @@ const divisions = [
     id: 'division-tile-4',
     divisionNumber: '04',
     divisionTag: 'Contract & Fractional',
-    title: 'ConvergeTec Resources & Talent',
+    title: 'Resources & Talent',
     description:
       'Pre-vetted fractional executives, delivery leads, and technical specialists embedded directly into mission-critical initiatives.',
     href: '/services/resources-talent',

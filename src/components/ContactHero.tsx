@@ -14,7 +14,7 @@ export default function ContactHero() {
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-700 dark:text-slate-200 leading-relaxed max-w-[560px] mx-auto font-normal">
-            Schedule an executive diagnostic session with our partners across Australia and Nigeria.
+            Schedule an executive diagnostic session with our partners across Australia.
           </p>
         </div>
       </div>

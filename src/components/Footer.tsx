@@ -19,7 +19,7 @@ export default function Footer() {
           </Link>
 
           <div className="flex flex-wrap items-center gap-5 text-sm text-slate-300 font-medium">
-            <span>Sydney · Melbourne · Queensland · Nigeria</span>
+            <span>Sydney · Melbourne · Queensland</span>
             <span className="text-slate-600">•</span>
             <span>Enterprise Advisory &amp; Cloud Systems</span>
             <span className="text-slate-600">•</span>
@@ -40,7 +40,7 @@ export default function Footer() {
                   to="/services/consulting"
                   className="text-sm text-slate-300 hover:text-white transition-colors no-underline flex items-center justify-between group"
                 >
-                  <span>ConvergeTec Consulting</span>
+                  <span>Consulting</span>
                   <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-blue" />
                 </Link>
               </li>
@@ -88,14 +88,7 @@ export default function Footer() {
                   Our Services
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/products"
-                  className="text-sm text-slate-300 hover:text-white transition-colors no-underline"
-                >
-                  Our Products
-                </Link>
-              </li>
+
               <li>
                 <Link
                   to="/about"
@@ -132,10 +125,6 @@ export default function Footer() {
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-blue shrink-0" />
                 <span className="font-semibold text-white">Queensland Practice</span>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-blue shrink-0" />
-                <span className="font-semibold text-white">Nigeria Practice</span>
               </div>
             </div>
           </div>
@@ -177,7 +166,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span>Australian Business Number (ABN) Verified</span>
             <span>•</span>
-            <span>Sydney · Melbourne · Queensland · Nigeria</span>
+            <span>Sydney · Melbourne · Queensland</span>
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ export default function BookingEmbed({
                           Direct Partner-Led Advisory
                         </h4>
                         <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed">
-                          Conducted virtually via Microsoft Teams or in-person across our Sydney, Melbourne, Queensland, and Nigeria practices.
+                          Conducted virtually via Microsoft Teams or in-person across our Sydney, Melbourne, and Queensland practices.
                         </p>
                       </div>
 

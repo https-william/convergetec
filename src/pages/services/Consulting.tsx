@@ -36,7 +36,7 @@ export default function Consulting() {
   return (
     <ServicePageTemplate
       accentColor="navy"
-      eyebrow="ConvergeTec Consulting"
+      eyebrow="Consulting"
       headline="Advice that survives contact with implementation"
       intro="Advisory, transformation and implementation services across business analysis, project delivery, change management, data and AI."
       pillars={pillars}

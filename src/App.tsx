@@ -15,7 +15,7 @@ const Consulting = lazy(() => import('./pages/services/Consulting'));
 const DigitalSoftware = lazy(() => import('./pages/services/DigitalSoftware'));
 const Academy = lazy(() => import('./pages/services/Academy'));
 const ResourcesTalent = lazy(() => import('./pages/services/ResourcesTalent'));
-const Products = lazy(() => import('./pages/Products'));
+// const Products = lazy(() => import('./pages/Products'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 function ScrollToTop() {
@@ -60,7 +60,7 @@ function AnimatedRoutes() {
             <Route path="/services/digital-software" element={<DigitalSoftware />} />
             <Route path="/services/academy" element={<Academy />} />
             <Route path="/services/resources-talent" element={<ResourcesTalent />} />
-            <Route path="/products" element={<Products />} />
+            {/* <Route path="/products" element={<Products />} /> */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Suspense>

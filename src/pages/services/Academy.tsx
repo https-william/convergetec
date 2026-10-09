@@ -36,7 +36,7 @@ export default function Academy() {
   return (
     <ServicePageTemplate
       accentColor="cyan"
-      eyebrow="ConvergeTec Academy"
+      eyebrow="Academy"
       headline="Building capability that outlasts any single project"
       intro="Corporate training, professional development and online learning across business analysis, project management, transformation, technology and leadership."
       pillars={pillars}

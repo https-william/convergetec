@@ -19,7 +19,7 @@ export default function CTASection() {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-            Consult directly with ConvergeTec practice partners in Sydney, Melbourne, Queensland, and Nigeria to assess your
+            Consult directly with ConvergeTec practice partners in Sydney, Melbourne, and Queensland to assess your
             operating model, cloud systems, and delivery velocity.
           </p>
 
@@ -53,7 +53,7 @@ export default function CTASection() {
             <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
             <span>Non-Disclosure Protected</span>
             <span className="hidden sm:inline text-slate-300 dark:text-slate-700">•</span>
-            <span>Sydney · Melbourne · Queensland · Nigeria</span>
+            <span>Sydney · Melbourne · Queensland</span>
           </div>
         </div>
       </div>

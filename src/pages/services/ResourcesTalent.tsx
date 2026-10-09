@@ -36,7 +36,7 @@ export default function ResourcesTalent() {
   return (
     <ServicePageTemplate
       accentColor="blue"
-      eyebrow="ConvergeTec Resources & Talent"
+      eyebrow="Resources & Talent"
       headline="The right people, placed where you need them"
       intro="Skilled contract professionals and fractional executives, placed where you need them."
       pillars={pillars}
