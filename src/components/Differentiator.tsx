@@ -39,11 +39,6 @@ export default function Differentiator() {
       <div className="content-container">
         {/* Section Header */}
         <div className="max-w-[760px] mx-auto text-center mb-16 sm:mb-20">
-          <div className="flex items-center justify-center gap-2 text-sm font-bold tracking-wide text-blue dark:text-cyan uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
-            <span>The Accountability Advantage</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy dark:text-white tracking-tight leading-[1.1] mb-5">
             The Strategic Divide:<br />
             Multi-Vendor Fragmentation vs. One Cohesive Engine

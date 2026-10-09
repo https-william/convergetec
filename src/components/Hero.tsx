@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion';
 import Button from './Button';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section className="relative w-full bg-offwhite dark:bg-[#070D1E] py-14 sm:py-20 lg:py-24 border-b border-slate-200/80 dark:border-slate-800 overflow-hidden transition-colors duration-200">
+      {/* Ambient Radial Glow Background */}
+      <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-blue/[0.03] dark:from-blue/10 to-transparent pointer-events-none" />
+      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-blue/[0.05] dark:bg-cyan/10 blur-[100px] pointer-events-none" />
+
       <div className="content-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-16 items-center">
           {/* Left Column: Command & Strategic Narrative (6 Cols) */}
@@ -46,25 +50,6 @@ export default function Hero() {
               >
                 Explore Practice Divisions
               </Button>
-            </div>
-
-            {/* Enterprise Sector Trust Strip */}
-            <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 max-w-[540px]">
-              <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 block mb-2.5">
-                Delivering across mission-critical sectors:
-              </span>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-800 dark:text-slate-200 font-medium">
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-blue dark:text-cyan" />
-                  Banking &amp; Financial Services
-                </span>
-                <span className="text-slate-300 dark:text-slate-700">•</span>
-                <span>Healthcare &amp; MedTech</span>
-                <span className="text-slate-300 dark:text-slate-700">•</span>
-                <span>Energy &amp; Utilities</span>
-                <span className="text-slate-300 dark:text-slate-700">•</span>
-                <span>Enterprise SaaS</span>
-              </div>
             </div>
           </div>
 

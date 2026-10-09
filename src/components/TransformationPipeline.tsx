@@ -51,10 +51,6 @@ export default function TransformationPipeline() {
       <div className="content-container relative z-10">
         {/* Section Header */}
         <div className="max-w-[720px] mx-auto text-center mb-12 sm:mb-16">
-          <div className="flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-slate-700 dark:text-slate-200 uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
-            <span>Delivery Lifecycle</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy dark:text-white mb-4 tracking-tight">
             The Continuous Delivery Lifecycle
           </h2>

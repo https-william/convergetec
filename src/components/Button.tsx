@@ -26,13 +26,13 @@ export type ButtonProps = LinkButtonProps | RegularButtonProps;
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-navy text-white hover:bg-[#12295F] border border-navy/20 dark:bg-blue dark:border-blue/30 dark:hover:bg-[#006fd6] shadow-xs active:bg-[#09173D]',
+    'bg-navy text-white hover:bg-[#12295F] border border-navy/20 dark:bg-blue dark:border-blue/30 dark:hover:bg-[#006fd6] shadow-md shadow-navy/10 dark:shadow-blue/20 active:bg-[#09173D] active:scale-[0.98]',
   glow:
-    'bg-blue text-white hover:bg-[#006fd6] border border-blue/20 shadow-xs active:bg-[#005fb8]',
+    'bg-blue text-white hover:bg-[#006fd6] border border-blue/20 shadow-md shadow-blue/20 active:bg-[#005fb8] active:scale-[0.98]',
   secondary:
-    'bg-white border border-slate-200 text-navy hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-800 dark:border-slate-700 dark:text-white dark:hover:bg-slate-700 shadow-xs active:bg-slate-100',
+    'bg-white border border-slate-200 text-navy hover:bg-slate-50 hover:border-slate-300 dark:bg-slate-800 dark:border-slate-700 dark:text-white dark:hover:bg-slate-700 shadow-sm active:bg-slate-100 active:scale-[0.98]',
   inverted:
-    'bg-white text-navy hover:bg-slate-100 border border-transparent shadow-xs dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800',
+    'bg-white text-navy hover:bg-slate-100 border border-transparent shadow-sm dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800 active:scale-[0.98]',
 };
 
 export default function Button(props: ButtonProps) {
@@ -44,7 +44,7 @@ export default function Button(props: ButtonProps) {
   } = props;
 
   const baseClasses =
-    'inline-flex items-center justify-center font-medium text-center transition-colors duration-150 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 no-underline';
+    'inline-flex items-center justify-center font-medium text-center transition-all duration-200 ease-out rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 no-underline';
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${className}`.trim();
 

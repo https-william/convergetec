@@ -1,5 +1,6 @@
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
+import TrustStrip from '../components/TrustStrip';
 import DivisionsGrid from '../components/DivisionsGrid';
 import TransformationPipeline from '../components/TransformationPipeline';
 import Differentiator from '../components/Differentiator';
@@ -14,6 +15,7 @@ export default function Home() {
         path="/"
       />
       <Hero />
+      <TrustStrip />
       <DivisionsGrid />
       <TransformationPipeline />
       <Differentiator />

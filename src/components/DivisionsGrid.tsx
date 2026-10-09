@@ -66,10 +66,6 @@ export default function DivisionsGrid() {
       <div className="content-container">
         {/* Section Header */}
         <div className="text-center max-w-[680px] mx-auto mb-12 md:mb-16">
-          <div className="flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-slate-700 dark:text-slate-200 uppercase mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
-            <span>Integrated Capabilities</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy dark:text-white mb-4 tracking-tight">
             One Company. Four Divisions.
           </h2>

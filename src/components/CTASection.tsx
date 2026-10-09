@@ -6,12 +6,6 @@ export default function CTASection() {
     <section className="relative w-full bg-slate-50 dark:bg-[#070D1E] py-16 sm:py-24 lg:py-28 border-t border-slate-200/80 dark:border-slate-800 transition-colors duration-200">
       <div className="content-container relative z-10 text-center">
         <div className="max-w-5xl mx-auto bg-white dark:bg-[#0D162B] border border-slate-200/90 dark:border-slate-800 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl shadow-navy/5 dark:shadow-2xl text-center transition-all duration-200">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center justify-center gap-2 text-sm font-bold tracking-wide text-blue dark:text-cyan uppercase mb-5 px-3.5 py-1.5 rounded-full bg-blue/5 dark:bg-cyan/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue dark:bg-cyan" />
-            <span>Executive Practice Intake</span>
-          </div>
-
           {/* Heading */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-navy dark:text-white mb-4 tracking-tight leading-tight max-w-3xl mx-auto">
             Ready to transition strategy into production reality?
